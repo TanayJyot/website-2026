@@ -1,0 +1,195 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* MUSIC INSPIRED DARK THEME */
+  --bg-color: #0d0f12; /* Deep dark slate like a dark stage */
+  --surface-main: #161921; /* Slightly lighter for cards */
+  --surface-hover: #1f232b;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent-color: #38bdf8; /* electric blue, like stage lights */
+  --accent-glow: rgba(56, 189, 248, 0.4);
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(22, 25, 33, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+
+  --font-main: 'Outfit', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* subtle gradient background like a spotlight */
+  background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-hover);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Base Elements */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #fff, var(--text-muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(56, 189, 248, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+}
+
+/* Music Visualizer Motif (Subtle Audio Wave bars) */
+.soundwave-bars {
+  display: flex;
+  align-items: flex-end;
+  height: 20px;
+  gap: 3px;
+}
+
+.soundwave-bar {
+  width: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  animation: wave 1s ease-in-out infinite alternate;
+}
+
+.soundwave-bar:nth-child(1) { animation-delay: 0.1s; }
+.soundwave-bar:nth-child(2) { animation-delay: 0.3s; }
+.soundwave-bar:nth-child(3) { animation-delay: 0.5s; }
+.soundwave-bar:nth-child(4) { animation-delay: 0.2s; }
+.soundwave-bar:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave {
+  0% { height: 4px; }
+  100% { height: 20px; box-shadow: 0 0 10px var(--accent-glow); }
+}
+
+/* Markdown Context Overrides */
+.markdown-body h1 { 
+  font-size: 2.8rem; 
+  margin-bottom: 1.5rem; 
+  color: #fff;
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+.markdown-body h2 { 
+  font-size: 1.8rem; 
+  margin-top: 2rem; 
+  margin-bottom: 1rem; 
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+}
+.markdown-body h3 {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+.markdown-body p { 
+  margin-bottom: 1.2rem; 
+  color: var(--text-muted); 
+  font-size: 1.15rem; 
+  line-height: 1.8; 
+}
+.markdown-body ul, .markdown-body ol { 
+  margin-left: 1.5rem; 
+  margin-bottom: 1.2rem; 
+  color: var(--text-muted); 
+}
+.markdown-body li { 
+  margin-bottom: 0.5rem; 
+}
+.markdown-body blockquote {
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1rem;
+  font-style: italic;
+  background: rgba(56, 189, 248, 0.05);
+  padding: 1rem;
+  border-radius: 4px;
+}
