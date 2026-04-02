@@ -13,6 +13,7 @@ I have asked a couple people to ask their labs if they are looking actively for 
 Applying to YC Companies is a really good option especially if they have recently raised funding([Cruchbase](https://www.crunchbase.com/)) and they are smaller startups. If you email 100 startups there is a high likelihood that you will get a job especially the ones that are small scale and if you are working for free
 
 - [Uoft Startups Job Board](https://jobs.entrepreneurs.utoronto.ca/jobs?filter=eyJzZW5pb3JpdHkiOlsiaW50ZXJuc2hpcCJdfQ%3D%3D): This might be a really good option but I have never used it myself
+- [Riipen Level Up (Canadian Students)](https://www.riipen.com/levelup/students), [Future Path (Canadian Students)](https://www.riipen.com/futurepath/students) and [Advance Ontario (International Students)](https://www.riipen.com/advanceontario/students): These are programs that match you with a small to medium sized Canadian startup to work with them as an intern. These are really cool if you are just starting out
 - [YC Startup Directory](https://www.ycombinator.com/companies)
 - [A16Z Portfolio](https://a16z.com/portfolio/)
 - [NEXT Canada Alumnis](https://directory.nextcanada.com/directory/alumni/)
