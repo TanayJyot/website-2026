@@ -33,7 +33,8 @@ For Research Positions, it is less about your current experiences and more about
 - [Xilin Liu (X-Lab)](https://www.ece.utoronto.ca/people/liu-x/) [^6]
 - [Roman Genov](https://www.ece.utoronto.ca/people/genov-r/) [^7] is usually looking
 - [Myrtede Alfred](https://www.mie.utoronto.ca/faculty_staff/myrtede-alfred/) [^8] likes working with first years interested in human factors work
-- Teaching Stream Profs like Jack Sun, Diane Horton, Mario and Steve also like helping out students and can be worth asking
+- [Michael Carter](https://che.utoronto.ca/professor-michael-w-carter/) [^9] takes student with less experience in the Engineering Healthcare Centre
+- Teaching Stream Profs like Jack Sun, Diane Horton, Mario and Steve also like helping out students and can be worth asking[^4]
 
 Andrew(andro.o on discord) is also down to guide people towards people he knows so feel free to contact him 
 
@@ -54,3 +55,4 @@ If you cannot find an opportunity there are a lot of resources out there that yo
 [^6]: Shoutout Stephanie
 [^7]: Shoutout Kalash
 [^8]: Shoutout Elena
+[^9]: Shoutut Eika
