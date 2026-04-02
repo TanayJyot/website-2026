@@ -6,7 +6,7 @@ I am just compiling a list of resources for people to look at if they are lookin
 I have asked a couple people to ask their labs if they are looking actively for people. I would let you know if I update this
 
 - [IBM Data Scientist Intern](https://careers.ibm.com/en_US/careers/JobDetail/Data-Scientist-Intern-16-months-September-2026/54156): This is for either May or December but 16 months is firm. Let [Abdul](https://www.linkedin.com/in/abdul-fatir-/) know if you are applying for this
-- [Model Alpha](https://www.modelpha.com) [^1]: Looking for a co-founder or intern, willing to give equity based on skillset and fit
+- [Model Alpha](https://www.modelpha.com) [^1]: Looking for a co-founder or intern, willing to give equity based on skillset and fit. Let me know if this sounds interesting to you
 
 ## Startups
 
