@@ -31,6 +31,7 @@ For Research Positions, it is less about your current experiences and more about
 - [Zhijing Jin](https://zhijing-jin.com/home/): [^5]: She hires a LOT
 - [Tim Chan](https://vectorinstitute.ai/team/timothy-chan/) [^6] : One of his PHD Students is looking for an undergrad. They are looking for someone more experienced (3rd year) but it still might be worth a shot.
 - [Xilin Liu (X-Lab)](https://www.ece.utoronto.ca/people/liu-x/) [^6]
+- [Roman Genov](https://www.ece.utoronto.ca/people/genov-r/) [^7] is usually looking
 - Teaching Stream Profs like Jack Sun, Diane Horton, Mario and Steve also like helping out students and can be worth asking
 
 Andrew(andro.o on discord) is also down to guide people towards people he knows so feel free to contact him 
@@ -50,3 +51,4 @@ If you cannot find an opportunity there are a lot of resources out there that yo
 [^4]: Shoutout Jessica
 [^5]: Shoutout Ruihang
 [^6]: Shoutout Stephanie
+[^7]: Shoutout Kalash
