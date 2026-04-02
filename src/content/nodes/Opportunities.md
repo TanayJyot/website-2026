@@ -18,6 +18,13 @@ Applying to YC Companies is a really good option especially if they have recentl
 - [A16Z Portfolio](https://a16z.com/portfolio/)
 - [NEXT Canada Alumnis](https://directory.nextcanada.com/directory/alumni/)
 
+## Open Source
+Open source can be really cool if you just want to learn and a lot of big companies have running open source projects. I have listed some here
+
+- [Google Summer of Code (Projects Announced Apr 30th)](https://summerofcode.withgoogle.com/) [^11]
+- [MLH Fellowship](https://fellowship.mlh.io/) [^11] MLH also pays a stipend to participants
+
+
 ## Research
 
 There is a high chance that at this point of the year (Apr 2026) that research can't pay you but you might also learn a lot working at a research lab as a volunteer + since it is still an experience, it can boost your intern chances / salary in the future
@@ -60,3 +67,4 @@ If you cannot find an opportunity there are a lot of resources out there that yo
 [^8]: Shoutout Elena
 [^9]: Shoutut Eika
 [^10]: Shoutout Anoop
+[^11]: Shoutout Kenny
