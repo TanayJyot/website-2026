@@ -1,16 +1,26 @@
-# React + Vite
+# Tanayjyot's Personal Portfolio & Graph Explorer (2026)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal website repository! 
 
-Currently, two official plugins are available:
+This project goes beyond a traditional static portfolio page. It acts as an interactive visualization map constructed natively inside the browser, connecting my various passions, technical engineering intern experiences, writing catalogs, and leadership backgrounds all organically interconnected.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Features
+- **Interactive Topography Map (Hero Graph):** Built from scratch utilizing `react-force-graph-2d` and D3, this visual DAG loads my life's milestones as draggable, organically connected physics nodes. They expand sequentially and gracefully stabilize.
+- **Glassmorphic Navigation:** Custom dynamic headers utilizing smooth interpolation and backdrop filter blur layers.
+- **Dynamic Content Routing:** Instead of cramming all details on a bloated scroll list, specific graphical nodes link directly to dynamically injected markdown breakdowns (`react-markdown`) using `React Router`.
+- **Categorized Experience Layers:** Differentiates the complex dichotomy of Technical Engineering & Leadership.
 
-## React Compiler
+## 💻 Tech Stack
+- Frontend Framework: **React 19** with **Vite 5**
+- Styling: Custom vanilla CSS with Glassmorphism variables
+- Ecosystem Dependencies: `react-router-dom`, `lucide-react`, `remark-gfm`
+- Routing: SPA Client-Side Routing
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Run Locally 
+If you want to view the site topology natively on your local machine:
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Then visit the provided localized development port (default `localhost:5173`).
