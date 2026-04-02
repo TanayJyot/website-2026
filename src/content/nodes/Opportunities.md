@@ -28,12 +28,14 @@ For Research Positions, it is less about your current experiences and more about
 - [Uoft Computer Science Faculty Directory](https://web.cs.toronto.edu/people/faculty-directory): This contains the emails of all faculty at UofT and there areas of interest in Computer Science.
 - [Vector Faculty List](https://vectorinstitute.ai/research-talent/research-team/)[^3] : Emailing Vector profs can be a good strat, especially new ones that are actively looking for students to work with
 - [Chandra Gummaluru](https://chandra-gummaluru.github.io/) [^4] : Chandra is a newly appointed prof in the CS Department. He is looking to create more student engagement and get into more game theory and RL stuff so there is a chance he would be down to take students. 
-- [Zhijing Jin](https://zhijing-jin.com/home/): [^5]: She hires a LOT
+- [Pascal Tyrrell](https://medical-imaging.utoronto.ca/faculty/pascal-tyrrell) [^5] : He is always looking to help out students and works with a lot of them
+- [Zhijing Jin](https://zhijing-jin.com/home/): [^5]: She is usually looking for people
 - [Tim Chan](https://vectorinstitute.ai/team/timothy-chan/) [^6] : One of his PHD Students is looking for an undergrad. They are looking for someone more experienced (3rd year) but it still might be worth a shot.
 - [Xilin Liu (X-Lab)](https://www.ece.utoronto.ca/people/liu-x/) [^6]
 - [Roman Genov](https://www.ece.utoronto.ca/people/genov-r/) [^7] is usually looking
 - [Myrtede Alfred](https://www.mie.utoronto.ca/faculty_staff/myrtede-alfred/) [^8] likes working with first years interested in human factors work
 - [Michael Carter](https://che.utoronto.ca/professor-michael-w-carter/) [^9] takes student with less experience in the Engineering Healthcare Centre
+- [Dr. Amey Pore](https://ameyapores.github.io/) [^10] is potentially looking for a student
 - Teaching Stream Profs like Jack Sun, Diane Horton, Mario and Steve also like helping out students and can be worth asking[^4]
 
 Andrew(andro.o on discord) is also down to guide people towards people he knows so feel free to contact him 
@@ -56,3 +58,4 @@ If you cannot find an opportunity there are a lot of resources out there that yo
 [^7]: Shoutout Kalash
 [^8]: Shoutout Elena
 [^9]: Shoutut Eika
+[^10]: Shoutout Anoop
