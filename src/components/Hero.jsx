@@ -18,6 +18,8 @@ const fullData = {
     { id: "Flybits", name: "Flybits ('25)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 15, fy: 15 },
     { id: "LeeLang", name: "Lee Lang. Lab ('24)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 45, fy: 45 },
     { id: "Shopify", name: "Shopify ('26)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 30, fy: 30 },
+    { id: "HCDSL", name: "HCDS Lab ('26)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 10, fy: 10 },
+    { id: "RBC", name: "RBC Let's Solve It ('26)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 50, fy: 50 },
     
     // Leadership Timeline geometrically tiered to avoid overlap
     { id: "IIMUN", name: "IIMUN ('22)", val: 3, color: "#e2e8f0", link: "#experience", prefY: -65, fy: -65 },
@@ -54,6 +56,8 @@ const fullData = {
     { source: "Sampark", target: "LeeLang" },
     { source: "Flybits", target: "Shopify" },
     { source: "LeeLang", target: "Shopify" },
+    { source: "LeeLang", target: "HCDSL" },
+    { source: "Flybits", target: "RBC" },
 
     { source: "Lead", target: "IIMUN" },
     { source: "Lead", target: "Lyceum" },
@@ -78,7 +82,7 @@ const nodeLayers = {
   "Guitar": 2,
   "IIMUN": 2, "Lyceum": 2, "LeoClub": 2, "Neurobridge": 2, "Sampark": 2, "Books": 2, "Opportunities": 2,
   "UTMIST_ML": 3, "UofTAI": 3, "Flybits": 3, "LeeLang": 3, "Blog": 3,
-  "UTMIST": 4, "RSG": 4, "Shopify": 4 
+  "UTMIST": 4, "RSG": 4, "Shopify": 4, "HCDSL": 4, "RBC": 4 
 };
 
 // Mathematically pin all node coordinates in advance so the DAG never jitters

@@ -12,6 +12,20 @@ export default function Experience() {
       nodeId: "Shopify"
     },
     {
+      role: "Researcher",
+      company: "Human-Centered Data Science Lab",
+      date: "2026",
+      desc: "Research at Human-Centered Data Science Lab.",
+      nodeId: "HCDSL"
+    },
+    {
+      role: "Participant",
+      company: "RBC Let's Solve It",
+      date: "2026",
+      desc: "Participated in RBC Let's Solve It program.",
+      nodeId: "RBC"
+    },
+    {
       role: "AI Research Intern",
       company: "Flybits",
       date: "Mar 2025 – Present",

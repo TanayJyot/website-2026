@@ -9,13 +9,13 @@ export default function Contact() {
         <p style={{ maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
           Whether you want to chat about AI systems, community building at UofT, or just want to jam on some guitars, feel free to reach out!
         </p>
-        
+
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-          <a href="mailto:tanay@example.com" className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 1.5rem' }}>
+          <a href="mailto:tj.singhchawla@mail.utoronto.ca" className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 1.5rem' }}>
             <Mail size={20} color="var(--accent-color)" />
             <span>Email Me</span>
           </a>
-          <a href="https://github.com/tjsin" target="_blank" rel="noreferrer" className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 1.5rem' }}>
+          <a href="https://github.com/tanayjyot" target="_blank" rel="noreferrer" className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 1.5rem' }}>
             <Github size={20} color="var(--accent-color)" />
             <span>GitHub</span>
           </a>
