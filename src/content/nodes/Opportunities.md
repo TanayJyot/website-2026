@@ -58,6 +58,11 @@ For Research Positions, it is less about your current experiences and more about
 - [Rahul Krishnan](https://www.cs.toronto.edu/~rahulgk/) [^12] if you are interested in healthcare / biology
 - [Nandita Vijaykumar](https://www.cs.toronto.edu/~nandita/) [^12] takes students for CSC494 / 495 usually so if you are interested in systems + vision then feel free to reach out
 - [Florian Shkurti](https://www.cs.toronto.edu/~florian/) [^12] for robotics (he also likes maths students)
+- [Indoor Microbiology and Environmental Exposures (IMEE) Lab](https://hab.civmin.utoronto.ca/people/dr-sarah-haines/) [^18]
+- [Moses Lab](https://moses.csb.utoronto.ca/) [^18]
+- [Toronto Robotics and Artificial Intelligence Laboratory (TRAIL)](https://www.trailab.utias.utoronto.ca/) [^18]
+- [CoNSens Lab](https://www.utsc.utoronto.ca/people/niemeier/) [^18]
+- [Computational Neuroscience Lab (Dr. Brokoslaw Laschowski)](https://tcairem.utoronto.ca/faculty/brokoslaw-laschowski) [^18]
 - [Alice Gao](https://www.cs.toronto.edu/~axgao/research.shtml) [^14] She has some really cool game projects among other things
 - Teaching Stream Profs like Jack Sun, Diane Horton, Mario and Steve also like helping out students and can be worth asking[^4]
 
@@ -90,3 +95,4 @@ If you cannot find an opportunity there are a lot of resources out there that yo
 [^15]: Shoutout Elwin
 [^16]: Shoutout Chloe
 [^17]: Shoutout Hasnain
+[^18]: Shoutout Veer
