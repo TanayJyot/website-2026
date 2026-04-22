@@ -1,0 +1,2 @@
+- can be used on a variable so that it stops accessing a file.
+- Example in [[open( , )]]. 

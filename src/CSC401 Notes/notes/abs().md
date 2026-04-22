@@ -1,0 +1,1 @@
+gives us the absolute value of the variable within it.(The positive value)

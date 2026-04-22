@@ -1,0 +1,1 @@
+Basically the input of the function very very synonymous to the [[domain(mathematics)]]. 

@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Interests from './components/Interests';
 import Contact from './components/Contact';
 import NodePage from './pages/NodePage';
+import NotePage from './pages/NotePage';
 import './App.css'; 
 
 function HomePage() {
@@ -19,6 +20,50 @@ function HomePage() {
       <Interests />
       <Contact />
     </>
+  );
+}
+
+function WritingsPage() {
+  const courseNotes = [
+    {
+      id: 'natural language processing',
+      title: 'CSC401 — Natural Language Processing',
+      description: 'Course notes covering linguistic knowledge, language modelling, Naive Bayes, entropy & information theory, neural networks, and machine translation.',
+      tags: ['NLP', 'Transformers', 'Deep Learning', 'Probability'],
+      date: '2026',
+    },
+  ];
+
+  return (
+    <div className="container section animate-fade-in" style={{ marginTop: '5rem', minHeight: '80vh', maxWidth: '900px' }}>
+      <h2 className="title">Writings &amp; Thoughts</h2>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '3rem', fontSize: '1.15rem', lineHeight: 1.7 }}>
+        Technical deep dives, book reviews, and notes on my hardware/music adventures. More coming soon.
+      </p>
+
+      {/* Course Notes section */}
+      <h3 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+        <span style={{ color: 'var(--accent-color)' }}>📚</span> Course Notes
+      </h3>
+
+      <div className="writings-grid">
+        {courseNotes.map((note) => (
+          <Link key={note.id} to={`/note/${encodeURIComponent(note.id)}`} style={{ textDecoration: 'none' }}>
+            <div className="writing-card glass-card">
+              <div className="writing-card-accent" />
+              <p className="writing-card-date">{note.date}</p>
+              <h4 className="writing-card-title">{note.title}</h4>
+              <p className="writing-card-desc">{note.description}</p>
+              <div className="writing-card-tags">
+                {note.tags.map((t) => (
+                  <span key={t} className="writing-tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -67,18 +112,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/node/:id" element={<NodePage />} />
-            <Route path="/blog" element={
-              <div className="container section" style={{marginTop:'5rem', minHeight: '80vh'}}>
-                <h2 className="title">Writings & Thoughts</h2>
-                <div className="glass-card">
-                  <h3 style={{marginBottom: '1rem'}}>Welcome to my blog</h3>
-                  <p style={{color: 'var(--text-muted)'}}>Dec 10, 2025</p>
-                  <p style={{marginTop: '1rem'}}>
-                    In the future, I will be posting thorough technical deep dives, book reviews, and notes on my hardware/music adventures right here. Stay tuned!
-                  </p>
-                </div>
-              </div>
-            } />
+            <Route path="/note/:slug" element={<NotePage />} />
+            <Route path="/blog" element={<WritingsPage />} />
           </Routes>
         </main>
       </div>

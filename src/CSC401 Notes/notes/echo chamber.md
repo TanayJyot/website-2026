@@ -1,0 +1,1 @@
+Basically where everyone just repeats your thoughts back at you because you all just think so alike. 

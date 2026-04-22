@@ -1,0 +1,1 @@
+He took a class on squid games

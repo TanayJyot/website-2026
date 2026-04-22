@@ -1,0 +1,1 @@
+The cost it takes to fix something that is causing [[negative externalities|external cost]] 

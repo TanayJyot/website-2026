@@ -1,0 +1,2 @@
+- A well ordered set is a set wherein every non empty set has a least element. Meaning there is a member of the set that is the smallest(smaller than every other set). 
+- Example would be 0 in the [[Natural Numbers]]. 

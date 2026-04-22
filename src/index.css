@@ -223,3 +223,386 @@ p {
 .markdown-body .footnotes li {
   margin-bottom: 0.8rem;
 }
+
+/* ========================================
+   Writings Page
+   ======================================== */
+.writings-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.writing-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 2rem 2.5rem;
+}
+
+.writing-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-color), #6366f1);
+  border-radius: 4px 0 0 4px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.writing-card:hover .writing-card-accent {
+  opacity: 1;
+}
+
+.writing-card-date {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.writing-card-title {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.writing-card-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.writing-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.writing-tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  transition: background 0.2s ease;
+}
+
+.writing-card:hover .writing-tag {
+  background: rgba(56, 189, 248, 0.18);
+}
+
+/* ========================================
+   Note Page Layout
+   ======================================== */
+.note-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3rem;
+  min-height: 80vh;
+}
+
+.note-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-color);
+  transition: opacity 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  opacity: 0.8;
+}
+
+.breadcrumb-sep {
+  color: var(--text-muted);
+  margin: 0 0.2rem;
+}
+
+.breadcrumb-current {
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+.note-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.note-content {
+  padding: 3rem 3.5rem;
+  background: rgba(22, 25, 33, 0.4);
+  min-width: 0; /* prevent overflow */
+}
+
+/* ========================================
+   Note Sidebar
+   ======================================== */
+.note-sidebar {
+  position: sticky;
+  top: 6rem;
+}
+
+.sidebar-card {
+  padding: 1.5rem;
+}
+
+.sidebar-card:hover {
+  transform: none; /* override glass-card hover lift */
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.3rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+}
+
+.sidebar-link:hover {
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--accent-color);
+  text-shadow: none;
+}
+
+.sidebar-link-missing {
+  opacity: 0.5;
+}
+
+.missing-badge {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   Wikilinks inside markdown
+   ======================================== */
+.wikilink {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(56, 189, 248, 0.3);
+  padding-bottom: 1px;
+  transition: all 0.2s ease;
+}
+
+.wikilink:hover {
+  border-bottom-color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* ========================================
+   Note Images
+   ======================================== */
+.note-image-wrapper {
+  display: block;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.note-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   Obsidian Callouts
+   ======================================== */
+.callout {
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.2rem 0;
+  border-left: 4px solid;
+}
+
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.callout-note, .callout-info {
+  background: rgba(56, 189, 248, 0.06);
+  border-left-color: #38bdf8;
+}
+.callout-note .callout-title, .callout-info .callout-title {
+  color: #38bdf8;
+}
+
+.callout-tip, .callout-success {
+  background: rgba(34, 197, 94, 0.06);
+  border-left-color: #22c55e;
+}
+.callout-tip .callout-title, .callout-success .callout-title {
+  color: #22c55e;
+}
+
+.callout-warning, .callout-caution {
+  background: rgba(251, 191, 36, 0.06);
+  border-left-color: #fbbf24;
+}
+.callout-warning .callout-title, .callout-caution .callout-title {
+  color: #fbbf24;
+}
+
+.callout-important, .callout-danger, .callout-failure, .callout-bug {
+  background: rgba(239, 68, 68, 0.06);
+  border-left-color: #ef4444;
+}
+.callout-important .callout-title,
+.callout-danger .callout-title,
+.callout-failure .callout-title,
+.callout-bug .callout-title {
+  color: #ef4444;
+}
+
+.callout-example, .callout-abstract, .callout-summary, .callout-todo {
+  background: rgba(168, 85, 247, 0.06);
+  border-left-color: #a855f7;
+}
+.callout-example .callout-title,
+.callout-abstract .callout-title,
+.callout-summary .callout-title,
+.callout-todo .callout-title {
+  color: #a855f7;
+}
+
+.callout-question {
+  background: rgba(251, 191, 36, 0.06);
+  border-left-color: #fbbf24;
+}
+.callout-question .callout-title {
+  color: #fbbf24;
+}
+
+.callout-quote {
+  background: rgba(148, 163, 184, 0.06);
+  border-left-color: #94a3b8;
+}
+.callout-quote .callout-title {
+  color: #94a3b8;
+}
+
+/* ========================================
+   KaTeX Overrides (dark theme)
+   ======================================== */
+.markdown-body .katex {
+  font-size: 1.1em;
+  color: var(--text-main);
+}
+
+.markdown-body .katex-display {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+.markdown-body .katex-display > .katex {
+  color: #fff;
+}
+
+/* ========================================
+   Markdown code overrides for notes
+   ======================================== */
+.markdown-body code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #e2e8f0;
+}
+
+.markdown-body pre {
+  background: rgba(13, 15, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1.2rem;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+}
+
+.markdown-body pre code {
+  background: none;
+  padding: 0;
+}
+
+/* ========================================
+   Horizontal rules in notes
+   ======================================== */
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 2rem 0;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+  .note-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .note-sidebar {
+    position: static;
+  }
+
+  .note-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .note-page-container {
+    padding: 4rem 1rem 2rem;
+  }
+}
+

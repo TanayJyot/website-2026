@@ -1,0 +1,2 @@
+- Variables that are made inside a function only exist within the [[variable scope]] of the function. By using ‘global’, the variable can also be used/ exists in the [[global scope]]. 
+- Variable must be initialised outside the function. 

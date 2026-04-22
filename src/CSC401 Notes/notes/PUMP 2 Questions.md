@@ -1,0 +1,6 @@
+- In what cases do we use the equivalent symbol over the equals to symbol.
+- Tutorial 1 question 2 
+- Can we say that the definition of $a \Rightarrow b$ is $\lnot a \lor b$
+- The field axioms weren’t directly discussed in the lectures so will they still be a part of the mid term?
+- Extension of the pset. 
+- 

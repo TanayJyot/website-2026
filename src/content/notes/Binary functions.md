@@ -1,0 +1,1 @@
+- functions like [[Concatenation]] and [[‘in’ Operator]] are restricted to binary functions. 

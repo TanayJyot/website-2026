@@ -1,0 +1,5 @@
+- have types 
+- can be an element of a data structure. ( A [[Functions]] can be used within a list.)
+- Can be in expressions( To assign values maybe to another function)
+- Example is [[Functions]]. 
+- 

@@ -1,0 +1,3 @@
+- Sequence of definitions and commands
+	- definitions evaluated
+	- [[Commands]] are executed by interpreter in a shell.

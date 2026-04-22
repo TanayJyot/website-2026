@@ -1,0 +1,1 @@
+Set of all “potential” outputs. 
