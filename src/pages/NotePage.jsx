@@ -108,6 +108,94 @@ function convertCallouts(md) {
   );
 }
 
+/**
+ * Ensure $$...$$ blocks have their delimiters on separate lines
+ * so that remark-math parses them as display math, not inline.
+ */
+function isolateDisplayMath(md) {
+  const lines = md.split('\n');
+  const result = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+    // Strip list prefix if the line is just a list item wrapping $$...$$
+    const stripped = line.replace(/^\s*[-*+]\s*/, '').replace(/^\s*\d+\.\s*/, '').trim();
+
+    // Case 1: Single-line display math  $$...$$
+    if (/^\$\$.*\$\$$/.test(stripped) && stripped !== '$$') {
+      const mathContent = stripped.slice(2, -2).trim();
+      if (result.length > 0 && result[result.length - 1].trim() !== '') {
+        result.push('');
+      }
+      result.push('$$');
+      result.push(mathContent);
+      result.push('$$');
+      result.push('');
+      i++;
+      continue;
+    }
+
+    // Case 2: Multi-line display math starting with $$
+    if (/^\$\$/.test(stripped) && !/\$\$$/.test(stripped.slice(2))) {
+      if (result.length > 0 && result[result.length - 1].trim() !== '') {
+        result.push('');
+      }
+      // If the first line is just $$, keep it. If it has content like $$ math, split it.
+      if (stripped === '$$') {
+        result.push('$$');
+      } else {
+        result.push('$$');
+        result.push(stripped.slice(2).trim());
+      }
+      
+      i++;
+      while (i < lines.length) {
+        const nextLine = lines[i].trim();
+        if (/\$\$\s*$/.test(nextLine)) {
+          if (nextLine === '$$') {
+            result.push('$$');
+          } else {
+            result.push(nextLine.slice(0, -2).trim());
+            result.push('$$');
+          }
+          i++;
+          break;
+        } else {
+          result.push(nextLine);
+          i++;
+        }
+      }
+      result.push('');
+      continue;
+    }
+
+    // Case 3: Line contains $$...$$ in the middle
+    const inlineDisplayMatch = line.match(/^(.*?)\s*(\$\$[^$]+\$\$)\s*(.*)$/);
+    if (inlineDisplayMatch && inlineDisplayMatch[2]) {
+      const before = inlineDisplayMatch[1].trim();
+      const mathContent = inlineDisplayMatch[2].slice(2, -2).trim();
+      const after = inlineDisplayMatch[3].trim();
+      
+      if (before) result.push(before);
+      result.push('');
+      result.push('$$');
+      result.push(mathContent);
+      result.push('$$');
+      result.push('');
+      if (after) result.push(after);
+      i++;
+      continue;
+    }
+
+    // Default: pass line through
+    result.push(line);
+    i++;
+  }
+
+  return result.join('\n');
+}
+
 /** Full pre-processing pipeline */
 function preprocessObsidian(raw) {
   let md = stripFrontmatter(raw);
@@ -116,6 +204,8 @@ function preprocessObsidian(raw) {
   md = convertWikilinks(md);
   // Remove empty ## headings (common in Obsidian templates)
   md = md.replace(/^##\s*$/gm, '');
+  // Isolate $$...$$ display math blocks onto their own paragraphs
+  md = isolateDisplayMath(md);
   return md;
 }
 

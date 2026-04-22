@@ -555,15 +555,13 @@ p {
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0.5rem 0;
-  text-align: center;
-}
-
-.markdown-body .katex-display > .katex > .katex-html {
-  display: flex;
-  justify-content: center;
+  text-align: center !important;
+  width: 100%;
 }
 
 .markdown-body .katex-display > .katex {
+  display: inline-block;
+  text-align: center !important;
   color: #fff;
 }
 
