@@ -6,7 +6,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import 'katex/dist/katex.min.css';
-import { ArrowLeft, BookOpen, FileText } from 'lucide-react';
+import { ArrowLeft, BookOpen, FileText, CornerDownLeft } from 'lucide-react';
 
 /* ────────────────────────────────────────────────────────────
    Vite glob: eagerly import every .md file under content/notes
@@ -30,6 +30,29 @@ function buildNoteLookup() {
 }
 
 const NOTES = buildNoteLookup();
+
+/** Pre-compute backlinks: for each note, which other notes link to it? */
+const WIKILINK_RE = /\[\[([^\]|#]+)(?:[#|][^\]]*)?\]\]/g;
+
+function buildBacklinksIndex() {
+  const index = {}; // targetSlug → [{ slug, display }]
+  for (const [sourceSlug, raw] of Object.entries(NOTES)) {
+    let match;
+    const re = new RegExp(WIKILINK_RE.source, 'g');
+    while ((match = re.exec(raw)) !== null) {
+      const targetName = match[1].trim().toLowerCase();
+      if (targetName === sourceSlug) continue; // skip self-links
+      if (!index[targetName]) index[targetName] = [];
+      // Avoid duplicate entries from the same source
+      if (!index[targetName].some(b => b.slug === sourceSlug)) {
+        index[targetName].push({ slug: sourceSlug, display: sourceSlug });
+      }
+    }
+  }
+  return index;
+}
+
+const BACKLINKS = buildBacklinksIndex();
 
 /* ────────────────────────────────────────────────────────────
    Pre-processing pipeline: Obsidian → standard Markdown
@@ -143,6 +166,7 @@ export default function NotePage() {
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
   const [linkedNotes, setLinkedNotes] = useState([]);
+  const [backlinks, setBacklinks] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -154,6 +178,7 @@ export default function NotePage() {
       setContent(`# Note Not Found\n\nCould not find a note named **${decodedSlug}**. It may not have been included in the exported set.`);
       setTitle('Not Found');
       setLinkedNotes([]);
+      setBacklinks([]);
       return;
     }
 
@@ -181,6 +206,14 @@ export default function NotePage() {
       seen.add(l.slug);
       return true;
     }));
+
+    // Compute backlinks for this note
+    const bl = (BACKLINKS[decodedSlug.toLowerCase()] || []).map(b => ({
+      ...b,
+      slug: encodeURIComponent(b.slug),
+      exists: true, // they're in NOTES by definition
+    }));
+    setBacklinks(bl);
   }, [slug]);
 
   return (
@@ -209,27 +242,46 @@ export default function NotePage() {
           </ReactMarkdown>
         </article>
 
-        {/* Sidebar: linked notes */}
-        {linkedNotes.length > 0 && (
+        {/* Sidebar: linked notes + backlinks */}
+        {(linkedNotes.length > 0 || backlinks.length > 0) && (
           <aside className="note-sidebar">
-            <div className="sidebar-card glass-card">
-              <h4 className="sidebar-title">
-                <FileText size={16} /> Linked Notes
-              </h4>
-              <ul className="sidebar-links">
-                {linkedNotes.map((link) => (
-                  <li key={link.slug}>
-                    <Link
-                      to={`/note/${link.slug}`}
-                      className={`sidebar-link ${link.exists ? '' : 'sidebar-link-missing'}`}
-                    >
-                      {link.display}
-                      {!link.exists && <span className="missing-badge">missing</span>}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {backlinks.length > 0 && (
+              <div className="sidebar-card glass-card">
+                <h4 className="sidebar-title sidebar-title-backlinks">
+                  <CornerDownLeft size={16} /> Backlinks
+                </h4>
+                <ul className="sidebar-links">
+                  {backlinks.map((link) => (
+                    <li key={link.slug}>
+                      <Link to={`/note/${link.slug}`} className="sidebar-link">
+                        {link.display}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {linkedNotes.length > 0 && (
+              <div className="sidebar-card glass-card" style={{ marginTop: backlinks.length > 0 ? '1rem' : 0 }}>
+                <h4 className="sidebar-title sidebar-title-forward">
+                  <FileText size={16} /> Forward Links
+                </h4>
+                <ul className="sidebar-links">
+                  {linkedNotes.map((link) => (
+                    <li key={link.slug}>
+                      <Link
+                        to={`/note/${link.slug}`}
+                        className={`sidebar-link ${link.exists ? '' : 'sidebar-link-missing'}`}
+                      >
+                        {link.display}
+                        {!link.exists && <span className="missing-badge">missing</span>}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </aside>
         )}
       </div>

@@ -411,6 +411,16 @@ p {
   opacity: 0.5;
 }
 
+.sidebar-title-backlinks {
+  color: #a78bfa;
+  border-bottom-color: rgba(167, 139, 250, 0.15);
+}
+
+.sidebar-title-forward {
+  color: #34d399;
+  border-bottom-color: rgba(52, 211, 153, 0.15);
+}
+
 .missing-badge {
   font-size: 0.65rem;
   padding: 0.1rem 0.45rem;
@@ -545,6 +555,12 @@ p {
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0.5rem 0;
+  text-align: center;
+}
+
+.markdown-body .katex-display > .katex > .katex-html {
+  display: flex;
+  justify-content: center;
 }
 
 .markdown-body .katex-display > .katex {

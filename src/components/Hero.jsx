@@ -31,9 +31,10 @@ const fullData = {
     { id: "RSG", name: "RSG Asst ('24)", val: 3, color: "#e2e8f0", link: "#experience", prefY: -15, fy: -15 },
 
     // Writings layered neatly avoiding the central dense timeline
-    { id: "Books", name: "Book Recs", val: 3, color: "#e2e8f0", link: "#interests", prefY: 110, fy: 110 },
-    { id: "Blog", name: "Tech Blog", val: 3, color: "#e2e8f0", link: "/blog", prefY: 140, fy: 140 },
-    { id: "Opportunities", name: "Opportunities", val: 3, color: "#e2e8f0", link: "/node/Opportunities", prefY: 170, fy: 170 },
+    { id: "Books", name: "Book Recs", val: 3, color: "#e2e8f0", link: "#interests", prefY: 100, fy: 100 },
+    { id: "Blog", name: "Tech Blog", val: 3, color: "#e2e8f0", link: "/blog", prefY: 130, fy: 130 },
+    { id: "Opportunities", name: "Opportunities", val: 3, color: "#e2e8f0", link: "/node/Opportunities", prefY: 160, fy: 160 },
+    { id: "CSC401", name: "CSC401 NLP Notes", val: 3, color: "#e2e8f0", link: "/note/natural%20language%20processing", prefY: 190, fy: 190 },
 
     // Interests
     { id: "Guitar", name: "Guitar", val: 3, color: "#e2e8f0", link: "#about", prefY: -110, fy: -110 }
@@ -49,6 +50,7 @@ const fullData = {
     { source: "Writings", target: "Books" },
     { source: "Writings", target: "Blog" },
     { source: "Writings", target: "Opportunities" },
+    { source: "Writings", target: "CSC401" },
 
     { source: "Tech", target: "Neurobridge" },
     { source: "Tech", target: "Sampark" },
@@ -80,7 +82,7 @@ const nodeLayers = {
   "Start": 0,
   "Interests": 1, "Lead": 1, "Tech": 1, "Writings": 1,
   "Guitar": 2,
-  "IIMUN": 2, "Lyceum": 2, "LeoClub": 2, "Neurobridge": 2, "Sampark": 2, "Books": 2, "Opportunities": 2,
+  "IIMUN": 2, "Lyceum": 2, "LeoClub": 2, "Neurobridge": 2, "Sampark": 2, "Books": 2, "Opportunities": 2, "CSC401": 2,
   "UTMIST_ML": 3, "UofTAI": 3, "Flybits": 3, "LeeLang": 3, "Blog": 3,
   "UTMIST": 4, "RSG": 4, "Shopify": 4, "HCDSL": 4, "RBC": 4 
 };
