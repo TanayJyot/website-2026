@@ -82,7 +82,11 @@ function convertWikilinks(md) {
     const target = parts[0].split('#')[0].trim();
     const display = parts.length > 1 ? parts[1].trim() : inner.split('#')[0].trim();
     const slug = encodeURIComponent(target);
-    return `[${display}](/note/${slug})`;
+    
+    const isMissing = !NOTES[target.toLowerCase()];
+    const suffix = isMissing ? '?missing=true' : '';
+    
+    return `[${display}](/note/${slug}${suffix})`;
   });
 }
 
@@ -217,13 +221,17 @@ function NoteLink({ href, children }) {
 
   // Internal /note/ links
   if (href && href.startsWith('/note/')) {
+    const isMissing = href.endsWith('?missing=true');
+    const cleanHref = href.replace('?missing=true', '');
+    const classes = `wikilink ${isMissing ? 'is-unresolved' : ''}`.trim();
+    
     return (
       <a
-        href={href}
-        className="wikilink"
+        href={cleanHref}
+        className={classes}
         onClick={(e) => {
           e.preventDefault();
-          navigate(href);
+          navigate(cleanHref);
         }}
       >
         {children}

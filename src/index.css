@@ -442,6 +442,11 @@ p {
   transition: all 0.2s ease;
 }
 
+.wikilink.is-unresolved {
+  opacity: 0.55;
+  border-bottom: 1px dotted rgba(56, 189, 248, 0.2);
+}
+
 .wikilink:hover {
   border-bottom-color: var(--accent-color);
   text-shadow: 0 0 8px var(--accent-glow);
