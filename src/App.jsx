@@ -32,6 +32,13 @@ function WritingsPage() {
       tags: ['NLP', 'Transformers', 'Deep Learning', 'Probability'],
       date: '2026',
     },
+    {
+      id: 'CSC384 Index',
+      title: 'CSC384 — Intro to Artificial Intelligence',
+      description: 'Course notes covering search algorithms, heuristics, constraint satisfaction problems, game trees, and basic machine learning concepts.',
+      tags: ['AI', 'Search', 'CSP', 'Machine Learning'],
+      date: '2026',
+    },
   ];
 
   return (

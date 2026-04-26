@@ -1,0 +1,5 @@
+- You only look at the [[docstring]] specifications. You don’t look at the code directly. 
+- Can be done by someone other than the programmer to avoid biases. 
+- Find ways that deal with all the different ways you may deal with a program. 
+- ![[Pasted image 20230703175339.png]]
+- Reminds me of [[beta testing]]

@@ -1,0 +1,1 @@
+- When something occurs only on a fixed number of values. 

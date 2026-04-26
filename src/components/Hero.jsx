@@ -35,6 +35,7 @@ const fullData = {
     { id: "Blog", name: "Tech Blog", val: 3, color: "#e2e8f0", link: "/blog", prefY: 130, fy: 130 },
     { id: "Opportunities", name: "Opportunities", val: 3, color: "#e2e8f0", link: "/node/Opportunities", prefY: 160, fy: 160 },
     { id: "CSC401", name: "CSC401 NLP Notes", val: 3, color: "#e2e8f0", link: "/note/natural%20language%20processing", prefY: 190, fy: 190 },
+    { id: "CSC384", name: "CSC384 AI Notes", val: 3, color: "#e2e8f0", link: "/note/CSC384%20Index", prefY: 220, fy: 220 },
 
     // Interests
     { id: "Guitar", name: "Guitar", val: 3, color: "#e2e8f0", link: "#about", prefY: -110, fy: -110 }
@@ -51,6 +52,7 @@ const fullData = {
     { source: "Writings", target: "Blog" },
     { source: "Writings", target: "Opportunities" },
     { source: "Writings", target: "CSC401" },
+    { source: "Writings", target: "CSC384" },
 
     { source: "Tech", target: "Neurobridge" },
     { source: "Tech", target: "Sampark" },

@@ -1,0 +1,3 @@
+- Cannot be modified directly
+- An example is [[Core Elements Of Programs#Strings:]]
+- 
