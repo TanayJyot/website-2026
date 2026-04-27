@@ -1,0 +1,2 @@
+- Variables that are made inside a function only exist within the [[MITx course - Knowledge Base - variable scope]] of the function. By using ‘global’, the variable can also be used/ exists in the [[MITx course - Knowledge Base - global scope]]. 
+- Variable must be initialised outside the function. 

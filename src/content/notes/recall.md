@@ -10,3 +10,7 @@ $$\frac{N_\text{relevant and retrieved}}{N_\text{relevant}}$$
 
 $$\frac{\text{True Positives}}{\text{True}}$$
 
+- this considers overall corpus and model output
+- same top term as [[precision]]
+- bottom term consists of everything positive in the corpus (instead of the model output which was the bottom term in precision)
+- 

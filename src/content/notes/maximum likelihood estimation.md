@@ -10,3 +10,9 @@ aliases: []
 
 $$P_{\text{MLE}}(w_1 \cdots w_n) = \frac{C(w_1 \cdots w_n)}{N}$$
 $$P_{\text{MLE}}(w_n \mid w_1 \cdots w_{n-1}) = \frac{C(w_1 \cdots w_n)}{C(w_1 \cdots w_{n-1})}$$
+
+##
+
+![[Pasted image 20260423133202.png]] ^83a71a
+
+- you look at the critical point of the 2D surface made by 

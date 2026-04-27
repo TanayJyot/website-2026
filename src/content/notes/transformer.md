@@ -3,6 +3,12 @@ tags:
 aliases: []
 ---
 # transformer
+- [[BERT]]
+- [[T5]]
+- [[GPT]]
+- [[token free models]]
+- [[reinforcement learning with human feedback]]
+
 ##
 ![[Pasted image 20260421182512.png]]
 
@@ -15,31 +21,13 @@ aliases: []
  - Positional encodings (PE)
  - Residual connections
 
-### Residual Connections
-![[Pasted image 20260421183008.png]]
-- After we do self-attention, some information from the input, would be lost. The residual connections allow us to retrieve that information and use it in the next operation 
-
-$$x_s^\prime = sublayer (x_s) + x_s$$
-
+- [[Residual Connections]]
 - [[Layer Normalization]]
 - [[self-attention]]
 - [[masked self-attention]]
 - [[cross attention]]
-### Feed Forward Layer
-
-residuals → I don't care about attention
-layer norm → I don't get carried away
-feed forward → let me fix that
-
-- after attention reweighs the values, it allows the architecture to **learn** information by giving the output some non-linearities 
-- We have a 2 layer [[Neural Network]] with a [[rectified linear unit activation function]] in the middle so that $$FFN(x_i) = \max(0, x_i W_1 + b_1) W_2 + b_2$$
-- On full sequence of tokens ($x_1 ... x_S$): $$FFN(x) = \text{ReLU}(x W_1 + b_1) W_2 + b_2$$
-### Position Independence
-![[Pasted image 20260421210047.png]]
-
-- Attention does not care about what order it is given words in, it will end up producing the same scores
-- to make it care about which order we give it words in we need to encode it in the input via $\phi(s)$ 
-- this is called the positional encoding of the word so that the model’s behaviour changes based on the encoding (because the vector is different now)
+- [[Feed Forward Layer]]
+- [[Position Independence]]
 ### Drawbacks
 
 #### Quadratic Computation Cost

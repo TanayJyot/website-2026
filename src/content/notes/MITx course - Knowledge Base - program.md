@@ -1,0 +1,3 @@
+- Sequence of definitions and commands
+	- definitions evaluated
+	- [[MITx course - Knowledge Base - Commands]] are executed by interpreter in a shell.

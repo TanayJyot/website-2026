@@ -9,8 +9,8 @@ aliases:
 ### Categories of linguistic knowledge
 - [[phonology]]
 - [[morphology]]
-- [[syntax]]
-- [[Semantics]]
+- [[MITx course - Knowledge Base - syntax]]
+- [[MITx course - Knowledge Base - Semantics]]
 - [[pragmatics]]
 - [[frequentist view]]
 - [[Bayesian view]]
@@ -25,7 +25,7 @@ aliases:
 - [[softmax activation]]
 
 ### Slides 4
-- [[Entropy and Information Theory]]
+- [[CSC401 - Entropy and Information Theory]]
 - [[decisions]]
 
 ### Slides 5 
@@ -34,3 +34,27 @@ aliases:
 
 ### Slides 6 
 - [[machine translation]]
+
+### Slides 7 / Transformers Part 2
+- [[transformer]]
+
+### Slides 8 Start of Audio
+- [[acoustics and phonetics]]
+
+### Slides 9
+- [[speech classification]]
+
+### Slides 10
+- [[automatic speech recognition]]
+
+### Slides 11 
+- [[hidden Markov model]]
+- [[fundamental equation for statistical speech recognition]]
+
+### Slides 12
+- [[information retrieval]]
+### Slides 13
+- [[RAG]]
+
+### Slide 14
+- [[text summarization]]

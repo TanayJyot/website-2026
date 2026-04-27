@@ -21,7 +21,7 @@ This is a clever bit of logarithmic shorthand. Remember that $\\log(A) \+ \\log(
 
 If we combine the terms on the left:
 
-$$\\log(F\_r) \+ \\log N \= \\log(F\_r \\cdot N)$$  
+$$\log(F_r) + \log N = \log(F_r \cdot N)$$  
 Since **Relative Frequency ($F\_r$)** is defined as $\\frac{count}{N}$, then $F\_r \\cdot N$ is simply the **raw count** (the frequency) of the word.
 
 * **The Reason:** Relative frequencies are tiny decimals (like $0.00001$). Their logs are large negative numbers, which are annoying to work with. Adding $\\log N$ effectively converts that decimal back into a "count" scale, moving the math into a more manageable range of positive numbers.

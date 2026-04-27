@@ -1,0 +1,3 @@
+- Cannot be modified directly
+- An example is [[MITx course - Python Basics - Core Elements Of Programs#Strings:]]
+- 

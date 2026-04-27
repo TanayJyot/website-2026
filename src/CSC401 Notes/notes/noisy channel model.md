@@ -18,11 +18,13 @@ Since $P(F)$ is constant for all possible English sentences $E$ being evaluated,
 
 $$E^* = \arg\max_E P(F|E)P(E)$$
 
-
-
 ![[Pasted image 20260421133659.png]]
 
-### How does this differ from [[neural machine translation]]
+
+
+
+
+### How does this differ from [[CSC401 - neural machine translation]]
 - it doesn’t need the noisy channel language model $$E^* = \arg\max_E P(E|F)$$ since the neural network can do the translation without this 
 	- it may be used as an objective in NNs
 - There is no explicit **alignment** between French and English words which means we used to tell the model that this word translates to this in English but we don’t do all that in NMT

@@ -7,4 +7,4 @@ aliases: []
 - involved optimizing for specific languages
 	- rule-based, hand-designed components were still involved 
 - extremely complex
-- 
+- [[noisy channel model]]

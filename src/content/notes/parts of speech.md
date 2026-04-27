@@ -21,6 +21,6 @@ aliases: []
 - has a small and fixed number of word types 
 	- makes the sentence grammatical but don’t necessarily contain as much info 
 - semantics depend on the words they are used with 
-- 
+
 
 [^1]: contain more data than needed

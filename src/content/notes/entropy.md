@@ -9,7 +9,7 @@ aliases: []
 
 - what is the average amounts of bits of information you are getting when you get a given output
 
-$$H(x) = E_x[I(x)] = \sum_x \log\frac{1}{p(x)}$$
+$$H(x) = E_x[I(x)] = \sum_x P(x)\log\frac{1}{p(x)}$$
 1. It is defined for a random variable
 2. since it is uncertain the amount of information you would *observe*, entropy tells you what this **uncertainty** is on average
 

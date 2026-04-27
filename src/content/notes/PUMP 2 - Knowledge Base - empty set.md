@@ -1,0 +1,4 @@
+- Empty set is a set that basically contains nothing. 
+- It has [[PUMP 2 - Knowledge Base - cardinality]] of 0 
+- It is represented by $$\emptyset$$
+- 
