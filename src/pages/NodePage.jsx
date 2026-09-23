@@ -10,14 +10,17 @@ export default function NodePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top when loading
+    let cancelled = false; // ignore stale loads if the user navigates before this one resolves
 
     // Dynamically retrieve the raw string of the matching markdown file using Vite's ?raw directive
     import(`../content/nodes/${id}.md?raw`)
-      .then(res => setContent(res.default))
+      .then(res => { if (!cancelled) setContent(res.default); })
       .catch(err => {
         console.error(err);
-        setContent(`# 404: Node Not Found\n\nCould not find content mapping for **${id}**. Ensure you have created a \`src/content/nodes/${id}.md\` file.`);
+        if (!cancelled) setContent(`# 404: Node Not Found\n\nCould not find content mapping for **${id}**. Ensure you have created a \`src/content/nodes/${id}.md\` file.`);
       });
+
+    return () => { cancelled = true; };
   }, [id]);
 
   return (
