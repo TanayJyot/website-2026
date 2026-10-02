@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -6,7 +6,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import 'katex/dist/katex.min.css';
-import { ArrowLeft, BookOpen, FileText, CornerDownLeft } from 'lucide-react';
+import { BookOpen, FileText, CornerDownLeft } from 'lucide-react';
 
 /* ────────────────────────────────────────────────────────────
    Vite glob: eagerly import every .md file under content/notes
@@ -58,35 +58,41 @@ const BACKLINKS = buildBacklinksIndex();
    Pre-processing pipeline: Obsidian → standard Markdown
    ──────────────────────────────────────────────────────────── */
 
-/** Strip YAML frontmatter (---…---) */
+/** Strip YAML frontmatter — only a --- block at the very start of the file */
 function stripFrontmatter(md) {
-  return md.replace(/^---[\s\S]*?---\n*/m, '');
+  return md.replace(/^---\r?\n[\s\S]*?\r?\n---[ \t]*(?:\r?\n)*/, '');
 }
 
-/** Convert ![[image.png]] → standard markdown image syntax */
+/** encodeURIComponent leaves ( and ) alone, which breaks markdown link parsing */
+function encodeSlug(name) {
+  return encodeURIComponent(name).replace(/\(/g, '%28').replace(/\)/g, '%29');
+}
+
+/** Convert ![[image.png]] and ![[image.png|300]] → standard markdown image syntax */
 function convertObsidianImages(md) {
-  return md.replace(/!\[\[([^\]]+\.(png|jpg|jpeg|gif|svg|webp|bmp|tiff|tif|excalidraw))\]\]/gi,
-    (_, filename) => `![${filename}](/notes-assets/${encodeURIComponent(filename)})`
+  return md.replace(/!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|svg|webp|bmp|tiff|tif|excalidraw))(?:\|[^\]]*)?\]\]/gi,
+    (_, filename) => `![${filename.trim()}](/notes-assets/${encodeSlug(filename.trim())})`
   );
 }
 
-/** Convert [[Note Name]] and [[Note Name|Alias]] → markdown links */
+/**
+ * Convert [[Note Name]], [[Note Name|Alias]] and note embeds ![[Note Name]] → markdown links.
+ * Embeds (transclusions) aren't supported, so they degrade to a plain link.
+ */
 function convertWikilinks(md) {
-  return md.replace(/\[\[([^\]]+)\]\]/g, (match, inner) => {
-    // Skip if it looks like an image (already handled)
-    if (/\.(png|jpg|jpeg|gif|svg|webp|bmp|tiff|tif|excalidraw)$/i.test(inner)) {
-      return match;
-    }
+  return md.replace(/!?\[\[([^\]]+)\]\]/g, (match, inner) => {
     // Handle [[Note Name|Display Text]] and [[Note Name#Heading|Display Text]]
     const parts = inner.split('|');
     const target = parts[0].split('#')[0].trim();
-    const display = parts.length > 1 ? parts[1].trim() : inner.split('#')[0].trim();
-    const slug = encodeURIComponent(target);
-    
-    const isMissing = !NOTES[target.toLowerCase()];
+    const display = parts.length > 1 ? parts.slice(1).join('|').trim() : parts[0].trim();
+
+    // Same-note heading/block reference ([[#^abc|text]]) — no page to link to
+    if (!target) return display.replace(/^#\^?/, '');
+
+    const isMissing = !(target.toLowerCase() in NOTES);
     const suffix = isMissing ? '?missing=true' : '';
-    
-    return `[${display}](/note/${slug}${suffix})`;
+
+    return `[${display}](/note/${encodeSlug(target)}${suffix})`;
   });
 }
 
@@ -121,8 +127,24 @@ function isolateDisplayMath(md) {
   const result = [];
   let i = 0;
 
+  let inFence = false;
+
   while (i < lines.length) {
     const line = lines[i];
+
+    // Leave fenced code blocks untouched
+    if (/^\s*(```|~~~)/.test(line)) {
+      inFence = !inFence;
+      result.push(line);
+      i++;
+      continue;
+    }
+    if (inFence) {
+      result.push(line);
+      i++;
+      continue;
+    }
+
     // Strip list prefix if the line is just a list item wrapping $$...$$
     const stripped = line.replace(/^\s*[-*+]\s*/, '').replace(/^\s*\d+\.\s*/, '').trim();
 
@@ -222,7 +244,7 @@ function NoteLink({ href, children }) {
   // Internal /note/ links
   if (href && href.startsWith('/note/')) {
     const isMissing = href.endsWith('?missing=true');
-    const cleanHref = href.replace('?missing=true', '');
+    const cleanHref = href.replace(/\?missing=true$/, '');
     const classes = `wikilink ${isMissing ? 'is-unresolved' : ''}`.trim();
     
     return (
@@ -244,6 +266,13 @@ function NoteLink({ href, children }) {
 }
 
 function NoteImage({ src, alt }) {
+  const [failed, setFailed] = useState(false);
+
+  // Image wasn't exported with the notes — show its name instead of a broken icon
+  if (failed) {
+    return <em className="note-image-missing">[missing image: {alt || src}]</em>;
+  }
+
   return (
     <span className="note-image-wrapper">
       <img
@@ -251,67 +280,60 @@ function NoteImage({ src, alt }) {
         alt={alt || ''}
         loading="lazy"
         className="note-image"
+        onError={() => setFailed(true)}
       />
     </span>
   );
 }
 
-/* ────────────────────────────────────────────────────────────
-   NotePage component
-   ──────────────────────────────────────────────────────────── */
+/** Everything the page renders for a given slug */
+function loadNote(name) {
+  const raw = NOTES[name.toLowerCase()];
+
+  // Empty notes are valid (raw === ''), so check for undefined rather than falsiness
+  if (raw === undefined) {
+    return {
+      content: `# Note Not Found\n\nCould not find a note named **${name}**. It may not have been included in the exported set.`,
+      title: 'Not Found',
+      linkedNotes: [],
+      backlinks: [],
+    };
+  }
+
+  const content = preprocessObsidian(raw) || `# ${name}\n\n*This note is empty.*`;
+
+  // Extract title from first # heading
+  const titleMatch = content.match(/^#\s+(.+)$/m);
+  const title = titleMatch ? titleMatch[1] : name;
+
+  // Extract linked notes from the processed markdown (the /note/ links)
+  const linkPattern = /\[([^\]]+)\]\(\/note\/([^)?]+)(\?missing=true)?\)/g;
+  const linkedNotes = [];
+  const seen = new Set();
+  let m;
+  while ((m = linkPattern.exec(content)) !== null) {
+    const slug = m[2];
+    if (seen.has(slug)) continue;
+    seen.add(slug);
+    linkedNotes.push({ display: m[1], slug, exists: !m[3] });
+  }
+
+  const backlinks = (BACKLINKS[name.toLowerCase()] || []).map(b => ({
+    ...b,
+    slug: encodeSlug(b.slug),
+    exists: true, // they're in NOTES by definition
+  }));
+
+  return { content, title, linkedNotes, backlinks };
+}
+
 export default function NotePage() {
+  // useParams already returns the decoded value; decoding again breaks names containing '%'
   const { slug } = useParams();
-  const [content, setContent] = useState('');
-  const [title, setTitle] = useState('');
-  const [linkedNotes, setLinkedNotes] = useState([]);
-  const [backlinks, setBacklinks] = useState([]);
+  const { content, title, linkedNotes, backlinks } = useMemo(() => loadNote(slug), [slug]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    const decodedSlug = decodeURIComponent(slug);
-    const raw = NOTES[decodedSlug.toLowerCase()];
-
-    if (!raw) {
-      setContent(`# Note Not Found\n\nCould not find a note named **${decodedSlug}**. It may not have been included in the exported set.`);
-      setTitle('Not Found');
-      setLinkedNotes([]);
-      setBacklinks([]);
-      return;
-    }
-
-    const processed = preprocessObsidian(raw);
-    setContent(processed);
-
-    // Extract title from first # heading
-    const titleMatch = processed.match(/^#\s+(.+)$/m);
-    setTitle(titleMatch ? titleMatch[1] : decodedSlug);
-
-    // Extract linked notes from the processed markdown (the /note/ links)
-    const linkPattern = /\[([^\]]+)\]\(\/note\/([^)]+)\)/g;
-    const links = [];
-    let m;
-    while ((m = linkPattern.exec(processed)) !== null) {
-      const display = m[1];
-      const targetSlug = decodeURIComponent(m[2]);
-      const exists = targetSlug.toLowerCase() in NOTES;
-      links.push({ display, slug: m[2], exists });
-    }
-    // Deduplicate
-    const seen = new Set();
-    setLinkedNotes(links.filter(l => {
-      if (seen.has(l.slug)) return false;
-      seen.add(l.slug);
-      return true;
-    }));
-
-    // Compute backlinks for this note
-    const bl = (BACKLINKS[decodedSlug.toLowerCase()] || []).map(b => ({
-      ...b,
-      slug: encodeURIComponent(b.slug),
-      exists: true, // they're in NOTES by definition
-    }));
-    setBacklinks(bl);
   }, [slug]);
 
   return (
@@ -327,7 +349,7 @@ export default function NotePage() {
 
       <div className="note-layout">
         {/* Main content */}
-        <article className="note-content glass-card markdown-body">
+        <article key={slug} className="note-content glass-card markdown-body">
           <ReactMarkdown
             remarkPlugins={[remarkGfm, remarkMath]}
             rehypePlugins={[rehypeKatex, rehypeRaw]}

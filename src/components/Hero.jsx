@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ForceGraph2D from 'react-force-graph-2d';
 import './Hero.css';
 
@@ -84,7 +85,7 @@ const nodeLayers = {
   "Start": 0,
   "Interests": 1, "Lead": 1, "Tech": 1, "Writings": 1,
   "Guitar": 2,
-  "IIMUN": 2, "Lyceum": 2, "LeoClub": 2, "Neurobridge": 2, "Sampark": 2, "Books": 2, "Opportunities": 2, "CSC401": 2,
+  "IIMUN": 2, "Lyceum": 2, "LeoClub": 2, "Neurobridge": 2, "Sampark": 2, "Books": 2, "Opportunities": 2, "CSC401": 2, "CSC384": 2,
   "UTMIST_ML": 3, "UofTAI": 3, "Flybits": 3, "LeeLang": 3, "Blog": 3,
   "UTMIST": 4, "RSG": 4, "Shopify": 4, "HCDSL": 4, "RBC": 4 
 };
@@ -114,6 +115,7 @@ export default function Hero() {
   const [hoverNode, setHoverNode] = useState(null);
   const [highlightNodes, setHighlightNodes] = useState(new Set());
   const [highlightLinks, setHighlightLinks] = useState(new Set());
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -146,6 +148,7 @@ export default function Hero() {
 
     // Begin interval from the next node
     let currentIndex = 1;
+    let zoomTimeout;
 
     const interval = setInterval(() => {
       const tickIndex = currentIndex; // capture locally for correct asynchronous React scheduling
@@ -153,9 +156,7 @@ export default function Hero() {
       if (tickIndex >= fullData.nodes.length) {
         clearInterval(interval);
         // Force a soft zoom to fit once it's done growing
-        if (fgRef.current) {
-          setTimeout(() => fgRef.current.zoomToFit(1200, 50), 3000);
-        }
+        zoomTimeout = setTimeout(() => fgRef.current?.zoomToFit(1200, 50), 3000);
         return;
       }
       
@@ -191,7 +192,10 @@ export default function Hero() {
       currentIndex++;
     }, 400); // Expanding timing faster for one-by-one nodes
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(zoomTimeout);
+    };
   }, []);
 
   const handleNodeDragEnd = useCallback(node => {
@@ -253,7 +257,7 @@ export default function Hero() {
   const handleNodeClick = useCallback((node) => {
     if (node.link) {
       if (node.link.startsWith('/')) {
-        window.location.href = node.link;
+        navigate(node.link);
       } else {
         const element = document.querySelector(node.link);
         if (element) {
@@ -262,7 +266,7 @@ export default function Hero() {
         }
       }
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <section className="hero-section" style={{ padding: 0, margin: 0, width: '100vw', height: '100vh', overflow: 'hidden' }}>
@@ -307,13 +311,13 @@ export default function Hero() {
             return highlightLinks.has(link) ? 6 : 3;
           }}
           linkDirectionalParticleWidth={link => highlightLinks.has(link) ? 4 : 2}
-          linkDirectionalParticleSpeed={link => hoverNode ? 0.002 : 0.008}
+          linkDirectionalParticleSpeed={() => hoverNode ? 0.002 : 0.008}
           linkDirectionalParticleColor={link => {
             const createdAt = link.createdAt || Date.now();
             if (Date.now() - createdAt < 1500) return 'rgba(0,0,0,0)'; // hidden during growth
             return highlightLinks.has(link) ? 'rgba(56, 189, 248, 0.8)' : 'rgba(255,255,255,0.4)';
           }}
-          linkCanvasObject={(link, ctx, globalScale) => {
+          linkCanvasObject={(link, ctx) => {
             const startX = link.source.x;
             const startY = link.source.y;
             const endX = link.target.x;

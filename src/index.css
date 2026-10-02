@@ -461,6 +461,13 @@ p {
   text-align: center;
 }
 
+.note-image-missing {
+  display: block;
+  margin: 1rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .note-image {
   max-width: 100%;
   height: auto;

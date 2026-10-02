@@ -11,6 +11,16 @@ import NotePage from './pages/NotePage';
 import './App.css'; 
 
 function HomePage() {
+  const { hash } = useLocation();
+
+  // Nav links like /#about load the page before the sections exist, so the
+  // browser can't jump to the anchor itself — scroll once the page has rendered.
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (el) el.scrollIntoView();
+  }, [hash]);
+
   return (
     <>
       <Hero />
@@ -74,6 +84,18 @@ function WritingsPage() {
   );
 }
 
+function NotFoundPage() {
+  return (
+    <div className="container section animate-fade-in" style={{ marginTop: '5rem', minHeight: '80vh', maxWidth: '900px' }}>
+      <h2 className="title">Page Not Found</h2>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+        There's nothing at this address.
+      </p>
+      <Link to="/" className="btn-secondary">Back to Home</Link>
+    </div>
+  );
+}
+
 function AppContent() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -125,6 +147,7 @@ function AppContent() {
           <Route path="/node/:id" element={<NodePage />} />
           <Route path="/note/:slug" element={<NotePage />} />
           <Route path="/blog" element={<WritingsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
     </div>
