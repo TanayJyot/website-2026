@@ -1,5 +1,0 @@
-- [[PUMP 2 - Knowledge Base - Natural Numbers]]
-- [[PUMP 2 - Knowledge Base - Integers]]
-- [[Rationals]]
-- [[The Reals]]
-- [[PUMP 2/Knowledge Base/Complex Numbers]]

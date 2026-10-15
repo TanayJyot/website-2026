@@ -1,1 +1,0 @@
-While the sodium potassium pump will keep moving sodium and potassium until they are back to a state of resting potential. 

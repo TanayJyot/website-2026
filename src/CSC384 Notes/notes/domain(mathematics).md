@@ -1,1 +1,0 @@
-The set of all possible  inputs of a function

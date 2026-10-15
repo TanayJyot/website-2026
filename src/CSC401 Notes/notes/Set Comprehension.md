@@ -1,3 +1,0 @@
-- A way of writing the set syntax in python. 
-- ![[Pasted image 20230912130746.png]]
-- This works for any [[collection data type]]. 

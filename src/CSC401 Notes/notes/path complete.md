@@ -1,1 +1,0 @@
-You basically try to test every single way a particular program can go. Every singly branch

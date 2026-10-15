@@ -1,3 +1,0 @@
-- The idea is that if something seems perfect and it is real then it is probably not true. 
-- Dig deeper into [[nuances, caveats and contingencies]]
-- 

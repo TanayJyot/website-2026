@@ -1,1 +1,0 @@
-Something that does not mean anything on its own. That’s what differentiates it from [[information]] and [[knowledge]]. 
