@@ -5,6 +5,10 @@
       "destination": "/opportunities.html"
     },
     {
+      "source": "/node/opportunities",
+      "destination": "/opportunities.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
