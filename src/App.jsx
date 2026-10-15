@@ -53,9 +53,9 @@ function WritingsPage() {
 
   return (
     <div className="container section animate-fade-in" style={{ marginTop: '5rem', minHeight: '80vh', maxWidth: '900px' }}>
-      <h2 className="title">Writings &amp; Thoughts</h2>
+      <h2 className="title">Writings</h2>
       <p style={{ color: 'var(--text-muted)', marginBottom: '3rem', fontSize: '1.15rem', lineHeight: 1.7 }}>
-        Technical deep dives, book reviews, and notes on my hardware/music adventures. More coming soon.
+        Course notes from my CS classes at UofT.
       </p>
 
       {/* Course Notes section */}

@@ -5,26 +5,25 @@ export default function About() {
     <section className="section" id="about">
       <div className="container">
         <h2 className="title">About Me</h2>
-        
+
         <div className="glass-card" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           <div>
-            <h3 style={{ marginBottom: '1rem', color: 'var(--accent-color)' }}>The Builder</h3>
+            <h3 style={{ marginBottom: '1rem', color: 'var(--accent-color)' }}>What I Work On</h3>
             <p style={{ marginBottom: '1rem' }}>
-              I'm an undergraduate at the <strong>University of Toronto</strong> studying Computer Science, with minors in Economics and Business.
-              I am focused on end-to-end AI/ML engineering—from data pipelines and modeling to backend architecture and deployment.
+              I'm a Computer Science student at the <strong>University of Toronto</strong>, with a minor in Economics and a Certificate in Business Fundamentals.
             </p>
             <p>
-              Whether it's orchestrating SLURM-style workflows on GPU clusters or building out scalable APIs, I think in terms of systems, optimization, and real-world scalability.
+              My work is in ML infrastructure and inference: serving and benchmarking LLMs, recommender pipelines and feature stores at <strong>Shopify</strong>, and on-prem LLM serving at the <strong>Human-Centered Data Science Lab</strong>.
             </p>
           </div>
-          
+
           <div>
             <h3 style={{ marginBottom: '1rem', color: 'var(--accent-color)' }}>Beyond the Code</h3>
             <p style={{ marginBottom: '1rem' }}>
-              Outside of engineering, I'm deeply involved in community building. As <strong>Co-President of UTMIST</strong>, I lead an organization of hundreds of members, running large-scale events like DevCon and managing AI compute resources for students.
+              I'm <strong>Co-President of UTMIST</strong>, North America's largest AI student organization, where we run events like DevCon and EigenAI.
             </p>
             <p>
-              When I'm off the clock, you can find me playing the <strong>Guitar</strong> or grinding the ladder in <strong>Clash Royale</strong>.
+              Outside of that, I play <strong>guitar</strong> and play <strong>Clash Royale</strong>.
             </p>
           </div>
         </div>

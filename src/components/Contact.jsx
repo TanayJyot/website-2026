@@ -7,7 +7,7 @@ export default function Contact() {
       <div className="container" style={{ textAlign: 'center' }}>
         <h2 className="title">Get In Touch</h2>
         <p style={{ maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
-          Whether you want to chat about AI systems, community building at UofT, or just want to jam on some guitars, feel free to reach out!
+          Happy to chat about ML infrastructure, LLM inference, research, or UTMIST.
         </p>
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
