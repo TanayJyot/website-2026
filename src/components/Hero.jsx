@@ -443,7 +443,7 @@ export default function Hero() {
               nodeLabel={() => null}
               nodeColor="color"
               nodeRelSize={6}
-              enableZoomInteraction={!coarse}
+              enableZoomInteraction={false} /* layout is pinned at zoom 1; wheel should scroll the page */
               enablePanInteraction={!coarse}
               enableNodeDrag={!coarse}
               linkDirectionalParticles={reducedMotion ? 0 : link => {
