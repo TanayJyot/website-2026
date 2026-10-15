@@ -1,37 +1,44 @@
 import React from 'react';
 import { Mail, Github, Linkedin, FileText } from 'lucide-react';
 
+const links = [
+  { href: 'mailto:tj.singhchawla@mail.utoronto.ca', label: 'Email Me', Icon: Mail },
+  { href: 'https://github.com/tanayjyot', label: 'GitHub', Icon: Github, external: true },
+  { href: 'https://linkedin.com/in/tanayjyot', label: 'LinkedIn', Icon: Linkedin, external: true },
+  { href: '/Resume.pdf', label: 'Resume', Icon: FileText, external: true },
+];
+
 export default function Contact() {
   return (
-    <section className="section" id="contact" style={{ borderTop: '1px solid var(--glass-border)', marginTop: '2rem' }}>
-      <div className="container" style={{ textAlign: 'center' }}>
-        <h2 className="title">Get In Touch</h2>
-        <p style={{ maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
+    <section className="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div className="container contact-inner">
+        <h2 className="title" id="contact-title">Get In Touch</h2>
+        <p className="contact-intro">
           Happy to chat about ML infrastructure, LLM inference, research, or UTMIST.
         </p>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-          <a href="mailto:tj.singhchawla@mail.utoronto.ca" className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 1.5rem' }}>
-            <Mail size={20} color="var(--accent-color)" />
-            <span>Email Me</span>
-          </a>
-          <a href="https://github.com/tanayjyot" target="_blank" rel="noreferrer" className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 1.5rem' }}>
-            <Github size={20} color="var(--accent-color)" />
-            <span>GitHub</span>
-          </a>
-          <a href="https://linkedin.com/in/tanayjyot" target="_blank" rel="noreferrer" className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 1.5rem' }}>
-            <Linkedin size={20} color="var(--accent-color)" />
-            <span>LinkedIn</span>
-          </a>
-          <a href="/Resume.pdf" target="_blank" className="glass-card" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 1.5rem' }}>
-            <FileText size={20} color="var(--accent-color)" />
-            <span>Resume</span>
-          </a>
-        </div>
+        <ul className="contact-links" role="list">
+          {links.map((link) => {
+            const { href, label, Icon, external } = link;
+            return (
+              <li key={label}>
+                <a
+                  href={href}
+                  className="glass-card contact-link"
+                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  <Icon size={20} aria-hidden="true" focusable="false" />
+                  <span>{label}</span>
+                  {external && <span className="sr-only"> (opens in a new tab)</span>}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-      <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+      <p className="contact-footer">
         © {new Date().getFullYear()} Tanayjyot Singh Chawla. Built with React & Vite.
-      </div>
+      </p>
     </section>
   );
 }

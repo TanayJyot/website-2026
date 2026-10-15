@@ -1,1 +1,0 @@
-- When groups get larger the ability to form new connections gets higher even if we don’t want to reveal them. These ideas get revealed by observation. 

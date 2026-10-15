@@ -1,15 +1,134 @@
+/* ========================================
+   Hero: photo + name beside (desktop) or above (below 960px) the graph
+   ======================================== */
 .hero-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  --hero-nav-h: 72px; /* the fixed glass nav on the home page is ~71px tall */
   position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh; /* grows with the browser bar on mobile instead of hiding behind it */
   overflow: hidden;
 }
-.hero-content {
+
+.hero-intro {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 32%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--hero-nav-h) + 1.5rem) 4% 2rem;
+  background: var(--bg-color);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-intro-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-photo {
+  display: block;
+  /* never wider than 350px, and short enough that the name still fits below it */
+  width: min(100%, 350px, max(160px, calc((100vh - var(--hero-nav-h) - 17rem) * 0.75)));
+  width: min(100%, 350px, max(160px, calc((100dvh - var(--hero-nav-h) - 17rem) * 0.75)));
+  height: auto;
+  aspect-ratio: 800 / 1067;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.hero-name {
+  margin-top: 2.5rem;
+  max-width: 100%;
+  font-size: clamp(2.4rem, 3.4vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  overflow-wrap: break-word;
+}
+
+.hero-graph {
   position: relative;
   z-index: 2;
-  margin-top: -5rem;
+  flex: 1 1 auto;
+  min-width: 0;
 }
+
+/* Absolutely positioned so the canvas never feeds back into the size it is measured from */
+.hero-graph-canvas {
+  position: absolute;
+  top: var(--hero-nav-h);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.hero-graph-canvas canvas {
+  display: block;
+}
+
+@media (max-width: 959.98px) {
+  .hero-section {
+    flex-direction: column;
+  }
+
+  .hero-intro {
+    flex: none;
+    padding: calc(var(--hero-nav-h) + 1.25rem) 1rem 0.5rem;
+    background: transparent;
+    border-right: 0;
+    box-shadow: none;
+  }
+
+  .hero-photo {
+    width: min(220px, 58vw, max(150px, 28vh));
+    border-radius: 14px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+  }
+
+  .hero-name {
+    margin-top: 1rem;
+    font-size: clamp(1.75rem, 7.4vw, 2.8rem);
+  }
+
+  .hero-graph {
+    flex: none;
+    width: 100%;
+    height: 58vh;
+    min-height: 380px;
+    max-height: 680px;
+  }
+
+  .hero-graph-canvas {
+    top: 0;
+  }
+}
+
+/* Touch screens: the graph has no pan/zoom/drag, so let swipes scroll the page
+   (d3 sets touch-action: none on the canvas inline). */
+@media (pointer: coarse), (hover: none) {
+  .hero-graph-canvas canvas {
+    touch-action: pan-y !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro-inner {
+    animation: none;
+  }
+}
+
 .mb-4 { margin-bottom: 1rem; }
 .mt-6 { margin-top: 2rem; }
 .highlight {

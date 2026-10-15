@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "notes:index": "node scripts/build-notes-index.mjs --verbose",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -1,1 +1,0 @@
-The [[py file format]] is just a text file with a different name for the sake of differentiating it. 

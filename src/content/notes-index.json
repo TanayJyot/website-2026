@@ -1,0 +1,4363 @@
+{
+ "backlinks": {
+  "1": [
+   "csc384 index"
+  ],
+  "2": [
+   "csc384 index"
+  ],
+  "3": [
+   "csc384 index"
+  ],
+  "4": [
+   "csc384 index"
+  ],
+  "00 fibonacci": [
+   "dictionaries",
+   "dictionaries_1",
+   "functions",
+   "functions_1",
+   "mitx course - simple programs - functions",
+   "mitx course - structured types - dictionaries"
+  ],
+  "1 changing face of business": [
+   "profit"
+  ],
+  "10.1, 10.2, 10.3": [
+   "mitx course - knowledge base - module",
+   "method in cs",
+   "method in cs_1",
+   "__init__",
+   "dataclass",
+   "interface",
+   "module"
+  ],
+  "10.4, 10.5": [
+   "data type",
+   "data type_1",
+   "last in first out behaviour",
+   "abstract data type",
+   "abstract data type_1",
+   "private instance attribute",
+   "stack",
+   "stack_1"
+  ],
+  "16.1, 16.2, 16.3, 16.4": [
+   "assignment statement",
+   "for loop",
+   "for loop_1",
+   "if statements",
+   "if statements_1",
+   "module",
+   "statement",
+   "variable",
+   "variable_1"
+  ],
+  "19 sept": [
+   "csc384 index"
+  ],
+  "3 october": [
+   "csc384 index"
+  ],
+  "4.1, 4.2": [
+   "convention of functions in single variable calculus",
+   "functions(math)",
+   "inverse functions"
+  ],
+  "6.1, 6.2, 6.3": [
+   "mutability",
+   "mutability_1",
+   "list.append",
+   "list.append_1"
+  ],
+  "6.4, 7.1": [
+   "greatest common divisor",
+   "object",
+   "object_1"
+  ],
+  "6.5, 6.6, 6.7": [
+   "automatic aliasing(on immutable data types)",
+   "manipulating values in a list",
+   "object mutation",
+   "object orientation in functions",
+   "testing mutations of a function",
+   "usage of equality operators",
+   "variable reassignment",
+   "function call stack",
+   "identity equality",
+   "stack frame",
+   "value equality"
+  ],
+  "7 segment decoder": [
+   "decoder"
+  ],
+  "9.1, 9.2": [
+   "linear running time",
+   "runtime",
+   "runtime_1",
+   "basic operations",
+   "basic operations_1"
+  ],
+  "9.3": [
+   "theta (cs)",
+   "theta (cs)_1",
+   "lower bound",
+   "lower bound_1"
+  ],
+  "9.4, 9.5": [
+   "more complex runtime analysis",
+   "more complex runtime analysis_1",
+   "runtime analysis",
+   "runtime analysis_1",
+   "basic operations",
+   "basic operations_1"
+  ],
+  "9.6, 9.7, 9.8, 9.9": [
+   "how lists store data",
+   "runtime analysis for list methods",
+   "theta (cs)",
+   "theta (cs)_1",
+   "all()",
+   "any()",
+   "generator compehension",
+   "len()",
+   "runtime analysis for aggregation functions",
+   "timeit()",
+   "worst-case running time"
+  ],
+  "== operator": [
+   "list operations",
+   "javascript",
+   "object",
+   "object_1",
+   "value equality"
+  ],
+  "__init__": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1",
+   "dataclass",
+   "interface",
+   "object superclass"
+  ],
+  "aayush": [
+   "mitx course - knowledge base - interpreter",
+   "interpreter"
+  ],
+  "abs()": [
+   "core elements of programs"
+  ],
+  "abstract class": [
+   "csc110 - lectures - week 10 lecture 3",
+   "on abstract class, jcf, interfaces",
+   "week 10 lecture 3"
+  ],
+  "abstract data type": [
+   "10.4, 10.5",
+   "10.4, 10.5_1",
+   "csc110 - csc110 lecture notes - 10.4, 10.5",
+   "csc110 - lectures - week 10 lecture 3",
+   "csc111 - lectures - week 2 lecture 1",
+   "data type",
+   "data type_1",
+   "inheritance",
+   "trees(cs)",
+   "trees(cs)_1",
+   "week 10 lecture 3",
+   "week 2 lecture 1",
+   "abstract data type_1"
+  ],
+  "abstract method": [
+   "csc110 - lectures - week 10 lecture 3",
+   "week 10 lecture 3"
+  ],
+  "abstract syntax tree": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "dom",
+   "mitx course - knowledge base - module",
+   "module",
+   "numeric literal"
+  ],
+  "ac 3 algorithm": [
+   "csc384 index",
+   "term test 2 prep"
+  ],
+  "acoustics and phonetics": [
+   "natural language processing"
+  ],
+  "acting rationally": [
+   "1",
+   "csc384 index"
+  ],
+  "action potential": [
+   "depolarization",
+   "hyperpolarization",
+   "local current",
+   "neural communication",
+   "neuron"
+  ],
+  "activation function": [
+   "neural network",
+   "forward pass",
+   "recurrent neural network"
+  ],
+  "add-1 smoothing": [
+   "add-delta smoothing",
+   "language models"
+  ],
+  "add-delta smoothing": [
+   "add-1 smoothing",
+   "language models"
+  ],
+  "adjacent": [
+   "graph",
+   "path"
+  ],
+  "admissible heuristic definition": [
+   "4",
+   "csc384 index",
+   "heuristic function"
+  ],
+  "agreement": [
+   "text classification"
+  ],
+  "algorithm": [
+   "arc introduction to computational thinking",
+   "arrive ready to computer science - notes - arc introduction to computational thinking",
+   "imperative knowledge",
+   "imperative knowledge_1",
+   "introduction to python",
+   "mitx course - python basics - introduction to python"
+  ],
+  "aliasing": [
+   "6.5, 6.6, 6.7",
+   "aliasing while parameter passing",
+   "object orientation in functions",
+   "object",
+   "object_1"
+  ],
+  "aliasing while parameter passing": [
+   "6.5, 6.6, 6.7"
+  ],
+  "all or none principle": [
+   "neural communication"
+  ],
+  "all()": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9",
+   "csc110 - lectures - week 2 lecture 2",
+   "csc110 - lectures - week 9 lecture 3",
+   "week 2 lecture 2",
+   "week 2 lecture 2_1",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1",
+   "early return",
+   "generator compehension",
+   "isinstance()",
+   "isinstance()_1"
+  ],
+  "alpha-beta pruning": [
+   "csc384 index",
+   "on move ordering"
+  ],
+  "ancestors of a tree": [
+   "back edge"
+  ],
+  "ancestors of a value": [
+   "trees(cs)",
+   "trees(cs)_1"
+  ],
+  "angle between vectors": [
+   "dot product",
+   "dot product_1"
+  ],
+  "anomaly detection": [
+   "unsupervised learning"
+  ],
+  "any()": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9",
+   "csc110 - lectures - week 2 lecture 2",
+   "csc110 - lectures - week 9 lecture 3",
+   "week 2 lecture 2",
+   "week 2 lecture 2_1",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1",
+   "early return",
+   "generator compehension"
+  ],
+  "api": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "application programming interface": [
+   "csc110 - lectures - week 10 lecture 3",
+   "week 10 lecture 3"
+  ],
+  "approximation": [
+   "csc110 - preparation - week 1 computer science",
+   "runtime analysis",
+   "runtime analysis_1",
+   "week 1 computer science"
+  ],
+  "arc consistency": [
+   "3 october",
+   "csc384 index"
+  ],
+  "arc introduction to computational thinking": [
+   "pattern recognition"
+  ],
+  "arguments": [
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 2",
+   "how functions work",
+   "object orientation in functions",
+   "week 1 computer science"
+  ],
+  "array": [
+   "dictionaries",
+   "dictionaries_1",
+   "mitx course - structured types - dictionaries",
+   "abstract data type",
+   "abstract data type_1"
+  ],
+  "arrive ready to computer science - knowledge base - formal language": [
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - knowledge base - semantics"
+  ],
+  "arrow notation": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "articulatory phonetics": [
+   "acoustics and phonetics"
+  ],
+  "assignment statement": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "statement"
+  ],
+  "astar search": [
+   "4",
+   "csc384 index",
+   "heuristic search",
+   "optimal efficiency theorem"
+  ],
+  "async await": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "attribute": [
+   "inheritance",
+   "mitx course - knowledge base - len()",
+   "len()"
+  ],
+  "augmented assignment statements": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "assignment statement"
+  ],
+  "automatic aliasing(on immutable data types)": [
+   "6.5, 6.6, 6.7"
+  ],
+  "automatic speech recognition": [
+   "natural language processing"
+  ],
+  "axioms": [
+   "sets"
+  ],
+  "axon": [
+   "action potential",
+   "local current",
+   "myelin sheath",
+   "neuron"
+  ],
+  "back edge": [
+   "depth first search"
+  ],
+  "back propagation": [
+   "visionary thinkers geoffrey hinton",
+   "gradient descent",
+   "gradient descent_1"
+  ],
+  "backprop signal": [
+   "back propagation",
+   "back propagation_1"
+  ],
+  "balance factor": [
+   "height of a tree"
+  ],
+  "basic dot product attention": [
+   "seq2seq"
+  ],
+  "basic machine architecture": [
+   "introduction to python",
+   "mitx course - python basics - introduction to python"
+  ],
+  "basic operations": [
+   "9.1, 9.2",
+   "9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.1, 9.2",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - lectures - week 8 lecture 2",
+   "csc110 - lectures - week 8 lecture 3",
+   "linear running time",
+   "runtime analysis for list methods",
+   "runtime analysis of nested loops",
+   "runtime analysis",
+   "runtime analysis_1",
+   "runtime",
+   "runtime_1",
+   "week 8 lecture 2",
+   "week 8 lecture 3",
+   "worst-case running time"
+  ],
+  "basic primitives": [
+   "introduction to python",
+   "mitx course - python basics - introduction to python"
+  ],
+  "basic variable": [
+   "rank of a linear transformation",
+   "rank of a linear transformation_1"
+  ],
+  "batch": [
+   "neural network"
+  ],
+  "batch gradient descent": [
+   "linear regression model",
+   "linear regression model_1"
+  ],
+  "baum-welch algorithm": [
+   "hidden markov model",
+   "hidden markov model_1"
+  ],
+  "bayes formula": [
+   "expectation maximization for gmms",
+   "naive bayes",
+   "parts of speech tagging"
+  ],
+  "bayesian classifier": [
+   "text summarization"
+  ],
+  "bayesian networks": [
+   "bayesian view",
+   "naive bayes"
+  ],
+  "bayesian view": [
+   "naive bayes",
+   "natural language processing"
+  ],
+  "beam search": [
+   "decoding in nmt"
+  ],
+  "bernoulli random variable": [
+   "naive bayes",
+   "random variable"
+  ],
+  "bert": [
+   "transformer"
+  ],
+  "bias": [
+   "neural network",
+   "classification",
+   "cost function",
+   "cost function_1",
+   "k-fold cross validation"
+  ],
+  "big ‘o’ notation": [
+   "9.1, 9.2",
+   "9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.1, 9.2",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - lectures - week 8 lecture 2",
+   "csc110 - lectures - week 9 lecture 3",
+   "theta (cs)",
+   "theta (cs)_1",
+   "week 8 lecture 2",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1",
+   "lower bound",
+   "lower bound_1",
+   "worst-case running time"
+  ],
+  "binary arithmetic operator": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "statement"
+  ],
+  "binary functions": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "binary operators": [
+   "mitx course - knowledge base - operators",
+   "operators",
+   "operators_1"
+  ],
+  "black box testing": [
+   "if statements",
+   "if statements_1",
+   "interface"
+  ],
+  "bleu evaluation": [
+   "csc401 - neural machine translation"
+  ],
+  "block scoping": [
+   "scopes"
+  ],
+  "bm 25": [
+   "information retrieval"
+  ],
+  "bottom-up parsing": [
+   "parsing"
+  ],
+  "brain": [
+   "central nervous system"
+  ],
+  "branching programs": [
+   "introduction to python",
+   "mitx course - python basics - introduction to python",
+   "if statements",
+   "if statements_1"
+  ],
+  "breadth first search": [
+   "depth first search"
+  ],
+  "break statement": [
+   "core elements of programs"
+  ],
+  "callback": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "cap and trade system": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods",
+   "equity"
+  ],
+  "cardinality": [
+   "numbers and number sets 1",
+   "sets",
+   "union of sets",
+   "empty set"
+  ],
+  "cartesian product": [
+   "csc110 - preparation - week 1 computer science",
+   "functions(math)",
+   "pump 2 - functions(math)",
+   "pump 2 - sets",
+   "sets",
+   "week 1 computer science"
+  ],
+  "casting": [
+   "introduction to python",
+   "javascript"
+  ],
+  "catastrophic cancellation": [
+   "csc110 - lectures - week 12 lecture 1",
+   "week 12 lecture 1"
+  ],
+  "categorical cross entropy": [
+   "loss calculation in nn"
+  ],
+  "cauchy-swartz inequality": [
+   "angle between vectors",
+   "angle between vectors_1"
+  ],
+  "cdn221 - lectures - week 1": [
+   "pump 2 - knowledge base - set builder notation"
+  ],
+  "cell body": [
+   "neuron"
+  ],
+  "central nervous system": [
+   "motor neuron"
+  ],
+  "cepstrum": [
+   "source-filter model"
+  ],
+  "chain rule for probability": [
+   "conditional probability",
+   "statistical language modelling"
+  ],
+  "chapter 11 externalities carbon taxes free riders public goods": [
+   "emissions tax",
+   "market failure",
+   "cap and trade system",
+   "efficient pollution",
+   "externalities",
+   "free rider problem",
+   "internalize the externality",
+   "marginal social benefit",
+   "marginal social cost",
+   "negative externalities",
+   "positive externalities",
+   "public good",
+   "public good_1",
+   "public provision",
+   "subsidy",
+   "tragedy of commons"
+  ],
+  "chapter 7 opportunity costs, economic profits and losses": [
+   "explicit costs",
+   "opportunity cost",
+   "profit"
+  ],
+  "chapter 9 how businesses price and profit": [
+   "inefficient market outcome",
+   "profit"
+  ],
+  "character": [
+   "csc236 - lectures - on formal language",
+   "inheritance",
+   "on formal language",
+   "string"
+  ],
+  "children of a value": [
+   "trees(cs)",
+   "trees(cs)_1",
+   "descendants of a value",
+   "descendants of a value_1",
+   "parent of a value"
+  ],
+  "chunking": [
+   "rag"
+  ],
+  "class": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1",
+   "isinstance()",
+   "isinstance()_1",
+   "type()"
+  ],
+  "classification": [
+   "natural language processing"
+  ],
+  "classification model": [
+   "machine learning",
+   "supervised machine learning",
+   "labeled data",
+   "machine learning workflow"
+  ],
+  "cloning": [
+   "6.5, 6.6, 6.7"
+  ],
+  "close()": [
+   "files in python",
+   "week 1 lecture 1"
+  ],
+  "closure": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "clustering": [
+   "unsupervised learning"
+  ],
+  "codomain(mathematics)": [
+   "convention of functions in single variable calculus",
+   "functions(math)",
+   "inverse functions",
+   "pump 2 - functions(math)"
+  ],
+  "cognitive modelling (thinking humanly)": [
+   "1",
+   "csc384 index"
+  ],
+  "commands": [
+   "program"
+  ],
+  "comment": [
+   "docstring",
+   "docstring_1",
+   "private instance attribute"
+  ],
+  "complement stats": [
+   "pump 2 - sets",
+   "sets"
+  ],
+  "completeness": [
+   "search algorithm"
+  ],
+  "component": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1",
+   "prop"
+  ],
+  "compound loop condition": [
+   "csc111 - lectures - week 2 lecture 1",
+   "week 2 lecture 1",
+   "early return"
+  ],
+  "comprehension of data types": [
+   "csc110 - preparation - week 1 computer science",
+   "dictionary comprehension",
+   "week 1 computer science",
+   "all()",
+   "any()"
+  ],
+  "computational thinking": [
+   "arc introduction to computational thinking",
+   "arrive ready to computer science - notes - arc introduction to computational thinking",
+   "introduction to python",
+   "mitx course - python basics - introduction to python"
+  ],
+  "computer science": [
+   "arc introduction to computational thinking",
+   "arrive ready to computer science - knowledge base - formal language",
+   "arrive ready to computer science - notes - arc introduction to computational thinking",
+   "computational thinking",
+   "introduction to python",
+   "mitx course - python basics - introduction to python",
+   "formal language"
+  ],
+  "computers are stupid": [
+   "arc introduction to computational thinking",
+   "arrive ready to computer science - notes - arc introduction to computational thinking",
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "computing approximate solution": [
+   "csc110 - lectures - week 12 lecture 1",
+   "mitx course - simple programs - simple algorithms",
+   "simple algorithms",
+   "week 12 lecture 1"
+  ],
+  "concatenation": [
+   "binary functions",
+   "csc110 lecture 2",
+   "core elements of programs",
+   "dictionaries",
+   "dictionaries_1",
+   "list operations",
+   "operators",
+   "operators_1",
+   "successive concatenation",
+   "tuples and lists",
+   "tuples and lists_1",
+   "print()",
+   "string operators"
+  ],
+  "concrete data type": [
+   "10.4, 10.5",
+   "10.4, 10.5_1",
+   "csc110 - csc110 lecture notes - 10.4, 10.5",
+   "data type",
+   "data type_1",
+   "abstract data type",
+   "abstract data type_1"
+  ],
+  "conditional entropy": [
+   "entropy",
+   "entropy_1"
+  ],
+  "conditional pmf": [
+   "statistical language modelling"
+  ],
+  "conditional probability": [
+   "conditional pmf"
+  ],
+  "confirmation bias": [
+   "replika",
+   "smc155 - replika - replika",
+   "the biases"
+  ],
+  "conflict": [
+   "replika",
+   "smc155 - replika - replika"
+  ],
+  "connectivity": [
+   "trees(cs)",
+   "trees(cs)_1",
+   "graph",
+   "path",
+   "transitivity of connectedness"
+  ],
+  "consonants": [
+   "phones"
+  ],
+  "constant running time": [
+   "9.1, 9.2",
+   "csc110 - csc110 lecture notes - 9.1, 9.2",
+   "indexing",
+   "indexing_1",
+   "mitx course - knowledge base - indexing",
+   "mitx course - knowledge base - list.append",
+   "runtime analysis",
+   "runtime analysis_1",
+   "basic operations",
+   "basic operations_1",
+   "list.append",
+   "list.append_1"
+  ],
+  "constraint propagation": [
+   "arc consistency"
+  ],
+  "constraint satisfaction problem": [
+   "3 october",
+   "csc384 index"
+  ],
+  "contiguity": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9",
+   "linked list"
+  ],
+  "continuous bag of words model": [
+   "neural language models"
+  ],
+  "continuous fourier transform": [
+   "sound"
+  ],
+  "contrastive learning": [
+   "skip grams with negative sampling"
+  ],
+  "convention of functions in single variable calculus": [
+   "4.1, 4.2",
+   "functions(math)",
+   "mat137 - videos - 4.1, 4.2",
+   "pump 2 - functions(math)"
+  ],
+  "convergence": [
+   "csc110 - lectures - week 8 lecture 2",
+   "week 8 lecture 2",
+   "float"
+  ],
+  "core elements of programs": [
+   "dictionaries",
+   "dictionaries_1",
+   "functions",
+   "functions_1",
+   "tuples and lists",
+   "tuples and lists_1",
+   "immutable",
+   "immutable_1",
+   "range()",
+   "range()_1"
+  ],
+  "corpora": [
+   "natural language processing"
+  ],
+  "correlation": [
+   "correlational methods of research"
+  ],
+  "correlational methods of research": [
+   "unsupervised learning"
+  ],
+  "cosine similarity": [
+   "similarity score",
+   "word vector representation",
+   "word vector representation_1"
+  ],
+  "cost function": [
+   "astar search",
+   "gradient descent",
+   "gradient descent_1",
+   "heuristic search",
+   "linear regression model",
+   "linear regression model_1"
+  ],
+  "covariance": [
+   "gaussian mixture models",
+   "multivariate gaussians"
+  ],
+  "creativity": [
+   "smc155 - smc155 lec01",
+   "smc155 lec01"
+  ],
+  "critical section": [
+   "mutually exclusive event"
+  ],
+  "cross attention": [
+   "residual connections",
+   "transformer"
+  ],
+  "cross edge": [
+   "depth first search"
+  ],
+  "cross entropy": [
+   "kl divergence",
+   "entropy rate",
+   "entropy",
+   "entropy_1"
+  ],
+  "cs preconditions": [
+   "function specification",
+   "type annotation"
+  ],
+  "cs50m - lecture 2": [
+   "mitx course - knowledge base - map()"
+  ],
+  "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3": [
+   "mitx course - knowledge base - mutability",
+   "mitx course - knowledge base - list.append"
+  ],
+  "csc110 - csc110 lecture notes - 6.4, 7.1": [
+   "pump 2 - knowledge base - greatest common divisor"
+  ],
+  "csc110 - csc110 lecture notes - 9.4, 9.5": [
+   "runtime analysis of nested loops"
+  ],
+  "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9": [
+   "mitx course - knowledge base - len()"
+  ],
+  "csc110 - lectures - week 2 lecture 2": [
+   "mitx course - knowledge base - mathematical induction"
+  ],
+  "csc110 - lectures - week 9 lecture 3": [
+   "mitx course - knowledge base - ‘in’ operator"
+  ],
+  "csc110 - preparation - week 1 computer science": [
+   "mitx course - knowledge base - operators",
+   "mitx course - knowledge base - expression",
+   "mitx course - knowledge base - syntax",
+   "mitx course - knowledge base - variable",
+   "mitx course - knowledge base - ‘in’ operator",
+   "pump 2 - knowledge base - natural numbers",
+   "pump 2 - knowledge base - set builder notation"
+  ],
+  "csc110 lecture 1": [
+   "csc110 - preparation - week 1 computer science",
+   "data type",
+   "data type_1",
+   "dictionaries",
+   "dictionaries_1",
+   "list operations",
+   "mitx course - structured types - dictionaries",
+   "set operations",
+   "sets in cs",
+   "week 1 computer science"
+  ],
+  "csc110 lecture 2": [
+   "csc110 - preparation - week 1 computer science",
+   "concatenation",
+   "mitx course - knowledge base - concatenation",
+   "week 1 computer science"
+  ],
+  "csc110 lecture 4": [
+   "mitx course - knowledge base - global scope",
+   "doctest examples",
+   "global scope"
+  ],
+  "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4": [
+   "mitx course - knowledge base - for loop",
+   "mitx course - knowledge base - module",
+   "mitx course - knowledge base - variable"
+  ],
+  "csc111 - lectures - week 1 lecture 1": [
+   "mitx course - knowledge base - slicing",
+   "mitx course - knowledge base - input()"
+  ],
+  "csc111 - lectures - week 2 lecture 1": [
+   "mitx course - knowledge base - interpreter"
+  ],
+  "csc111 project 2 proposal": [
+   "feature engineering",
+   "feature engineering_1"
+  ],
+  "csc111 week 2 worksheet 2": [
+   "csc111 - lectures - week 2 lecture 1",
+   "week 2 lecture 1"
+  ],
+  "csc236 - lectures - on formal language": [
+   "mitx course - knowledge base - concatenation",
+   "mitx course - knowledge base - operators"
+  ],
+  "csc401 - entropy and information theory": [
+   "natural language processing"
+  ],
+  "csc401 - neural machine translation": [
+   "noisy channel model"
+  ],
+  "data": [
+   "machine learning",
+   "generalization"
+  ],
+  "data type": [
+   "10.4, 10.5",
+   "10.4, 10.5_1",
+   "csc110 - csc110 lecture notes - 10.4, 10.5",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "homogeneous collections",
+   "object mutation",
+   "set operations",
+   "concrete data type",
+   "concrete data type_1",
+   "object",
+   "object_1",
+   "stack frame"
+  ],
+  "dataclass": [
+   "10.1, 10.2, 10.3",
+   "mitx course - knowledge base - module",
+   "method in cs",
+   "method in cs_1",
+   "runtime analysis in set, dictionaries, dataclasses",
+   "__init__",
+   "concrete data type",
+   "concrete data type_1",
+   "exception",
+   "interface",
+   "module"
+  ],
+  "de morgan’s law": [
+   "sets"
+  ],
+  "deadweight loss": [
+   "market failure",
+   "subsidy"
+  ],
+  "decision tree": [
+   "discriminative classifier"
+  ],
+  "decisions": [
+   "natural language processing"
+  ],
+  "declarative knowledge": [
+   "cs50m - lecture 2",
+   "introduction to python",
+   "lecture 2",
+   "lecture 2_1",
+   "mitx course - python basics - introduction to python",
+   "react"
+  ],
+  "decoder": [
+   "csc401 - neural machine translation"
+  ],
+  "decoding in nmt": [
+   "csc401 - neural machine translation"
+  ],
+  "decomposition": [
+   "arc introduction to computational thinking",
+   "functions",
+   "functions_1"
+  ],
+  "decrementing function": [
+   "core elements of programs"
+  ],
+  "default access modifier": [
+   "interface"
+  ],
+  "degree": [
+   "graph"
+  ],
+  "del command": [
+   "dictionaries",
+   "dictionaries_1",
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "dendrites": [
+   "neuron"
+  ],
+  "dependent variable": [
+   "functions(math)",
+   "pump 2 - functions(math)",
+   "independent variable"
+  ],
+  "depolarization": [
+   "hyperpolarization",
+   "neural communication"
+  ],
+  "depth first search": [
+   "2",
+   "csc384 index",
+   "depth-limited search",
+   "tree edge"
+  ],
+  "depth-first minimax search": [
+   "19 sept",
+   "csc384 index"
+  ],
+  "depth-first parsing": [
+   "parsing"
+  ],
+  "depth-limited search": [
+   "3",
+   "csc384 index",
+   "iterative deepening search"
+  ],
+  "descendants of a value": [
+   "trees(cs)",
+   "trees(cs)_1",
+   "ancestors of a value",
+   "cross edge",
+   "forward edge"
+  ],
+  "dictionaries": [
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "homogeneous collections",
+   "runtime analysis in set, dictionaries, dataclasses",
+   "week 1 computer science",
+   "dataclass",
+   "mapping",
+   "mapping_1"
+  ],
+  "dictionary comprehension": [
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 2",
+   "week 1 computer science"
+  ],
+  "dimension": [
+   "rank of a linear transformation",
+   "rank of a linear transformation_1"
+  ],
+  "dimensionality reduction": [
+   "unsupervised learning"
+  ],
+  "directionality problem": [
+   "correlational methods of research"
+  ],
+  "discrete fourier transform": [
+   "cepstrum",
+   "discrete signal representation"
+  ],
+  "discrete random variable": [
+   "random variable"
+  ],
+  "discrete signal representation": [
+   "sound"
+  ],
+  "discriminative classifier": [
+   "classification",
+   "naive bayes"
+  ],
+  "division": [
+   "operations",
+   "operations_1",
+   "week 1 computer science"
+  ],
+  "docstring": [
+   "black box testing",
+   "csc110 lecture 2",
+   "function specification",
+   "functions",
+   "functions_1",
+   "unit testing",
+   "help()",
+   "private instance attribute"
+  ],
+  "doctest examples": [
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 4",
+   "week 1 computer science"
+  ],
+  "document frequency": [
+   "tf idf"
+  ],
+  "dom": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "domain(mathematics)": [
+   "convention of functions in single variable calculus",
+   "functions(math)",
+   "inverse functions",
+   "pump 2 - functions(math)",
+   "pump 2 - knowledge base - set builder notation",
+   "pre-image of a function",
+   "set builder notation",
+   "discrete random variable"
+  ],
+  "dot product": [
+   "neural network",
+   "forward pass",
+   "linear regression model",
+   "linear regression model_1"
+  ],
+  "drawing 2023-07-20 13.16.00.excalidraw": [
+   "cartesian product"
+  ],
+  "drawing 2023-08-20 15.28.36.excalidraw": [
+   "functions(math)"
+  ],
+  "drawing 2024-09-19 11.44.28.excalidraw": [
+   "subsidy"
+  ],
+  "dynamic programming": [
+   "forward algorithm"
+  ],
+  "ear": [
+   "sound"
+  ],
+  "early return": [
+   "csc111 - lectures - week 2 lecture 1",
+   "week 2 lecture 1"
+  ],
+  "echo chamber": [
+   "replika",
+   "smc155 - replika - replika"
+  ],
+  "edge": [
+   "trees(cs)",
+   "trees(cs)_1",
+   "adjacent",
+   "graph",
+   "vertex"
+  ],
+  "efficient market outcome": [
+   "deadweight loss",
+   "emissions tax",
+   "market failure"
+  ],
+  "efficient pollution": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods"
+  ],
+  "emissions tax": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "chapter 11",
+   "chapter 11_1",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - refresh questions - chapter 11",
+   "equity",
+   "internalize the externality"
+  ],
+  "empty set": [
+   "sets"
+  ],
+  "entropy": [
+   "information",
+   "information_1"
+  ],
+  "entropy rate": [
+   "cross entropy",
+   "entropy",
+   "entropy_1"
+  ],
+  "epsilon": [
+   "computing approximate solution",
+   "simple algorithms",
+   "week 1 computer science",
+   "catastrophic cancellation"
+  ],
+  "epsilon delta proofs of a limit": [
+   "csc110 - lectures - week 8 lecture 2",
+   "limits",
+   "week 8 lecture 2"
+  ],
+  "equality of sets": [
+   "set operations",
+   "sets"
+  ],
+  "equality operator": [
+   "mapping operations",
+   "usage of equality operators",
+   "identity equality",
+   "string operators",
+   "value equality"
+  ],
+  "equity": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods"
+  ],
+  "essentialism": [
+   "replika",
+   "smc155 - replika - replika"
+  ],
+  "event": [
+   "subsets"
+  ],
+  "excalidraw - drawing 2023-08-20 15.28.36.excalidraw": [
+   "pump 2 - functions(math)"
+  ],
+  "exception": [
+   "csc110 - lectures - week 10 lecture 3",
+   "week 10 lecture 3"
+  ],
+  "excitatory signal": [
+   "action potential",
+   "depolarization",
+   "inhibitory signal",
+   "neural communication"
+  ],
+  "exhaustive enumeration": [
+   "core elements of programs"
+  ],
+  "exhaustive search decoding": [
+   "decoding in nmt"
+  ],
+  "existential quantifier": [
+   "complement stats",
+   "worst-case running time"
+  ],
+  "expectation maximization for gmms": [
+   "baum-welch algorithm",
+   "gaussian mixture models"
+  ],
+  "explicit costs": [
+   "chapter 7 opportunity costs, economic profits and losses",
+   "eco105 - lectures - chapter 7 opportunity costs, economic profits and losses",
+   "profit"
+  ],
+  "exponential function": [
+   "softmax activation"
+  ],
+  "expression": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "introduction to python",
+   "week 1 computer science",
+   "literal",
+   "statement"
+  ],
+  "extend list": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "extends": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "externalities": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods",
+   "market failure"
+  ],
+  "f-measure": [
+   "classification",
+   "information retrieval"
+  ],
+  "feature": [
+   "text classification"
+  ],
+  "feature engineering": [
+   "linear regression model",
+   "linear regression model_1",
+   "machine learning workflow"
+  ],
+  "feature scaling": [
+   "layer normalization",
+   "gradient descent",
+   "gradient descent_1"
+  ],
+  "feed forward layer": [
+   "residual connections",
+   "transformer"
+  ],
+  "files in python": [
+   "csc110 lecture 4",
+   "csc111 - lectures - week 1 lecture 1",
+   "functions",
+   "functions_1",
+   "mitx course - simple programs - functions",
+   "week 1 lecture 1"
+  ],
+  "filter()": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "final prep": [
+   "csc384 index"
+  ],
+  "first class function": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "first class objects": [
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "fixed program computer": [
+   "introduction to python"
+  ],
+  "float": [
+   "csc110 - lectures - week 12 lecture 1",
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 4",
+   "mitx course - simple programs - simple algorithms",
+   "simple algorithms",
+   "week 1 computer science",
+   "week 12 lecture 1",
+   "catastrophic cancellation",
+   "javascript"
+  ],
+  "for loop": [
+   "core elements of programs",
+   "lecture 1",
+   "runtime analysis of comprehensions",
+   "runtime analysis of comprehensions_1",
+   "runtime analysis",
+   "runtime analysis_1",
+   "simple algorithms",
+   "range()",
+   "range()_1"
+  ],
+  "formal language": [
+   "semantics",
+   "week 1 computer science"
+  ],
+  "forward algorithm": [
+   "viterbi algorithm",
+   "hidden markov model",
+   "hidden markov model_1"
+  ],
+  "forward checking": [
+   "3 october",
+   "csc384 index"
+  ],
+  "forward edge": [
+   "depth first search"
+  ],
+  "forward pass": [
+   "neural network",
+   "step function"
+  ],
+  "forward-backward algorithm": [
+   "hidden markov model",
+   "hidden markov model_1"
+  ],
+  "free rider": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods",
+   "free rider problem",
+   "public good",
+   "public good_1"
+  ],
+  "free rider problem": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods"
+  ],
+  "frequency": [
+   "sound"
+  ],
+  "frequentist view": [
+   "natural language processing"
+  ],
+  "function call stack": [
+   "6.5, 6.6, 6.7",
+   "javascript",
+   "object",
+   "object_1",
+   "stack frame",
+   "stack",
+   "stack_1"
+  ],
+  "function header": [
+   "functions",
+   "functions_1",
+   "mitx course - simple programs - functions"
+  ],
+  "function representation": [
+   "functions(math)",
+   "pump 2 - functions(math)"
+  ],
+  "function specification": [
+   "functions",
+   "functions_1",
+   "mitx course - simple programs - functions"
+  ],
+  "functions": [
+   "10.1, 10.2, 10.3",
+   "4.1, 4.2",
+   "aliasing",
+   "csc110 lecture 2",
+   "functions_1",
+   "how functions work",
+   "method in cs",
+   "method in cs_1",
+   "object orientation in functions",
+   "tuples and lists",
+   "tuples and lists_1",
+   "type contract",
+   "type contract_1",
+   "unit testing",
+   "week 1 computer science",
+   "first class objects",
+   "interface",
+   "module",
+   "parameter",
+   "parameter_1"
+  ],
+  "functions(math)": [
+   "4.1, 4.2",
+   "inverse functions",
+   "week 1 computer science"
+  ],
+  "fundamental equation for statistical speech recognition": [
+   "natural language processing"
+  ],
+  "gall's law": [
+   "arrive ready to computer science - pdf annotations - the way of the program",
+   "functions",
+   "functions_1",
+   "mitx course - simple programs - functions",
+   "the way of the program"
+  ],
+  "gaussian mixture models": [
+   "speech classification"
+  ],
+  "generalization": [
+   "supervised machine learning"
+  ],
+  "generative classifier": [
+   "classification"
+  ],
+  "generator compehension": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9"
+  ],
+  "generic search algorithm": [
+   "2",
+   "csc384 index"
+  ],
+  "generic search algorithm with pruning": [
+   "3",
+   "csc384 index"
+  ],
+  "glia": [
+   "myelin sheath"
+  ],
+  "global method": [
+   "global variables"
+  ],
+  "global scope": [
+   "csc110 lecture 4",
+   "functions",
+   "functions_1",
+   "global variables",
+   "global method",
+   "scopes"
+  ],
+  "global variables": [
+   "cs50m - lecture 1",
+   "dictionaries",
+   "dictionaries_1",
+   "lecture 1",
+   "mitx course - structured types - dictionaries",
+   "lexical scoping"
+  ],
+  "good-turing": [
+   "language models"
+  ],
+  "gpt": [
+   "transformer"
+  ],
+  "gradient descent": [
+   "neural network",
+   "feature scaling",
+   "feature scaling_1",
+   "learning rate",
+   "learning rate_1",
+   "linear regression model",
+   "linear regression model_1"
+  ],
+  "graph": [
+   "neural network",
+   "trees(cs)",
+   "trees(cs)_1"
+  ],
+  "greatest common divisor": [
+   "6.4, 7.1",
+   "division"
+  ],
+  "greedy best first search": [
+   "4",
+   "csc384 index",
+   "heuristic search"
+  ],
+  "greedy decoding": [
+   "decoding in nmt"
+  ],
+  "ground truth": [
+   "supervised machine learning",
+   "unsupervised learning"
+  ],
+  "harold innis": [
+   "cdn221 - lectures - week 1",
+   "week 1"
+  ],
+  "hash tables": [
+   "csc110 - lectures - week 9 lecture 3",
+   "runtime analysis in set, dictionaries, dataclasses",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1"
+  ],
+  "hashable": [
+   "dictionaries",
+   "dictionaries_1",
+   "mitx course - structured types - dictionaries",
+   "runtime analysis in set, dictionaries, dataclasses",
+   "mapping",
+   "mapping_1"
+  ],
+  "head in linguistics": [
+   "depth-first parsing"
+  ],
+  "height of a tree": [
+   "trees(cs)",
+   "trees(cs)_1"
+  ],
+  "help()": [
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 2",
+   "week 1 computer science"
+  ],
+  "heuristic alpha-beta search": [
+   "csc384 index",
+   "on move ordering"
+  ],
+  "heuristic function": [
+   "astar search",
+   "greedy best first search",
+   "heuristic search"
+  ],
+  "heuristic search": [
+   "4",
+   "csc384 index"
+  ],
+  "hidden markov model": [
+   "bayesian view",
+   "csc384 index",
+   "final prep",
+   "generative classifier",
+   "natural language processing"
+  ],
+  "hierarchical navigable small worlds": [
+   "indexing_1",
+   "mitx course - knowledge base - indexing"
+  ],
+  "homogeneous collections": [
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "mitx course - structured types - tuples and lists",
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "homography": [
+   "homonymy"
+  ],
+  "homologous": [
+   "np.shape"
+  ],
+  "homonymy": [
+   "lexical semantics"
+  ],
+  "homophony": [
+   "homonymy"
+  ],
+  "how functions work": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "how lists store data": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9"
+  ],
+  "hyperparameter tuning": [
+   "machine learning workflow"
+  ],
+  "hyperpolarization": [
+   "neural communication"
+  ],
+  "hypothesis": [
+   "visionary thinkers geoffrey hinton",
+   "correlational methods of research"
+  ],
+  "ide": [
+   "core elements of programs"
+  ],
+  "identity equality": [
+   "6.5, 6.6, 6.7",
+   "value equality"
+  ],
+  "if statements": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "branching programs",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "basic operations",
+   "basic operations_1"
+  ],
+  "immediately invoked function expression": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "immutable": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "aliasing",
+   "dictionaries",
+   "dictionaries_1",
+   "hashable",
+   "hashable_1",
+   "simple algorithms",
+   "string",
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "imperative knowledge": [
+   "cs50m - lecture 2",
+   "introduction to python",
+   "lecture 2",
+   "lecture 2_1",
+   "mitx course - python basics - introduction to python"
+  ],
+  "implicit costs": [
+   "chapter 11",
+   "chapter 11_1",
+   "chapter 7 opportunity costs, economic profits and losses",
+   "eco105 - lectures - chapter 7 opportunity costs, economic profits and losses",
+   "eco105 - refresh questions - chapter 11"
+  ],
+  "includes": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "independence assumption": [
+   "bayesian classifier",
+   "naive bayes",
+   "parts of speech tagging"
+  ],
+  "independent event": [
+   "independent random variable"
+  ],
+  "independent random variable": [
+   "random variable"
+  ],
+  "independent variable": [
+   "functions(math)",
+   "pump 2 - functions(math)",
+   "dependent variable"
+  ],
+  "indexing": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "core elements of programs",
+   "dictionaries",
+   "dictionaries_1",
+   "how lists store data",
+   "list operations",
+   "mapping operations",
+   "natural numbers",
+   "simple algorithms",
+   "slicing",
+   "week 1 lecture 1",
+   "array",
+   "array_1",
+   "map()",
+   "map()_1",
+   "stack",
+   "stack_1",
+   "string operators"
+  ],
+  "indifference curve": [
+   "marginal rate of technical substitution",
+   "marginal rate of technical substitution_1"
+  ],
+  "inefficient market outcome": [
+   "chapter 9 how businesses price and profit",
+   "eco105 - lectures - chapter 9 how businesses price and profit",
+   "subsidy"
+  ],
+  "inflection": [
+   "morphology"
+  ],
+  "information": [
+   "csc401 - entropy and information theory",
+   "data",
+   "entropy and information theory"
+  ],
+  "information retrieval": [
+   "natural language processing"
+  ],
+  "information spillover": [
+   "visionary thinkers geoffrey hinton"
+  ],
+  "inheritance": [
+   "csc110 - lectures - week 10 lecture 3",
+   "mitx course - knowledge base - expression",
+   "week 10 lecture 3",
+   "expression",
+   "super"
+  ],
+  "inhibitory signal": [
+   "excitatory signal",
+   "neural communication"
+  ],
+  "input()": [
+   "core elements of programs",
+   "week 1 lecture 1"
+  ],
+  "inspiration as creativity": [
+   "smc155 - smc155 lec01",
+   "smc155 lec01"
+  ],
+  "instance": [
+   "private instance attribute"
+  ],
+  "integer division operator": [
+   "csc110 - preparation - week 1 computer science",
+   "mod operator",
+   "week 1 computer science"
+  ],
+  "integers": [
+   "numbers and number sets 1",
+   "types of numbers",
+   "week 1 computer science"
+  ],
+  "interface": [
+   "10.1, 10.2, 10.3",
+   "application programming interface",
+   "mitx course - knowledge base - module",
+   "on abstract class, jcf, interfaces",
+   "dataclass",
+   "default access modifier",
+   "isinstance()",
+   "isinstance()_1",
+   "module",
+   "private instance attribute"
+  ],
+  "internal value of a tree": [
+   "trees(cs)",
+   "trees(cs)_1"
+  ],
+  "internalize the externality": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "chapter 11",
+   "chapter 11_1",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - refresh questions - chapter 11"
+  ],
+  "interneuron": [
+   "neuron"
+  ],
+  "interpreter": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "week 1 computer science",
+   "expression",
+   "javascript",
+   "python interpreter",
+   "stored program computer"
+  ],
+  "intersection of sets": [
+   "pump 2 - sets",
+   "sets"
+  ],
+  "introduction to python": [
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "core elements of programs",
+   "simple algorithms"
+  ],
+  "inverse document frequency": [
+   "tf idf"
+  ],
+  "inverse functions": [
+   "4.1, 4.2",
+   "mat137 - videos - 4.1, 4.2"
+  ],
+  "isinstance()": [
+   "csc110 - lectures - week 10 lecture 3",
+   "week 10 lecture 3",
+   "interface"
+  ],
+  "isocost": [
+   "minimum cost optimization",
+   "minimum cost optimization_1"
+  ],
+  "isocost line and input price changes": [
+   "isocost",
+   "isocost_1"
+  ],
+  "isoquant": [
+   "marginal rate of technical substitution",
+   "marginal rate of technical substitution_1"
+  ],
+  "iterative deepening search": [
+   "3",
+   "csc384 index",
+   "move ordering"
+  ],
+  "javascript": [
+   "== operator",
+   "cs50m - lecture 1",
+   "lecture 1",
+   "callback"
+  ],
+  "join for list to string": [
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "joint entropy": [
+   "entropy",
+   "entropy_1"
+  ],
+  "joint pmf": [
+   "joint entropy"
+  ],
+  "jorgenson-the almanack of naval ravikant": [
+   "gall's law"
+  ],
+  "k-fold cross validation": [
+   "classification"
+  ],
+  "key()": [
+   "mitx course - knowledge base - sorted()",
+   "callback",
+   "sorted()"
+  ],
+  "keys method": [
+   "dictionaries",
+   "dictionaries_1"
+  ],
+  "kl divergence": [
+   "entropy",
+   "entropy_1"
+  ],
+  "labeled data": [
+   "machine learning workflow"
+  ],
+  "language": [
+   "csc236 - lectures - on formal language",
+   "on formal language",
+   "play to experience the symbolic dimension of life"
+  ],
+  "language modelling": [
+   "natural language processing",
+   "statistical language modelling"
+  ],
+  "language models": [
+   "language modelling"
+  ],
+  "last in first out behaviour": [
+   "depth first search",
+   "stack",
+   "stack_1"
+  ],
+  "latent query document summarization": [
+   "text summarization"
+  ],
+  "latent semantic indexing": [
+   "information retrieval",
+   "term-document matrix"
+  ],
+  "law of total probability": [
+   "conditional probability"
+  ],
+  "layer": [
+   "neural network"
+  ],
+  "layer normalization": [
+   "residual connections",
+   "transformer"
+  ],
+  "leaf of a tree": [
+   "trees(cs)",
+   "trees(cs)_1",
+   "internal value of a tree",
+   "numeric literal"
+  ],
+  "learning rate": [
+   "gradient descent",
+   "gradient descent_1"
+  ],
+  "len()": [
+   "automatic aliasing(on immutable data types)",
+   "core elements of programs",
+   "dictionaries",
+   "dictionaries_1",
+   "week 1 computer science",
+   "range()",
+   "range()_1",
+   "size of tree"
+  ],
+  "length": [
+   "mitx course - knowledge base - operators",
+   "operators",
+   "operators_1"
+  ],
+  "lexical scoping": [
+   "scopes"
+  ],
+  "lexical semantics": [
+   "machine translation",
+   "parts of speech"
+  ],
+  "lexicon": [
+   "corpora",
+   "relative frequency",
+   "relative frequency_1"
+  ],
+  "limits": [
+   "mitx course - knowledge base - epsilon",
+   "epsilon"
+  ],
+  "limits at infinity": [
+   "limits"
+  ],
+  "limits that do not exist": [
+   "limits"
+  ],
+  "linear basis": [
+   "dimension"
+  ],
+  "linear regression model": [
+   "cost function",
+   "cost function_1",
+   "regression model"
+  ],
+  "linear running time": [
+   "9.1, 9.2",
+   "csc110 - csc110 lecture notes - 9.1, 9.2",
+   "list.insert()"
+  ],
+  "linearly independent": [
+   "linear basis",
+   "rank of a linear transformation",
+   "rank of a linear transformation_1"
+  ],
+  "linked list": [
+   "csc111 - lectures - week 2 lecture 1",
+   "week 2 lecture 1",
+   "abstract class",
+   "list adt"
+  ],
+  "list": [
+   "aliasing",
+   "array",
+   "array_1",
+   "linked list",
+   "list adt",
+   "stack",
+   "stack_1"
+  ],
+  "list adt": [
+   "csc111 - lectures - week 2 lecture 1",
+   "week 2 lecture 1",
+   "linked list"
+  ],
+  "list comprehension": [
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 2",
+   "week 1 computer science",
+   "isinstance()",
+   "isinstance()_1"
+  ],
+  "list methods": [
+   "stack",
+   "stack_1"
+  ],
+  "list operations": [
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "week 1 computer science"
+  ],
+  "list()": [
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "list.append": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "tuples and lists",
+   "tuples and lists_1",
+   "stack",
+   "stack_1"
+  ],
+  "list.copy()": [
+   "6.5, 6.6, 6.7"
+  ],
+  "list.count()": [
+   "list methods"
+  ],
+  "list.insert()": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "how lists store data",
+   "runtime analysis for list methods",
+   "stack",
+   "stack_1"
+  ],
+  "list.pop()": [
+   "how lists store data",
+   "tuples and lists",
+   "tuples and lists_1",
+   "stack",
+   "stack_1"
+  ],
+  "literal": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "csc110 - preparation - week 1 computer science",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "mitx course - knowledge base - expression",
+   "week 1 computer science",
+   "expression",
+   "numeric literal",
+   "statement"
+  ],
+  "local current": [
+   "neural communication"
+  ],
+  "local sensitivity hashing": [
+   "indexing_1",
+   "mitx course - knowledge base - indexing"
+  ],
+  "logical operators": [
+   "csc110 - lectures - week 2 lecture 2",
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science",
+   "week 2 lecture 2",
+   "week 2 lecture 2_1",
+   "regular expression"
+  ],
+  "logistic regression": [
+   "regression model"
+  ],
+  "loss calculation in nn": [
+   "neural network"
+  ],
+  "lower bound": [
+   "9.3",
+   "9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.3",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - lectures - week 8 lecture 2",
+   "theta (cs)",
+   "theta (cs)_1",
+   "week 8 lecture 2",
+   "worst-case running time"
+  ],
+  "lstms": [
+   "recurrent neural network"
+  ],
+  "machine learning": [
+   "turing test (acting humanly)",
+   "correlational methods of research"
+  ],
+  "machine learning workflow": [
+   "machine learning"
+  ],
+  "machine translation": [
+   "natural language processing",
+   "parts of speech tagging"
+  ],
+  "manipulating values in a list": [
+   "6.5, 6.6, 6.7"
+  ],
+  "map()": [
+   "tuples and lists",
+   "tuples and lists_1",
+   "map()_1"
+  ],
+  "mapping": [
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "dictionaries",
+   "dictionaries_1",
+   "mitx course - structured types - dictionaries",
+   "mapping space",
+   "variable environment"
+  ],
+  "mapping operations": [
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "mitx course - knowledge base - ‘in’ operator",
+   "week 1 computer science",
+   "‘in’ operator",
+   "‘in’ operator_1"
+  ],
+  "mapping space": [
+   "machine learning"
+  ],
+  "marginal external benefit": [
+   "market failure",
+   "marginal social benefit",
+   "subsidy"
+  ],
+  "marginal external cost": [
+   "emissions tax",
+   "market failure",
+   "marginal social cost"
+  ],
+  "marginal rate of technical substitution": [
+   "minimum cost optimization",
+   "minimum cost optimization_1"
+  ],
+  "marginal social benefit": [
+   "chapter 11",
+   "chapter 11_1",
+   "eco105 - refresh questions - chapter 11",
+   "efficient pollution"
+  ],
+  "marginal social cost": [
+   "chapter 11",
+   "chapter 11_1",
+   "eco105 - refresh questions - chapter 11",
+   "efficient pollution"
+  ],
+  "market": [
+   "emissions tax",
+   "cap and trade system"
+  ],
+  "market failure": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods"
+  ],
+  "markov assumptions": [
+   "hidden markov model",
+   "hidden markov model_1",
+   "parts of speech tagging",
+   "word prediction"
+  ],
+  "masked self-attention": [
+   "residual connections",
+   "self-attention",
+   "transformer"
+  ],
+  "mat137 - videos - 4.1, 4.2": [
+   "pump 2 - functions(math)"
+  ],
+  "mathematical induction": [
+   "functions",
+   "functions_1",
+   "mathematical induction_1",
+   "recursion",
+   "recursion_1",
+   "conditional probability"
+  ],
+  "matrix": [
+   "basic variable"
+  ],
+  "matrix transpose": [
+   "dot product",
+   "dot product_1"
+  ],
+  "max()": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "maximum likelihood estimation": [
+   "expectation maximization for gmms",
+   "generative classifier",
+   "naive bayes",
+   "normal distribution",
+   "seq2seq",
+   "teacher forcing",
+   "word likelihood probability",
+   "word prediction"
+  ],
+  "maximum number of edges": [
+   "graph"
+  ],
+  "mccullogh-pitts model": [
+   "neural network"
+  ],
+  "mean": [
+   "covariance",
+   "k-fold cross validation",
+   "mean normalization",
+   "normal distribution"
+  ],
+  "mean normalization": [
+   "feature scaling",
+   "feature scaling_1"
+  ],
+  "mean squared error": [
+   "cost function",
+   "cost function_1",
+   "gradient descent",
+   "gradient descent_1"
+  ],
+  "mel-frequency spectral coefficients": [
+   "source-filter model"
+  ],
+  "mel-scale": [
+   "sound"
+  ],
+  "mel-scale filter bank": [
+   "spectrogram filtering"
+  ],
+  "method in cs": [
+   "10.1, 10.2, 10.3",
+   "cs50m - lecture 2",
+   "data type",
+   "data type_1",
+   "inheritance",
+   "lecture 2",
+   "lecture 2_1",
+   "__init__",
+   "component",
+   "object superclass"
+  ],
+  "min()": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "minimum cost optimization": [
+   "cost function",
+   "cost function_1"
+  ],
+  "mitx course - abstraction": [
+   "arrive ready to computer science - notes - arc introduction to computational thinking",
+   "csc110 - csc110 lecture notes - 10.4, 10.5",
+   "mitx course - knowledge base - unit testing",
+   "mitx course - simple programs - functions",
+   "pump 2 - knowledge base - set builder notation"
+  ],
+  "mitx course - knowledge base - abs()": [
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - break statement": [
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - casting": [
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - close()": [
+   "csc111 - lectures - week 1 lecture 1"
+  ],
+  "mitx course - knowledge base - commands": [
+   "mitx course - knowledge base - program"
+  ],
+  "mitx course - knowledge base - comment": [
+   "mitx course - knowledge base - docstring"
+  ],
+  "mitx course - knowledge base - concatenation": [
+   "mitx course - knowledge base - operators",
+   "mitx course - knowledge base - successive concatenation",
+   "mitx course - knowledge base - print()",
+   "mitx course - python basics - core elements of programs",
+   "mitx course - structured types - dictionaries",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - decomposition": [
+   "arrive ready to computer science - notes - arc introduction to computational thinking",
+   "mitx course - simple programs - functions"
+  ],
+  "mitx course - knowledge base - decrementing function": [
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - del command": [
+   "mitx course - structured types - dictionaries",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - docstring": [
+   "mitx course - knowledge base - unit testing",
+   "mitx course - simple programs - functions"
+  ],
+  "mitx course - knowledge base - epsilon": [
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - simple programs - simple algorithms"
+  ],
+  "mitx course - knowledge base - exhaustive enumeration": [
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - expression": [
+   "csc110 - preparation - week 1 computer science",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - extend list": [
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - first class objects": [
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - fixed program computer": [
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - for loop": [
+   "cs50m - lecture 1",
+   "mitx course - knowledge base - range()",
+   "mitx course - python basics - core elements of programs",
+   "mitx course - simple programs - simple algorithms"
+  ],
+  "mitx course - knowledge base - global scope": [
+   "mitx course - knowledge base - global method",
+   "mitx course - simple programs - functions"
+  ],
+  "mitx course - knowledge base - ide": [
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - immutable": [
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "mitx course - simple programs - simple algorithms",
+   "mitx course - structured types - dictionaries",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - indexing": [
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "csc111 - lectures - week 1 lecture 1",
+   "mitx course - knowledge base - slicing",
+   "mitx course - knowledge base - map()",
+   "mitx course - python basics - core elements of programs",
+   "mitx course - simple programs - simple algorithms",
+   "mitx course - structured types - dictionaries",
+   "pump 2 - knowledge base - natural numbers",
+   "rag"
+  ],
+  "mitx course - knowledge base - input()": [
+   "csc111 - lectures - week 1 lecture 1",
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - interpreter": [
+   "csc110 - preparation - week 1 computer science",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "mitx course - knowledge base - expression",
+   "mitx course - knowledge base - stored program computer"
+  ],
+  "mitx course - knowledge base - join for list to string": [
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - keys method": [
+   "mitx course - structured types - dictionaries"
+  ],
+  "mitx course - knowledge base - len()": [
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - knowledge base - range()",
+   "mitx course - python basics - core elements of programs",
+   "mitx course - structured types - dictionaries"
+  ],
+  "mitx course - knowledge base - list()": [
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - list.append": [
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - list.pop()": [
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - map()": [
+   "cs50m - lecture 2",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - mathematical induction": [
+   "mitx course - knowledge base - recursion",
+   "mitx course - simple programs - functions"
+  ],
+  "mitx course - knowledge base - module": [
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "mitx course - knowledge base - decomposition"
+  ],
+  "mitx course - knowledge base - mutability": [
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "mitx course - simple programs - simple algorithms",
+   "mitx course - structured types - dictionaries",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - nameerror": [
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - open( , )": [
+   "csc111 - lectures - week 1 lecture 1",
+   "mitx course - knowledge base - close()"
+  ],
+  "mitx course - knowledge base - operator precedence": [
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - operators": [
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "csc110 - preparation - week 1 computer science",
+   "csc236 - lectures - on formal language",
+   "mitx course - python basics - core elements of programs",
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - ordered sequence": [
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - parameter": [
+   "csc110 - preparation - week 1 computer science",
+   "csc111 - lectures - week 1 lecture 1",
+   "mitx course - simple programs - functions"
+  ],
+  "mitx course - knowledge base - print()": [
+   "cs50m - lecture 1",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "mitx course - python basics - core elements of programs",
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - program": [
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - range()": [
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - knowledge base - for loop",
+   "mitx course - simple programs - simple algorithms",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - recursion": [
+   "mitx course - knowledge base - interpreter",
+   "mitx course - simple programs - functions"
+  ],
+  "mitx course - knowledge base - remove (list)": [
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - reverse list": [
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - scalar objects": [
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - semantics": [
+   "arrive ready to computer science - knowledge base - formal language",
+   "arrive ready to computer science - pdf annotations - the way of the program",
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - python basics - introduction to python",
+   "natural language processing"
+  ],
+  "mitx course - knowledge base - slicing": [
+   "csc111 - lectures - week 1 lecture 1",
+   "mitx course - python basics - core elements of programs",
+   "mitx course - structured types - dictionaries",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - sort list": [
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - sorted()": [
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - knowledge base - sort list",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - split string for list": [
+   "csc111 - lectures - week 1 lecture 1",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - knowledge base - stored program computer": [
+   "mitx course - python basics - introduction to python"
+  ],
+  "mitx course - knowledge base - successive concatenation": [
+   "mitx course - python basics - core elements of programs",
+   "mitx course - structured types - dictionaries"
+  ],
+  "mitx course - knowledge base - syntax": [
+   "arrive ready to computer science - knowledge base - formal language",
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - knowledge base - semantics",
+   "mitx course - python basics - introduction to python",
+   "natural language processing"
+  ],
+  "mitx course - knowledge base - values method": [
+   "mitx course - structured types - dictionaries"
+  ],
+  "mitx course - knowledge base - variable": [
+   "cs50m - lecture 1",
+   "csc110 - preparation - week 1 computer science",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "mitx course - knowledge base - parameter",
+   "mitx course - knowledge base - variable scope",
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - variable scope": [
+   "mitx course - knowledge base - global method",
+   "mitx course - simple programs - functions"
+  ],
+  "mitx course - knowledge base - while loop": [
+   "mitx course - python basics - core elements of programs"
+  ],
+  "mitx course - knowledge base - ‘in’ operator": [
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9",
+   "csc110 - lectures - week 9 lecture 3",
+   "csc110 - preparation - week 1 computer science",
+   "csc111 - lectures - week 2 lecture 1",
+   "mitx course - knowledge base - for loop",
+   "mitx course - python basics - core elements of programs",
+   "mitx course - simple programs - simple algorithms"
+  ],
+  "mitx course - python basics - core elements of programs": [
+   "mitx course - knowledge base - immutable",
+   "mitx course - knowledge base - range()",
+   "mitx course - simple programs - functions",
+   "mitx course - structured types - dictionaries",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - python basics - introduction to python": [
+   "mitx course - python basics - core elements of programs",
+   "mitx course - simple programs - simple algorithms"
+  ],
+  "mitx course - simple programs - functions": [
+   "csc110 - preparation - week 1 computer science",
+   "mat137 - videos - 4.1, 4.2",
+   "mitx course - knowledge base - unit testing",
+   "mitx course - knowledge base - first class objects",
+   "mitx course - knowledge base - module",
+   "mitx course - knowledge base - parameter",
+   "mitx course - structured types - tuples and lists"
+  ],
+  "mitx course - simple programs - simple algorithms": [
+   "csc110 - lectures - week 12 lecture 1"
+  ],
+  "mitx course - structured types - dictionaries": [
+   "csc110 - preparation - week 1 computer science"
+  ],
+  "mitx course - structured types - tuples and lists": [
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - knowledge base - mutability",
+   "mitx course - knowledge base - slicing",
+   "mitx course - knowledge base - range()"
+  ],
+  "mod operator": [
+   "mitx course - knowledge base - operators",
+   "operators",
+   "operators_1"
+  ],
+  "module": [
+   "10.1, 10.2, 10.3",
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "decomposition",
+   "files in python"
+  ],
+  "monte carlo tree search": [
+   "csc384 index",
+   "on move ordering"
+  ],
+  "more complex runtime analysis": [
+   "9.4, 9.5",
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9"
+  ],
+  "morpheme": [
+   "typology"
+  ],
+  "morphology": [
+   "natural language processing",
+   "parts of speech"
+  ],
+  "motor neuron": [
+   "axon",
+   "neuron"
+  ],
+  "move ordering": [
+   "alpha-beta pruning"
+  ],
+  "multiple-path pruning": [
+   "3",
+   "csc384 index"
+  ],
+  "multiplicative attention": [
+   "seq2seq"
+  ],
+  "multivariate gaussians": [
+   "gaussian mixture models",
+   "speech classification"
+  ],
+  "mutability": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "aliasing",
+   "dictionaries",
+   "dictionaries_1",
+   "sets in cs",
+   "simple algorithms",
+   "tuples and lists",
+   "tuples and lists_1",
+   "object",
+   "object_1"
+  ],
+  "mutual information": [
+   "entropy",
+   "entropy_1"
+  ],
+  "mutually exclusive event": [
+   "event",
+   "independent event"
+  ],
+  "myelin sheath": [
+   "schwann cell",
+   "neuron",
+   "saltatory conduction"
+  ],
+  "n queens problem": [
+   "3 october",
+   "csc384 index"
+  ],
+  "n-grams": [
+   "markov assumptions",
+   "markov assumptions_1",
+   "recurrent neural network",
+   "statistical language modelling",
+   "word prediction"
+  ],
+  "naive bayes": [
+   "bayesian classifier",
+   "natural language processing"
+  ],
+  "nameerror": [
+   "core elements of programs"
+  ],
+  "natural numbers": [
+   "functions",
+   "functions_1",
+   "numbers and number sets 1",
+   "types of numbers",
+   "week 1 computer science",
+   "well ordered"
+  ],
+  "naval ravikant": [
+   "pump 2 - knowledge base - axioms",
+   "smc155 - smc155 lec01",
+   "smc155 lec01",
+   "axioms"
+  ],
+  "negative externalities": [
+   "chapter 11",
+   "chapter 11_1",
+   "eco105 - refresh questions - chapter 11",
+   "externalities",
+   "marginal external cost"
+  ],
+  "negative log likelihood": [
+   "kl divergence",
+   "entropy rate",
+   "information",
+   "information_1",
+   "perplexity"
+  ],
+  "neighbour": [
+   "degree"
+  ],
+  "neural communication": [
+   "neuron"
+  ],
+  "neural language models": [
+   "natural language processing"
+  ],
+  "neural machine translation": [
+   "machine translation"
+  ],
+  "neural network": [
+   "feed forward layer",
+   "natural language processing",
+   "neural language models",
+   "neuron",
+   "recurrent neural network"
+  ],
+  "neuron": [
+   "neural network",
+   "activation function",
+   "excitatory signal",
+   "layer"
+  ],
+  "neurons": [
+   "visionary thinkers geoffrey hinton"
+  ],
+  "new method": [
+   "__init__",
+   "class",
+   "class_1"
+  ],
+  "node": [
+   "csc111 - lectures - week 2 lecture 1",
+   "week 2 lecture 1",
+   "component",
+   "linked list"
+  ],
+  "node of ranvier": [
+   "neuron"
+  ],
+  "noisy channel model": [
+   "neural machine translation",
+   "seq2seq",
+   "statistical machine translation"
+  ],
+  "normal distribution": [
+   "speech classification"
+  ],
+  "normal equation": [
+   "linear regression model",
+   "linear regression model_1"
+  ],
+  "normalization": [
+   "softmax activation"
+  ],
+  "noun": [
+   "text classification"
+  ],
+  "np.shape": [
+   "neural network"
+  ],
+  "null hypothesis": [
+   "p-value",
+   "statistical significance testing"
+  ],
+  "numbers and number sets 1": [
+   "greatest common divisor",
+   "sets"
+  ],
+  "numeric literal": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "abstract syntax tree"
+  ],
+  "nyquist rate": [
+   "discrete signal representation"
+  ],
+  "object": [
+   "10.1, 10.2, 10.3",
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "== operator",
+   "automatic aliasing(on immutable data types)",
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "dataclass",
+   "first class function",
+   "isinstance()",
+   "isinstance()_1",
+   "javascript"
+  ],
+  "object mutation": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "6.5, 6.6, 6.7",
+   "aliasing while parameter passing",
+   "aliasing",
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "how lists store data",
+   "mitx course - knowledge base - unit testing",
+   "unit testing",
+   "object",
+   "object_1"
+  ],
+  "object orientation in functions": [
+   "6.5, 6.6, 6.7",
+   "aliasing while parameter passing",
+   "stack frame"
+  ],
+  "object oriented programming": [
+   "object orientation in functions",
+   "dataclass",
+   "function call stack"
+  ],
+  "object superclass": [
+   "csc110 - lectures - week 10 lecture 3",
+   "inheritance",
+   "week 10 lecture 3",
+   "arrow notation",
+   "immediately invoked function expression"
+  ],
+  "on abstract class, jcf, interfaces": [
+   "interface"
+  ],
+  "on formal language": [
+   "concatenation",
+   "operators",
+   "operators_1"
+  ],
+  "on move ordering": [
+   "csc384 index"
+  ],
+  "on regex": [
+   "logical operators"
+  ],
+  "one-hot encoding": [
+   "categorical cross entropy",
+   "word vector representation",
+   "word vector representation_1",
+   "word2vec"
+  ],
+  "open( , )": [
+   "files in python",
+   "week 1 lecture 1",
+   "close()"
+  ],
+  "operations": [
+   "data type",
+   "data type_1",
+   "abstract data type",
+   "abstract data type_1",
+   "concrete data type",
+   "concrete data type_1"
+  ],
+  "operator precedence": [
+   "introduction to python",
+   "week 1 computer science"
+  ],
+  "operators": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "core elements of programs",
+   "data type",
+   "data type_1",
+   "introduction to python",
+   "on formal language",
+   "week 1 computer science",
+   "equality operator",
+   "integer division operator"
+  ],
+  "opportunity cost": [
+   "chapter 7 opportunity costs, economic profits and losses",
+   "eco105 - lectures - chapter 7 opportunity costs, economic profits and losses",
+   "efficient market outcome",
+   "implicit costs",
+   "explicit costs"
+  ],
+  "optimal efficiency theorem": [
+   "heuristic search"
+  ],
+  "optimality": [
+   "search algorithm"
+  ],
+  "oral tradition": [
+   "cdn221 - lectures - week 1",
+   "week 1",
+   "week 10"
+  ],
+  "ordered list": [
+   "integers",
+   "pump 2 - knowledge base - integers",
+   "cartesian product"
+  ],
+  "ordered sequence": [
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "orthography": [
+   "lexical semantics"
+  ],
+  "overfitting": [
+   "regularization",
+   "variance",
+   "variance_1"
+  ],
+  "overflow prevention": [
+   "softmax activation"
+  ],
+  "p-value": [
+   "null hypothesis"
+  ],
+  "paolo granata": [
+   "replika",
+   "smc155 - replika - replika",
+   "smc155 - smc155 lec01",
+   "smc155 lec01"
+  ],
+  "parameter": [
+   "aliasing while parameter passing",
+   "functions",
+   "functions_1",
+   "how functions work",
+   "object orientation in functions",
+   "type annotation",
+   "week 1 computer science",
+   "week 1 lecture 1",
+   "object",
+   "object_1"
+  ],
+  "parent of a value": [
+   "trees(cs)",
+   "trees(cs)_1"
+  ],
+  "parenthesis theorem": [
+   "depth first search"
+  ],
+  "parsing": [
+   "mitx course - knowledge base - semantics",
+   "semantics"
+  ],
+  "parts of speech": [
+   "agreement",
+   "parts of speech tagging",
+   "text classification"
+  ],
+  "parts of speech tagging": [
+   "classification"
+  ],
+  "path": [
+   "connectivity",
+   "graph"
+  ],
+  "path complete": [
+   "more complex runtime analysis",
+   "more complex runtime analysis_1",
+   "connectivity"
+  ],
+  "pattern recognition": [
+   "arc introduction to computational thinking",
+   "arrive ready to computer science - notes - arc introduction to computational thinking",
+   "visionary thinkers geoffrey hinton"
+  ],
+  "perplexity": [
+   "entropy",
+   "entropy_1"
+  ],
+  "phase": [
+   "sound"
+  ],
+  "phones": [
+   "phonetics"
+  ],
+  "phonetic alphabets": [
+   "phonetics"
+  ],
+  "phonetic transcription": [
+   "phonetics"
+  ],
+  "phonetics": [
+   "articulatory phonetics"
+  ],
+  "phonology": [
+   "lexical semantics",
+   "natural language processing"
+  ],
+  "pictures - transitiveness of sets": [
+   "pump 2 - sets"
+  ],
+  "pivot of a row in a matrix": [
+   "basic variable"
+  ],
+  "play as a form of learning": [
+   "smc155 - smc155 lec01",
+   "smc155 lec01"
+  ],
+  "play to experience the symbolic dimension of life": [
+   "smc155 - smc155 lec01",
+   "smc155 lec01",
+   "visionary thinkers geoffrey hinton"
+  ],
+  "polarization": [
+   "resting potential"
+  ],
+  "polynomial regression": [
+   "regression model"
+  ],
+  "polysemy": [
+   "lexical semantics"
+  ],
+  "position independence": [
+   "residual connections",
+   "transformer"
+  ],
+  "positive externalities": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods",
+   "externalities",
+   "free rider"
+  ],
+  "postcondition": [
+   "function specification"
+  ],
+  "power set": [
+   "length"
+  ],
+  "pragmatic ambiguity": [
+   "machine translation"
+  ],
+  "pragmatics": [
+   "natural language processing"
+  ],
+  "pre-image of a function": [
+   "functions(math)",
+   "pump 2 - functions(math)"
+  ],
+  "pre-processing": [
+   "text classification"
+  ],
+  "precision": [
+   "classification",
+   "f-measure",
+   "information retrieval",
+   "recall"
+  ],
+  "precision at k": [
+   "information retrieval"
+  ],
+  "price": [
+   "efficient market outcome",
+   "emissions tax",
+   "equity",
+   "cap and trade system"
+  ],
+  "primitive": [
+   "== operator",
+   "aliasing",
+   "javascript",
+   "object",
+   "object_1"
+  ],
+  "print()": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "core elements of programs",
+   "introduction to python",
+   "lecture 1",
+   "float"
+  ],
+  "private instance attribute": [
+   "10.4, 10.5",
+   "10.4, 10.5_1",
+   "csc110 - csc110 lecture notes - 10.4, 10.5",
+   "stack",
+   "stack_1"
+  ],
+  "probability function": [
+   "conditional probability"
+  ],
+  "product quantization": [
+   "indexing_1",
+   "mitx course - knowledge base - indexing"
+  ],
+  "profit": [
+   "1 changing face of business",
+   "chapter 7 opportunity costs, economic profits and losses",
+   "chapter 9 how businesses price and profit",
+   "eco105 - lectures - chapter 7 opportunity costs, economic profits and losses",
+   "eco105 - lectures - chapter 9 how businesses price and profit",
+   "mgt100 - book - 1 changing face of business",
+   "public good",
+   "public good_1"
+  ],
+  "program": [
+   "introduction to python",
+   "week 1 computer science"
+  ],
+  "promise": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "prop": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "proper subset": [
+   "sets"
+  ],
+  "psychological safety": [
+   "replika",
+   "smc155 - replika - replika"
+  ],
+  "psychology": [
+   "hypothesis",
+   "hypothesis_1",
+   "psychological safety"
+  ],
+  "public good": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods",
+   "free rider",
+   "information",
+   "information_1"
+  ],
+  "public provision": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods"
+  ],
+  "pump 2 - functions(math)": [
+   "csc110 - preparation - week 1 computer science",
+   "mat137 - videos - 4.1, 4.2"
+  ],
+  "pump 2 - knowledge base - axioms": [
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - cardinality": [
+   "pump 2 - knowledge base - numbers and number sets 1",
+   "pump 2 - knowledge base - empty set",
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - de morgan’s law": [
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - division": [
+   "csc110 - preparation - week 1 computer science"
+  ],
+  "pump 2 - knowledge base - empty set": [
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - equality of sets": [
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - greatest common divisor": [
+   "csc110 - csc110 lecture notes - 6.4, 7.1",
+   "pump 2 - knowledge base - division"
+  ],
+  "pump 2 - knowledge base - integers": [
+   "csc110 - preparation - week 1 computer science",
+   "pump 2 - knowledge base - numbers and number sets 1",
+   "pump 2 - knowledge base - types of numbers"
+  ],
+  "pump 2 - knowledge base - natural numbers": [
+   "csc110 - preparation - week 1 computer science",
+   "mitx course - simple programs - functions",
+   "pump 2 - knowledge base - numbers and number sets 1",
+   "pump 2 - knowledge base - types of numbers",
+   "pump 2 - knowledge base - well ordered"
+  ],
+  "pump 2 - knowledge base - numbers and number sets 1": [
+   "pump 2 - knowledge base - greatest common divisor",
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - proper subset": [
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - russell’s paradox": [
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - set builder notation": [
+   "csc110 - preparation - week 1 computer science"
+  ],
+  "pump 2 - knowledge base - set symbols": [
+   "csc110 - lectures - week 2 lecture 2",
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - types of numbers": [
+   "pump 2 - knowledge base - numbers and number sets 1",
+   "pump 2 - sets"
+  ],
+  "pump 2 - knowledge base - well ordered": [
+   "pump 2 - knowledge base - integers",
+   "pump 2 - knowledge base - numbers and number sets 1"
+  ],
+  "pump 2 - pump 2 questions": [
+   "pump 2 - sets"
+  ],
+  "pump 2 - sets": [
+   "pump 2 - functions(math)",
+   "pump 2 - knowledge base - natural numbers"
+  ],
+  "py file format": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "pytest": [
+   "csc110 lecture 4"
+  ],
+  "python console": [
+   "python interpreter"
+  ],
+  "python interpreter": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science",
+   "logical operators"
+  ],
+  "rag": [
+   "natural language processing"
+  ],
+  "random": [
+   "forward pass"
+  ],
+  "random variable": [
+   "csc384 index",
+   "term test 2 prep",
+   "independent random variable"
+  ],
+  "range of a function": [
+   "functions(math)",
+   "inverse functions",
+   "pump 2 - functions(math)",
+   "rank of a linear transformation",
+   "rank of a linear transformation_1"
+  ],
+  "range()": [
+   "csc110 lecture 2",
+   "simple algorithms",
+   "tuples and lists",
+   "tuples and lists_1",
+   "week 1 computer science",
+   "for loop",
+   "for loop_1"
+  ],
+  "rank of a linear transformation": [
+   "range of a function",
+   "single value decomposition"
+  ],
+  "react": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "reality isn’t perfect": [
+   "replika",
+   "smc155 - replika - replika"
+  ],
+  "recall": [
+   "classification",
+   "f-measure",
+   "information retrieval"
+  ],
+  "recognition problem": [
+   "csc236 - lectures - on formal language",
+   "on formal language"
+  ],
+  "rectified linear unit activation function": [
+   "feed forward layer",
+   "activation function",
+   "softmax activation"
+  ],
+  "recurrent neural network": [
+   "neural language models",
+   "seq2seq"
+  ],
+  "recursion": [
+   "functions",
+   "functions_1",
+   "trees(cs)",
+   "trees(cs)_1",
+   "function call stack",
+   "interpreter",
+   "stack",
+   "stack_1"
+  ],
+  "reduce()": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "refractory period in neuron communication": [
+   "neural communication"
+  ],
+  "regression model": [
+   "machine learning",
+   "supervised machine learning",
+   "machine learning workflow"
+  ],
+  "regular expression": [
+   "csc207 - lectures - on regex",
+   "on regex",
+   "regular language"
+  ],
+  "regular language": [
+   "csc236 - lectures - on formal language",
+   "on formal language"
+  ],
+  "regularization": [
+   "overfitting",
+   "overfitting_1"
+  ],
+  "reinforcement learning with human feedback": [
+   "transformer"
+  ],
+  "relative frequency": [
+   "corpora",
+   "maximum likelihood estimation",
+   "maximum likelihood estimation_1"
+  ],
+  "remove (list)": [
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "replika": [
+   "visionary thinkers geoffrey hinton"
+  ],
+  "residual connections": [
+   "transformer"
+  ],
+  "resting potential": [
+   "excitatory signal",
+   "inhibitory signal",
+   "neural communication"
+  ],
+  "reverse list": [
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "root": [
+   "mitx course - knowledge base - module",
+   "trees(cs)",
+   "trees(cs)_1",
+   "module"
+  ],
+  "runtime": [
+   "9.1, 9.2",
+   "csc110 - csc110 lecture notes - 9.1, 9.2",
+   "csc110 - lectures - week 8 lecture 3",
+   "how lists store data",
+   "linear running time",
+   "runtime analysis of nested loops",
+   "runtime analysis",
+   "runtime analysis_1",
+   "week 8 lecture 3",
+   "basic operations",
+   "basic operations_1",
+   "contiguity",
+   "worst-case running time"
+  ],
+  "runtime analysis": [
+   "9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - lectures - week 8 lecture 3",
+   "indexing",
+   "indexing_1",
+   "mitx course - knowledge base - indexing",
+   "more complex runtime analysis",
+   "more complex runtime analysis_1",
+   "week 8 lecture 3",
+   "all()",
+   "any()",
+   "basic operations",
+   "basic operations_1",
+   "generator compehension",
+   "list.insert()",
+   "stack",
+   "stack_1",
+   "worst-case running time"
+  ],
+  "runtime analysis for aggregation functions": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9"
+  ],
+  "runtime analysis for list methods": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9"
+  ],
+  "runtime analysis for while loops": [
+   "9.4, 9.5",
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9"
+  ],
+  "runtime analysis in set, dictionaries, dataclasses": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9",
+   "csc110 - lectures - week 9 lecture 3",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1"
+  ],
+  "runtime analysis of comprehensions": [
+   "9.4, 9.5",
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9"
+  ],
+  "runtime analysis of nested loops": [
+   "9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.4, 9.5"
+  ],
+  "runtime analysis of recursive functions": [
+   "runtime analysis of trees"
+  ],
+  "runtime analysis of trees": [
+   "trees(cs)",
+   "trees(cs)_1"
+  ],
+  "russell’s paradox": [
+   "sets"
+  ],
+  "sadia sharmin": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "6.4, 7.1",
+   "6.5, 6.6, 6.7",
+   "9.1, 9.2",
+   "9.4, 9.5",
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "csc110 - csc110 lecture notes - 6.4, 7.1",
+   "csc110 - csc110 lecture notes - 9.1, 9.2",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - lectures - week 2 lecture 2",
+   "csc110 - lectures - week 8 lecture 3",
+   "csc110 - lectures - week 9 lecture 3",
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "csc110 lecture 2",
+   "csc111 - lectures - week 2 lecture 1",
+   "week 1 computer science",
+   "week 2 lecture 1",
+   "week 2 lecture 2",
+   "week 2 lecture 2_1",
+   "week 8 lecture 3",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1"
+  ],
+  "saltatory conduction": [
+   "neural communication"
+  ],
+  "saltatory spread": [
+   "saltatory conduction"
+  ],
+  "sample space": [
+   "discrete random variable",
+   "event",
+   "probability function"
+  ],
+  "scalar objects": [
+   "introduction to python"
+  ],
+  "scaled dot product attention": [
+   "seq2seq"
+  ],
+  "schwann cell": [
+   "neuron"
+  ],
+  "scopes": [
+   "cs50m - lecture 1",
+   "csc110 lecture 4",
+   "functions",
+   "functions_1",
+   "lecture 1",
+   "mitx course - simple programs - functions",
+   "closure"
+  ],
+  "search algorithm": [
+   "3",
+   "csc384 index"
+  ],
+  "search graph": [
+   "2",
+   "csc384 index"
+  ],
+  "search tree": [
+   "2",
+   "csc384 index"
+  ],
+  "searching in a list": [
+   "csc110 - lectures - week 9 lecture 3",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1"
+  ],
+  "self-attention": [
+   "residual connections",
+   "masked self-attention",
+   "transformer"
+  ],
+  "semantic ambiguity": [
+   "machine translation"
+  ],
+  "semantic doc2vec": [
+   "information retrieval"
+  ],
+  "semantics": [
+   "introduction to python",
+   "the way of the program",
+   "week 1 computer science",
+   "formal language",
+   "parsing"
+  ],
+  "semi-supervised learning": [
+   "machine learning"
+  ],
+  "sensory neuron": [
+   "neuron"
+  ],
+  "sentience defence": [
+   "visionary thinkers geoffrey hinton"
+  ],
+  "seq2seq": [
+   "csc401 - neural machine translation",
+   "neural machine translation",
+   "teacher forcing"
+  ],
+  "sequences": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "set builder notation": [
+   "week 1 computer science"
+  ],
+  "set comprehension": [
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 2",
+   "week 1 computer science"
+  ],
+  "set operations": [
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "sets in cs"
+  ],
+  "set symbols": [
+   "sets",
+   "week 2 lecture 2",
+   "week 2 lecture 2_1"
+  ],
+  "set.add()": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3"
+  ],
+  "sets": [
+   "functions(math)",
+   "natural numbers",
+   "runtime analysis in set, dictionaries, dataclasses",
+   "sets in cs"
+  ],
+  "sets in cs": [
+   "csc110 - lectures - week 9 lecture 3",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "homogeneous collections",
+   "list comprehension",
+   "subsets in cs",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1"
+  ],
+  "shannon’s method": [
+   "language models"
+  ],
+  "short-time windowing": [
+   "sound"
+  ],
+  "sigmoid function": [
+   "activation function",
+   "logistic regression"
+  ],
+  "signature": [
+   "csc207 - random",
+   "random"
+  ],
+  "similarity score": [
+   "information retrieval"
+  ],
+  "simon’s discourse model": [
+   "zipf’s law"
+  ],
+  "simple algorithms": [
+   "week 12 lecture 1"
+  ],
+  "single value decomposition": [
+   "indexing_1",
+   "mitx course - knowledge base - indexing",
+   "information retrieval",
+   "term-document matrix"
+  ],
+  "size of tree": [
+   "trees(cs)",
+   "trees(cs)_1"
+  ],
+  "skip grams with negative sampling": [
+   "neural language models"
+  ],
+  "slicing": [
+   "core elements of programs",
+   "dictionaries",
+   "dictionaries_1",
+   "tuples and lists",
+   "tuples and lists_1",
+   "week 1 lecture 1"
+  ],
+  "slope of isocost": [
+   "isocost",
+   "isocost_1"
+  ],
+  "smc155 lec01": [
+   "visionary thinkers geoffrey hinton"
+  ],
+  "softmax activation": [
+   "neural network",
+   "naive bayes",
+   "natural language processing",
+   "recurrent neural network",
+   "word2vec"
+  ],
+  "softplus": [
+   "rectified linear unit activation function"
+  ],
+  "sort list": [
+   "tuples and lists",
+   "tuples and lists_1"
+  ],
+  "sorted()": [
+   "csc110 lecture 2",
+   "tuples and lists",
+   "tuples and lists_1",
+   "week 1 computer science",
+   "sort list"
+  ],
+  "sound": [
+   "acoustics and phonetics"
+  ],
+  "source-filter model": [
+   "spectrogram filtering"
+  ],
+  "space complexity": [
+   "search algorithm"
+  ],
+  "spanning tree": [
+   "trees(cs)",
+   "trees(cs)_1"
+  ],
+  "spectrogram": [
+   "acoustics and phonetics",
+   "sound"
+  ],
+  "spectrogram filtering": [
+   "mel-frequency spectral coefficients",
+   "spectrogram"
+  ],
+  "speech classification": [
+   "natural language processing"
+  ],
+  "speech recognition": [
+   "phonology"
+  ],
+  "spinal cord": [
+   "central nervous system"
+  ],
+  "split string for list": [
+   "tuples and lists",
+   "tuples and lists_1",
+   "week 1 lecture 1"
+  ],
+  "stack": [
+   "10.4, 10.5",
+   "10.4, 10.5_1",
+   "csc110 - csc110 lecture notes - 10.4, 10.5",
+   "depth first search",
+   "inheritance",
+   "last in first out behaviour",
+   "function call stack",
+   "javascript",
+   "stack_1"
+  ],
+  "stack frame": [
+   "6.5, 6.6, 6.7",
+   "object",
+   "object_1",
+   "stack",
+   "stack_1"
+  ],
+  "standard deviation": [
+   "correlation",
+   "variance",
+   "variance_1"
+  ],
+  "standardized random variable": [
+   "normal distribution"
+  ],
+  "staples thesis": [
+   "cdn221 - lectures - week 1",
+   "week 1"
+  ],
+  "statement": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "csc111 - csc111 lecture notes - 16.1, 16.2, 16.3, 16.4",
+   "if statements",
+   "if statements_1"
+  ],
+  "static method": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "statistical language modelling": [
+   "language modelling"
+  ],
+  "statistical machine translation": [
+   "machine translation"
+  ],
+  "statistical significance testing": [
+   "decisions"
+  ],
+  "step function": [
+   "activation function"
+  ],
+  "stop list": [
+   "information retrieval"
+  ],
+  "stored program computer": [
+   "introduction to python"
+  ],
+  "strcat": [
+   "string"
+  ],
+  "strchr": [
+   "string"
+  ],
+  "strcpy": [
+   "string"
+  ],
+  "string": [
+   "csc110 - preparation - week 1 computer science",
+   "csc236 - lectures - on formal language",
+   "language",
+   "on formal language",
+   "week 1 computer science",
+   "primitive"
+  ],
+  "string literal": [
+   "string"
+  ],
+  "string operators": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "strlen": [
+   "string"
+  ],
+  "strstr": [
+   "string"
+  ],
+  "struct": [
+   "string"
+  ],
+  "structure(cs)": [
+   "mitx course - knowledge base - syntax",
+   "syntax"
+  ],
+  "structured relational data": [
+   "information retrieval"
+  ],
+  "subset sum problem": [
+   "dynamic programming"
+  ],
+  "subsets": [
+   "subsets in cs"
+  ],
+  "subsets in cs": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "subsidy": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "chapter 11",
+   "chapter 11_1",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - refresh questions - chapter 11",
+   "equity"
+  ],
+  "subtree": [
+   "trees(cs)",
+   "trees(cs)_1",
+   "height of a tree",
+   "size of tree"
+  ],
+  "successive concatenation": [
+   "core elements of programs",
+   "dictionaries",
+   "dictionaries_1"
+  ],
+  "sum()": [
+   "csc110 - preparation - week 1 computer science",
+   "week 1 computer science"
+  ],
+  "summation formula": [
+   "mitx course - knowledge base - mathematical induction",
+   "mathematical induction",
+   "mathematical induction_1",
+   "pattern recognition",
+   "runtime analysis for list methods",
+   "runtime analysis of nested loops"
+  ],
+  "super": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1",
+   "__init__"
+  ],
+  "superposition": [
+   "sound"
+  ],
+  "supervised machine learning": [
+   "machine learning",
+   "machine learning workflow",
+   "semi-supervised learning"
+  ],
+  "symbolical thinking": [
+   "smc155 - smc155 lec01",
+   "smc155 lec01"
+  ],
+  "synonymy": [
+   "lexical semantics"
+  ],
+  "syntactic ambiguity": [
+   "machine translation"
+  ],
+  "syntax": [
+   "introduction to python",
+   "semantics",
+   "week 1 computer science",
+   "formal language",
+   "phonology"
+  ],
+  "t5": [
+   "transformer"
+  ],
+  "tag transition probability": [
+   "parts of speech tagging"
+  ],
+  "teacher forcing": [
+   "neural machine translation",
+   "seq2seq"
+  ],
+  "technology upgrades over time and accelerates": [
+   "smc155 - smc155 lec01",
+   "smc155 lec01"
+  ],
+  "tensor": [
+   "neural network"
+  ],
+  "term frequency": [
+   "corpora",
+   "relative frequency",
+   "relative frequency_1",
+   "tf idf"
+  ],
+  "term test 2 prep": [
+   "csc384 index"
+  ],
+  "term-document matrix": [
+   "information retrieval"
+  ],
+  "terminal button": [
+   "action potential",
+   "neuron"
+  ],
+  "test suite": [
+   "csc110 lecture 4"
+  ],
+  "testing mutations of a function": [
+   "6.5, 6.6, 6.7"
+  ],
+  "testing process": [
+   "machine learning workflow"
+  ],
+  "text classification": [
+   "classification"
+  ],
+  "text summarization": [
+   "natural language processing"
+  ],
+  "tf idf": [
+   "information retrieval"
+  ],
+  "the biases": [
+   "replika",
+   "smc155 - replika - replika"
+  ],
+  "the raw youth": [
+   "gall's law"
+  ],
+  "the symbolic dimension of life": [
+   "visionary thinkers geoffrey hinton"
+  ],
+  "the way of the program": [
+   "tokens"
+  ],
+  "theta (cs)": [
+   "9.1, 9.2",
+   "9.3",
+   "9.4, 9.5",
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.1, 9.2",
+   "csc110 - csc110 lecture notes - 9.3",
+   "csc110 - csc110 lecture notes - 9.4, 9.5",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9",
+   "csc110 - lectures - week 8 lecture 2",
+   "csc110 - lectures - week 8 lecture 3",
+   "csc110 - lectures - week 9 lecture 3",
+   "runtime analysis",
+   "runtime analysis_1",
+   "week 8 lecture 2",
+   "week 8 lecture 3",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1",
+   "worst-case running time"
+  ],
+  "thinking rationally": [
+   "1",
+   "csc384 index"
+  ],
+  "third-variable problem": [
+   "correlational methods of research"
+  ],
+  "this": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1"
+  ],
+  "time complexity": [
+   "search algorithm"
+  ],
+  "timeit()": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9",
+   "csc110 - lectures - week 9 lecture 3",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1",
+   "searching in a list"
+  ],
+  "to a man with a hammer everything looks like a nail": [
+   "replika",
+   "smc155 - replika - replika",
+   "smc155 - smc155 lec01",
+   "smc155 lec01"
+  ],
+  "token free models": [
+   "transformer"
+  ],
+  "tokens": [
+   "mitx course - knowledge base - syntax",
+   "syntax",
+   "term frequency"
+  ],
+  "topological sort": [
+   "depth first search"
+  ],
+  "tragedy of commons": [
+   "chapter 11 externalities carbon taxes free riders public goods",
+   "eco105 - lectures - chapter 11 externalities carbon taxes free riders public goods"
+  ],
+  "training data": [
+   "feature engineering",
+   "feature engineering_1",
+   "linear regression model",
+   "linear regression model_1",
+   "training process"
+  ],
+  "training process": [
+   "machine learning workflow",
+   "testing process"
+  ],
+  "transformer": [
+   "csc401 - neural machine translation",
+   "natural language processing",
+   "neural machine translation"
+  ],
+  "transitiveness of sets": [
+   "sets"
+  ],
+  "transitivity of connectedness": [
+   "graph"
+  ],
+  "transposition table": [
+   "move ordering"
+  ],
+  "tree edge": [
+   "depth first search"
+  ],
+  "trees(cs)": [
+   "abstract syntax tree",
+   "graph",
+   "interface"
+  ],
+  "try catch": [
+   "cs50m - lecture 2",
+   "lecture 2",
+   "lecture 2_1",
+   "exception"
+  ],
+  "tuples and lists": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "mutability",
+   "mutability_1",
+   "slicing",
+   "tuples and lists_1",
+   "week 1 computer science",
+   "list adt",
+   "range()",
+   "range()_1"
+  ],
+  "turing test (acting humanly)": [
+   "1",
+   "csc384 index"
+  ],
+  "type annotation": [
+   "csc110 - lectures - week 10 lecture 3",
+   "week 10 lecture 3"
+  ],
+  "type contract": [
+   "csc110 - preparation - week 1 computer science",
+   "type annotation",
+   "week 1 computer science",
+   "interface"
+  ],
+  "type()": [
+   "cs50m - lecture 1",
+   "csc110 - lectures - week 10 lecture 3",
+   "csc110 - preparation - week 1 computer science",
+   "lecture 1",
+   "week 1 computer science",
+   "week 10 lecture 3"
+  ],
+  "types of numbers": [
+   "numbers and number sets 1",
+   "sets"
+  ],
+  "typology": [
+   "machine translation"
+  ],
+  "unfair advantage": [
+   "introduction to python",
+   "mitx course - python basics - introduction to python"
+  ],
+  "uniform distribution": [
+   "skip grams with negative sampling"
+  ],
+  "uniform random variable": [
+   "random variable"
+  ],
+  "union of sets": [
+   "pump 2 - sets",
+   "sets"
+  ],
+  "unit testing": [
+   "csc110 lecture 4",
+   "testing mutations of a function"
+  ],
+  "unsupervised learning": [
+   "machine learning",
+   "machine learning workflow",
+   "semi-supervised learning"
+  ],
+  "upper bound": [
+   "csc110 - lectures - week 9 lecture 3",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1"
+  ],
+  "usage of equality operators": [
+   "6.5, 6.6, 6.7"
+  ],
+  "value based memory model": [
+   "6.4, 7.1",
+   "csc110 - csc110 lecture notes - 6.4, 7.1",
+   "csc110 - preparation - week 1 computer science",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "week 1 computer science"
+  ],
+  "value equality": [
+   "6.5, 6.6, 6.7"
+  ],
+  "values method": [
+   "dictionaries",
+   "dictionaries_1"
+  ],
+  "variable": [
+   "16.1, 16.2, 16.3, 16.4",
+   "16.1, 16.2, 16.3, 16.4_1",
+   "csc110 lecture 1",
+   "csc110 lecture 1_1",
+   "core elements of programs",
+   "lecture 1",
+   "object orientation in functions",
+   "week 1 computer science",
+   "parameter",
+   "parameter_1",
+   "variable scope"
+  ],
+  "variable environment": [
+   "mitx course - knowledge base - variable",
+   "scopes",
+   "variable",
+   "variable_1"
+  ],
+  "variable reassignment": [
+   "6.1, 6.2, 6.3",
+   "6.1, 6.2, 6.3_1",
+   "6.5, 6.6, 6.7",
+   "aliasing",
+   "csc110 - csc110 lecture notes - 6.1, 6.2, 6.3",
+   "object mutation",
+   "object",
+   "object_1"
+  ],
+  "variable scope": [
+   "csc110 lecture 4",
+   "functions",
+   "functions_1",
+   "global variables",
+   "global method",
+   "scopes"
+  ],
+  "variance": [
+   "bias",
+   "bias_1",
+   "classification",
+   "correlation",
+   "k-fold cross validation"
+  ],
+  "vauquois triangle": [
+   "machine translation"
+  ],
+  "vectorization": [
+   "linear regression model",
+   "linear regression model_1"
+  ],
+  "vertex": [
+   "trees(cs)",
+   "trees(cs)_1",
+   "edge",
+   "graph",
+   "neighbour"
+  ],
+  "visionary thinkers geoffrey hinton": [
+   "arrive ready to computer science - knowledge base - formal language",
+   "formal language"
+  ],
+  "viterbi algorithm": [
+   "forward algorithm",
+   "hidden markov model",
+   "hidden markov model_1"
+  ],
+  "vocal tract": [
+   "phonetics"
+  ],
+  "vowels": [
+   "phones"
+  ],
+  "week 1 computer science": [
+   "dictionary comprehension",
+   "natural numbers",
+   "operators",
+   "operators_1",
+   "set builder notation",
+   "subsets in cs",
+   "expression",
+   "syntax",
+   "variable",
+   "variable_1",
+   "‘in’ operator",
+   "‘in’ operator_1"
+  ],
+  "week 10 lecture 3": [
+   "abstract method",
+   "type()"
+  ],
+  "week 12 lecture 1": [
+   "catastrophic cancellation",
+   "float"
+  ],
+  "week 8 lecture 3": [
+   "theta (cs)",
+   "theta (cs)_1",
+   "basic operations",
+   "basic operations_1"
+  ],
+  "week 9 lecture 3": [
+   "runtime analysis in set, dictionaries, dataclasses",
+   "theta (cs)",
+   "theta (cs)_1",
+   "searching in a list",
+   "worst-case running time",
+   "‘in’ operator",
+   "‘in’ operator_1"
+  ],
+  "well ordered": [
+   "integers",
+   "numbers and number sets 1"
+  ],
+  "while loop": [
+   "core elements of programs",
+   "runtime analysis for while loops",
+   "runtime analysis for while loops_1"
+  ],
+  "word dependency parsing": [
+   "parsing"
+  ],
+  "word error rate": [
+   "csc401 - neural machine translation"
+  ],
+  "word likelihood probability": [
+   "parts of speech tagging"
+  ],
+  "word prediction": [
+   "language models"
+  ],
+  "word vector representation": [
+   "indexing_1",
+   "mitx course - knowledge base - indexing",
+   "continuous bag of words model",
+   "neural language models",
+   "skip grams with negative sampling",
+   "word2vec"
+  ],
+  "word2vec": [
+   "continuous bag of words model",
+   "neural language models",
+   "skip grams with negative sampling"
+  ],
+  "worst-case running time": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "csc110 - csc110 lecture notes - 9.6, 9.7, 9.8, 9.9",
+   "csc110 - lectures - week 9 lecture 3",
+   "mitx course - knowledge base - ‘in’ operator",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1",
+   "all()",
+   "any()",
+   "‘in’ operator",
+   "‘in’ operator_1"
+  ],
+  "yule’s law": [
+   "zipf’s law"
+  ],
+  "z score normalization": [
+   "feature scaling",
+   "feature scaling_1"
+  ],
+  "zipf-mandelbrot equation": [
+   "zipf’s law",
+   "null hypothesis"
+  ],
+  "zipf’s law": [
+   "corpora",
+   "null hypothesis"
+  ],
+  "‘in’ operator": [
+   "9.6, 9.7, 9.8, 9.9",
+   "9.6, 9.7, 9.8, 9.9_1",
+   "binary functions",
+   "core elements of programs",
+   "list operations",
+   "mapping operations",
+   "set operations",
+   "simple algorithms",
+   "subsets in cs",
+   "week 1 computer science",
+   "week 2 lecture 1",
+   "week 9 lecture 3",
+   "week 9 lecture 3_1",
+   "for loop",
+   "for loop_1",
+   "string operators",
+   "‘in’ operator_1"
+  ]
+ },
+ "images": {
+  "pictures/pasted image 20240425001022.png": "Pasted image 20240425001022.png",
+  "pictures/pasted image 20240515195234.png": "Pictures - Pasted image 20240515195234.png",
+  "pictures/pasted image 20240515195825.png": "Pictures - Pasted image 20240515195825.png",
+  "pictures/pasted image 20240515200002.png": "Pictures - Pasted image 20240515200002.png",
+  "pictures/pasted image 20240515201906.png": "Pictures - Pasted image 20240515201906.png",
+  "pictures/pasted image 20240522193115.png": "Pictures - Pasted image 20240522193115.png",
+  "pictures/pasted image 20240623221335.png": "Pasted image 20240623221335.png"
+ }
+}

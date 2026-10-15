@@ -1,6 +1,0 @@
----
-tags: 
-aliases: []
----
-# speech recognition
-##

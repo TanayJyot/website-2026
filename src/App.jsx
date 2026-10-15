@@ -1,29 +1,73 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Hero from './components/Hero';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigationType } from 'react-router-dom';
+import Nav from './components/Nav';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Interests from './components/Interests';
 import Contact from './components/Contact';
-import NodePage from './pages/NodePage';
-import NotePage from './pages/NotePage';
-import './App.css'; 
+import usePageTitle from './components/usePageTitle';
+// Hero.css also holds the shared .btn-primary / .btn-secondary styles used on
+// other routes, so keep it in the main bundle even though Hero itself is lazy.
+import './components/Hero.css';
+
+// Code-split the heavy parts: the force-graph hero and the markdown/KaTeX pages.
+const Hero = lazy(() => import('./components/Hero'));
+const NodePage = lazy(() => import('./pages/NodePage'));
+const NotePage = lazy(() => import('./pages/NotePage'));
+
+// Where a scrolled-to section heading should sit: just below the fixed nav
+// (about 71px tall, or about 80px to the bottom of the floating pill).
+const NAV_CLEARANCE = 96;
+
+function HeroFallback() {
+  return <div aria-hidden="true" style={{ minHeight: '100dvh', background: 'var(--bg-color)' }} />;
+}
+
+function RouteFallback() {
+  return <div aria-hidden="true" style={{ minHeight: '100dvh', background: 'var(--bg-color)' }} />;
+}
+
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (!section) return;
+  const target = section.querySelector('h1, h2') || section;
+  const top = target.getBoundingClientRect().top + window.scrollY - NAV_CLEARANCE;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+}
 
 function HomePage() {
-  const { hash } = useLocation();
+  const { hash, key } = useLocation();
+  usePageTitle();
 
-  // Nav links like /#about load the page before the sections exist, so the
-  // browser can't jump to the anchor itself — scroll once the page has rendered.
+  // Links like /#about land here before the browser can resolve the anchor
+  // (and on client-side navigation it never tries), so scroll ourselves on
+  // every navigation that carries a hash. Content above the target can still
+  // grow afterwards (lazy hero, web fonts), so keep the target pinned for a
+  // moment unless the visitor starts scrolling themselves.
   useEffect(() => {
     if (!hash) return;
-    const el = document.getElementById(decodeURIComponent(hash.slice(1)));
-    if (el) el.scrollIntoView();
-  }, [hash]);
+    const id = decodeURIComponent(hash.slice(1));
+    scrollToSection(id);
+
+    const observer = new ResizeObserver(() => scrollToSection(id));
+    observer.observe(document.body);
+    const userEvents = ['wheel', 'touchstart', 'keydown', 'pointerdown'];
+    const stop = () => {
+      observer.disconnect();
+      clearTimeout(timer);
+      userEvents.forEach((t) => window.removeEventListener(t, stop));
+    };
+    const timer = setTimeout(stop, 3000);
+    userEvents.forEach((t) => window.addEventListener(t, stop, { passive: true }));
+    return stop;
+  }, [hash, key]);
 
   return (
     <>
-      <Hero />
+      <Suspense fallback={<HeroFallback />}>
+        <Hero />
+      </Suspense>
       <About />
       <Experience />
       <Projects />
@@ -34,6 +78,7 @@ function HomePage() {
 }
 
 function WritingsPage() {
+  usePageTitle('Writings');
   const courseNotes = [
     {
       id: 'natural language processing',
@@ -52,7 +97,7 @@ function WritingsPage() {
   ];
 
   return (
-    <div className="container section animate-fade-in" style={{ marginTop: '5rem', minHeight: '80vh', maxWidth: '900px' }}>
+    <div className="container animate-fade-in" style={{ marginTop: '5rem', paddingBlock: 'clamp(3rem, 8vw, 5rem)', minHeight: '80vh', maxWidth: '900px' }}>
       <h2 className="title">Writings</h2>
       <p style={{ color: 'var(--text-muted)', marginBottom: '3rem', fontSize: '1.15rem', lineHeight: 1.7 }}>
         Course notes from my CS classes at UofT.
@@ -85,70 +130,58 @@ function WritingsPage() {
 }
 
 function NotFoundPage() {
+  usePageTitle('Page Not Found');
   return (
-    <div className="container section animate-fade-in" style={{ marginTop: '5rem', minHeight: '80vh', maxWidth: '900px' }}>
+    <div className="container animate-fade-in" style={{ marginTop: '5rem', paddingBlock: 'clamp(3rem, 8vw, 5rem)', minHeight: '80vh', maxWidth: '900px' }}>
       <h2 className="title">Page Not Found</h2>
       <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
         There's nothing at this address.
       </p>
-      <Link to="/" className="btn-secondary">Back to Home</Link>
+      <Link to="/" className="btn-secondary btn-touch">Back to Home</Link>
     </div>
   );
 }
 
-function AppContent() {
-  const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === '/';
+// New pages start at the top; back/forward keeps the browser's restored position.
+function ScrollToTop() {
+  const { hash, key } = useLocation();
+  const navigationType = useNavigationType();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (hash || navigationType === 'POP') return;
+    window.scrollTo(0, 0);
+  }, [key, hash, navigationType]);
 
-  // Only apply the pill-shrink effect on the homepage
-  const navScrolled = isHome && scrolled;
+  return null;
+}
 
+// Move keyboard focus past the nav without touching the URL (a plain #hash
+// would be picked up by the router and the home page's section scrolling).
+function skipToContent(e) {
+  const main = document.getElementById('main-content');
+  if (!main) return;
+  e.preventDefault();
+  main.focus({ preventScroll: true });
+  main.scrollIntoView();
+}
+
+function AppContent() {
   return (
     <div className="app-container">
-      <nav className="glass-nav" style={{
-        position: isHome ? 'fixed' : 'relative',
-        top: navScrolled ? '20px' : '0',
-        left: isHome ? '50%' : 'auto',
-        transform: isHome ? 'translateX(-50%)' : 'none',
-        width: navScrolled ? '85%' : '100%',
-        maxWidth: navScrolled ? '900px' : 'none',
-        borderRadius: navScrolled ? '50px' : '0',
-        zIndex: 100, 
-        background: navScrolled ? 'rgba(13, 15, 18, 0.85)' : 'rgba(13, 15, 18, 0.5)', 
-        backdropFilter: 'blur(12px)',
-        border: navScrolled ? '1px solid rgba(255,255,255,0.1)' : '1px solid transparent',
-        borderBottom: navScrolled ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(255,255,255,0.05)',
-        boxShadow: navScrolled ? '0 10px 30px rgba(0,0,0,0.5)' : 'none',
-        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
-      }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', padding: navScrolled ? '0.8rem 2.5rem' : '1.2rem 2rem', alignItems: 'center', transition: 'padding 0.4s ease' }}>
-          <Link to="/" style={{ fontWeight: 700, fontSize: '1.2rem', color: '#fff' }}>Tanayjyot</Link>
-          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-            <a href="/#about">About</a>
-            <a href="/#experience">Experience</a>
-            <a href="/#projects">Projects</a>
-            <Link to="/blog" style={{ color: 'var(--accent-color)' }}>Writings</Link>
-          </div>
-        </div>
-      </nav>
-      
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/node/:id" element={<NodePage />} />
-          <Route path="/note/:slug" element={<NotePage />} />
-          <Route path="/blog" element={<WritingsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+      <a href="#main-content" className="sr-only skip-link" onClick={skipToContent}>Skip to content</a>
+      <ScrollToTop />
+      <Nav />
+
+      <main id="main-content" tabIndex={-1}>
+        <Suspense fallback={<RouteFallback />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/node/:id" element={<NodePage />} />
+            <Route path="/note/:slug" element={<NotePage />} />
+            <Route path="/blog" element={<WritingsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </main>
     </div>
   );

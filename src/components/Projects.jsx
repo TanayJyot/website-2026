@@ -30,26 +30,24 @@ export default function Projects() {
   ];
 
   return (
-    <section className="section" id="projects">
+    <section className="section" id="projects" aria-labelledby="projects-title">
       <div className="container">
-        <h2 className="title">Projects</h2>
+        <h2 className="title" id="projects-title">Projects</h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
-          {projects.map((proj, idx) => (
-            <div key={idx} className="glass-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '0.8rem' }}>{proj.name}</h3>
-              <p style={{ flexGrow: 1, marginBottom: '1.5rem' }}>{proj.desc}</p>
+        <ul className="projects-grid" role="list">
+          {projects.map((proj) => (
+            <li key={proj.name} className="glass-card project-card">
+              <h3 className="project-title">{proj.name}</h3>
+              <p className="project-desc">{proj.desc}</p>
 
-              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <ul className="project-tags" aria-label="Technologies">
                 {proj.tags.map(tag => (
-                  <span key={tag} style={{ fontSize: '0.8rem', padding: '0.2rem 0.6rem', border: '1px solid var(--border-color)', borderRadius: '4px', color: 'var(--accent-color)' }}>
-                    {tag}
-                  </span>
+                  <li key={tag} className="project-tag">{tag}</li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -1,1 +1,0 @@
-The properties of a data type

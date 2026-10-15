@@ -1,1 +1,0 @@
-Error wherein a variable is used that does not exist.
