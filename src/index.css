@@ -1,5 +1,5 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+/* The Outfit font is loaded with <link> tags in index.html (no render-blocking @import here). */
 
 :root {
   /* MUSIC INSPIRED DARK THEME */
@@ -15,8 +15,14 @@
   /* Glassmorphism */
   --glass-bg: rgba(22, 25, 33, 0.6);
   --glass-border: rgba(255, 255, 255, 0.05);
+  /* Opaque stand-in for --glass-bg where backdrop blur is switched off (phones) */
+  --glass-bg-solid: rgba(22, 25, 33, 0.85);
 
   --font-main: 'Outfit', sans-serif;
+
+  /* Minimum hit area for interactive elements */
+  --tap-min: 24px;
+  --tap-coarse: 44px;
 }
 
 * {
@@ -25,12 +31,21 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Keep hash targets (/#experience etc.) clear of the fixed nav */
+  scroll-padding-top: 5rem;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--bg-color);
   color: var(--text-main);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden; /* fallback for browsers without overflow: clip */
+  overflow-x: clip;
   /* subtle gradient background like a spotlight */
   background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
   background-attachment: fixed;
@@ -54,21 +69,33 @@ body {
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 a:hover {
   text-shadow: 0 0 10px var(--accent-glow);
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: -0.02em;
   color: #fff;
+  overflow-wrap: break-word;
 }
 
 p {
   color: var(--text-muted);
+}
+
+img, video {
+  max-width: 100%;
 }
 
 /* Layout Utilities */
@@ -83,13 +110,16 @@ p {
 }
 
 .title {
-  font-size: 2.5rem;
+  /* ~1.9rem at 320px, ~2rem at 375px, 2.5rem from ~880px up */
+  font-size: clamp(1.9rem, 1.4rem + 2.5vw, 2.5rem);
+  line-height: 1.2;
   margin-bottom: 2rem;
   background: linear-gradient(90deg, #fff, var(--text-muted));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  max-width: 100%;
 }
 
 /* Glassmorphism Cards */
@@ -100,13 +130,17 @@ p {
   border: 1px solid var(--glass-border);
   border-radius: 12px;
   padding: 2rem;
-  transition: all 0.3s ease;
+  min-width: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.glass-card:hover {
-  border-color: var(--border-color);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+/* Hover lift only where hover exists (avoids "stuck" lifted cards after a tap) */
+@media (hover: hover) {
+  .glass-card:hover {
+    border-color: var(--border-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* Animations */
@@ -119,71 +153,271 @@ p {
   animation: fadeIn 0.8s ease forwards;
 }
 
+/* Used by .stage-glow in components/Hero.css */
 @keyframes pulse-glow {
   0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
   70% { box-shadow: 0 0 0 15px rgba(56, 189, 248, 0); }
   100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
 }
 
-/* Music Visualizer Motif (Subtle Audio Wave bars) */
-.soundwave-bars {
+/* ========================================
+   Home: About
+   ======================================== */
+.about-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 2rem;
+}
+
+.about-heading {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.about-card p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   Home: Experience
+   ======================================== */
+.experience-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 3rem;
+}
+
+.experience-column {
+  min-width: 0;
+}
+
+.title.experience-column-title {
+  font-size: clamp(1.7rem, 1.35rem + 1.5vw, 2rem);
+  margin-bottom: 2rem;
+}
+
+.experience-list {
+  list-style: none;
   display: flex;
-  align-items: flex-end;
-  height: 20px;
-  gap: 3px;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.soundwave-bar {
-  width: 4px;
-  background-color: var(--accent-color);
-  border-radius: 2px;
-  animation: wave 1s ease-in-out infinite alternate;
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  container-type: inline-size;
 }
 
-.soundwave-bar:nth-child(1) { animation-delay: 0.1s; }
-.soundwave-bar:nth-child(2) { animation-delay: 0.3s; }
-.soundwave-bar:nth-child(3) { animation-delay: 0.5s; }
-.soundwave-bar:nth-child(4) { animation-delay: 0.2s; }
-.soundwave-bar:nth-child(5) { animation-delay: 0.4s; }
-
-@keyframes wave {
-  0% { height: 4px; }
-  100% { height: 20px; box-shadow: 0 0 10px var(--accent-glow); }
+.experience-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-/* Markdown Context Overrides */
-.markdown-body h1 { 
-  font-size: 2.8rem; 
-  margin-bottom: 1.5rem; 
+.experience-role {
+  flex: 1 1 12rem;
+  min-width: 0;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.experience-company {
+  display: block;
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.experience-date {
+  flex-shrink: 0;
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Narrow cards: stack role/company above the date pill instead of squeezing them side by side */
+@container (max-width: 380px) {
+  .experience-card-header {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .experience-role {
+    flex: 0 1 auto;
+    font-size: 1.2rem;
+  }
+}
+
+.experience-desc {
+  color: #fff;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.details-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.4rem;
+  min-height: 32px;
+  padding: 0.25rem 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.details-link svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.details-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* ========================================
+   Home: Projects
+   ======================================== */
+.projects-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+}
+
+.project-desc {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.project-tag {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--accent-color);
+}
+
+/* ========================================
+   Home: Contact
+   ======================================== */
+.contact-section {
+  border-top: 1px solid var(--glass-border);
+  margin-top: 2rem;
+}
+
+.contact-inner {
+  text-align: center;
+}
+
+.contact-intro {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.glass-card.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: var(--tap-coarse);
+  padding: 1rem 1.5rem;
+}
+
+.contact-link svg {
+  flex-shrink: 0;
+  color: var(--accent-color);
+}
+
+.contact-footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   Markdown Context Overrides
+   ======================================== */
+.markdown-body {
+  overflow-wrap: break-word;
+}
+
+.markdown-body h1 {
+  /* ~2rem on phones, 2.8rem on desktop */
+  font-size: clamp(1.9rem, 1.3rem + 3vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
   color: #fff;
   text-shadow: 0 0 20px var(--accent-glow);
 }
-.markdown-body h2 { 
-  font-size: 1.8rem; 
-  margin-top: 2rem; 
-  margin-bottom: 1rem; 
+.markdown-body h2 {
+  font-size: clamp(1.45rem, 1.2rem + 1.2vw, 1.8rem);
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 0.5rem;
 }
 .markdown-body h3 {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1.05rem + 0.75vw, 1.4rem);
+  line-height: 1.35;
   color: var(--accent-color);
   margin-top: 1.5rem;
   margin-bottom: 0.8rem;
 }
-.markdown-body p { 
-  margin-bottom: 1.2rem; 
-  color: var(--text-muted); 
-  font-size: 1.15rem; 
-  line-height: 1.8; 
+.markdown-body p {
+  margin-bottom: 1.2rem;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.15rem);
+  line-height: 1.8;
 }
-.markdown-body ul, .markdown-body ol { 
-  margin-left: 1.5rem; 
-  margin-bottom: 1.2rem; 
-  color: var(--text-muted); 
+.markdown-body ul, .markdown-body ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-muted);
 }
-.markdown-body li { 
-  margin-bottom: 0.5rem; 
+.markdown-body li {
+  margin-bottom: 0.5rem;
 }
 .markdown-body blockquote {
   border-left: 4px solid var(--accent-color);
@@ -192,6 +426,50 @@ p {
   background: rgba(56, 189, 248, 0.05);
   padding: 1rem;
   border-radius: 4px;
+}
+
+/* Inline links in prose: vertical padding enlarges the hit area to >= 24px
+   without changing line spacing (padding on inline boxes does not affect line height). */
+.markdown-body a {
+  padding-block: 0.3em;
+}
+
+/* Footnote references and back-references from remark-gfm
+   (matched by href too, in case the link renderer drops the data-* attributes) */
+.markdown-body a[data-footnote-ref],
+.markdown-body a[data-footnote-backref],
+.markdown-body a[href^="#user-content-fn"] {
+  display: inline-block;
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  padding: 0 0.2em;
+  line-height: var(--tap-min);
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.markdown-body sup {
+  line-height: 0;
+}
+
+.markdown-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  color: var(--text-muted);
+}
+
+.markdown-body th,
+.markdown-body td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.markdown-body th {
+  color: #fff;
 }
 
 /* Visually hide screen reader elements (like the Footnotes h2 from remark-gfm) */
@@ -232,6 +510,12 @@ p {
   gap: 1.5rem;
 }
 
+/* Card links wrap a block-level card */
+.writings-grid > a {
+  display: block;
+  border-radius: 12px;
+}
+
 .writing-card {
   position: relative;
   overflow: hidden;
@@ -264,7 +548,8 @@ p {
 }
 
 .writing-card-title {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1.05rem + 0.75vw, 1.4rem);
+  line-height: 1.3;
   color: #fff;
   margin-bottom: 0.75rem;
   font-weight: 600;
@@ -310,6 +595,7 @@ p {
 .note-breadcrumb {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 2rem;
   font-size: 0.95rem;
@@ -319,6 +605,7 @@ p {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  min-height: 32px;
   color: var(--accent-color);
   transition: opacity 0.2s ease;
 }
@@ -333,13 +620,15 @@ p {
 }
 
 .breadcrumb-current {
+  min-width: 0;
   color: var(--text-muted);
   text-transform: capitalize;
+  overflow-wrap: anywhere;
 }
 
 .note-layout {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: minmax(0, 1fr) 260px;
   gap: 2rem;
   align-items: start;
 }
@@ -356,6 +645,7 @@ p {
 .note-sidebar {
   position: sticky;
   top: 6rem;
+  min-width: 0;
 }
 
 .sidebar-card {
@@ -393,12 +683,14 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 32px;
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
   font-size: 0.88rem;
   color: var(--text-muted);
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   text-transform: capitalize;
+  overflow-wrap: anywhere;
 }
 
 .sidebar-link:hover {
@@ -422,7 +714,8 @@ p {
 }
 
 .missing-badge {
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.4;
   padding: 0.1rem 0.45rem;
   border-radius: 4px;
   background: rgba(251, 191, 36, 0.15);
@@ -436,19 +729,22 @@ p {
    ======================================== */
 .wikilink {
   color: var(--accent-color);
-  text-decoration: none;
-  border-bottom: 1px dashed rgba(56, 189, 248, 0.3);
-  padding-bottom: 1px;
-  transition: all 0.2s ease;
+  /* Underline drawn with text-decoration so the hit-area padding
+     (from .markdown-body a) does not push it away from the text */
+  text-decoration: underline dashed rgba(56, 189, 248, 0.4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease, text-shadow 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .wikilink.is-unresolved {
   opacity: 0.55;
-  border-bottom: 1px dotted rgba(56, 189, 248, 0.2);
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(56, 189, 248, 0.3);
 }
 
 .wikilink:hover {
-  border-bottom-color: var(--accent-color);
+  text-decoration-color: var(--accent-color);
   text-shadow: 0 0 8px var(--accent-glow);
 }
 
@@ -586,6 +882,7 @@ p {
   border-radius: 4px;
   font-size: 0.9em;
   color: #e2e8f0;
+  overflow-wrap: anywhere;
 }
 
 .markdown-body pre {
@@ -600,6 +897,7 @@ p {
 .markdown-body pre code {
   background: none;
   padding: 0;
+  overflow-wrap: normal;
 }
 
 /* ========================================
@@ -614,21 +912,163 @@ p {
 /* ========================================
    Responsive
    ======================================== */
-@media (max-width: 768px) {
+
+/* Small tablets: give note content the full width instead of squeezing it next to the 260px sidebar */
+@media (max-width: 900px) {
   .note-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .note-sidebar {
     position: static;
   }
 
+  .sidebar-links {
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Backdrop blur on ~25 cards is expensive on mobile GPUs; use an opaque fill instead.
+     (The nav keeps its blur; it lives in its own stylesheet.) */
+  .glass-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--glass-bg-solid);
+  }
+
   .note-content {
     padding: 2rem 1.5rem;
+    background: rgba(22, 25, 33, 0.6);
   }
 
   .note-page-container {
     padding: 4rem 1rem 2rem;
   }
+
+  .experience-columns {
+    gap: 2.5rem;
+  }
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+  }
+
+  .title.experience-column-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .glass-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .experience-list,
+  .projects-grid {
+    gap: 1.25rem;
+  }
+
+  .about-card {
+    gap: 1.5rem;
+  }
+
+  .writing-card {
+    padding: 1.5rem 1.25rem 1.5rem 1.5rem;
+  }
+
+  .note-content {
+    padding: 1.5rem 1.1rem;
+  }
+
+  .markdown-body ul, .markdown-body ol {
+    margin-left: 1.1rem;
+  }
+
+  .markdown-body blockquote,
+  .callout {
+    padding: 0.85rem 1rem;
+  }
+
+  .markdown-body pre {
+    padding: 1rem;
+  }
+
+  .contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .glass-card.contact-link {
+    padding: 0.9rem 1rem;
+  }
+
+  .contact-footer {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .glass-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .glass-card.contact-link {
+    padding: 0.85rem 0.75rem;
+  }
+}
+
+/* Touch screens: standalone links get a 44px target */
+@media (pointer: coarse) {
+  .details-link,
+  .breadcrumb-link,
+  .sidebar-link {
+    min-height: var(--tap-coarse);
+  }
+
+  .sidebar-links li {
+    margin-bottom: 0.15rem;
+  }
+}
+
+/* ========================================
+   Reduced motion
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-fade-in {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .glass-card:hover,
+  .details-link:hover svg {
+    transform: none !important;
+  }
+}

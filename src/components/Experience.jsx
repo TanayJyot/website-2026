@@ -79,43 +79,43 @@ export default function Experience() {
     }
   ];
 
-  const renderCard = (exp, idx) => (
-    <div key={idx} className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', position: 'relative' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem' }}>
-        <h3 style={{ fontSize: '1.3rem', lineHeight: '1.3' }}>{exp.role} <br/><span style={{ color: 'var(--accent-color)', fontSize: '1rem' }}>@ {exp.company}</span></h3>
-        <div style={{ padding: '0.2rem 0.6rem', background: 'rgba(255,255,255,0.05)', borderRadius: '20px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-          {exp.date}
-        </div>
+  const renderCard = (exp) => (
+    <li key={exp.nodeId ?? `${exp.role}-${exp.company}`} className="glass-card experience-card">
+      <div className="experience-card-header">
+        <h3 className="experience-role">
+          {exp.role}
+          <span className="experience-company">@ {exp.company}</span>
+        </h3>
+        <p className="experience-date">{exp.date}</p>
       </div>
-      <p style={{ color: '#fff', fontSize: '0.95rem', flex: 1 }}>{exp.desc}</p>
+      <p className="experience-desc">{exp.desc}</p>
       {exp.nodeId && (
-        <Link to={`/node/${exp.nodeId}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.9rem', fontWeight: 600, marginTop: 'auto' }}>
-          Details <ArrowRight size={14} />
+        <Link to={`/node/${exp.nodeId}`} className="details-link">
+          Details<span className="sr-only"> about {exp.role} at {exp.company}</span>
+          <ArrowRight size={14} aria-hidden="true" />
         </Link>
       )}
-    </div>
+    </li>
   );
 
   return (
-    <section className="section" id="experience">
+    <section className="section" id="experience" aria-label="Experience">
       <div className="container">
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
-          <div>
-            <h2 className="title" style={{ marginBottom: '2rem', fontSize: '2rem' }}>Technical Experience</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {technicalExperiences.map((exp, idx) => renderCard(exp, idx))}
-            </div>
+        <div className="experience-columns">
+          <div className="experience-column">
+            <h2 className="title experience-column-title">Technical Experience</h2>
+            <ul className="experience-list" role="list">
+              {technicalExperiences.map(renderCard)}
+            </ul>
           </div>
 
-          <div>
-            <h2 className="title" style={{ marginBottom: '2rem', fontSize: '2rem' }}>Leadership</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {leadershipExperiences.map((exp, idx) => renderCard(exp, idx))}
-            </div>
+          <div className="experience-column">
+            <h2 className="title experience-column-title">Leadership</h2>
+            <ul className="experience-list" role="list">
+              {leadershipExperiences.map(renderCard)}
+            </ul>
           </div>
         </div>
-
       </div>
     </section>
   );

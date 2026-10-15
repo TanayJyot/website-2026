@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function About() {
   return (
-    <section className="section" id="about">
+    <section className="section" id="about" aria-labelledby="about-title">
       <div className="container">
-        <h2 className="title">About Me</h2>
+        <h2 className="title" id="about-title">About Me</h2>
 
-        <div className="glass-card" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        <div className="glass-card about-card">
           <div>
-            <h3 style={{ marginBottom: '1rem', color: 'var(--accent-color)' }}>What I Work On</h3>
-            <p style={{ marginBottom: '1rem' }}>
+            <h3 className="about-heading">What I Work On</h3>
+            <p>
               I'm a Computer Science student at the <strong>University of Toronto</strong>, with a minor in Economics and a Certificate in Business Fundamentals.
             </p>
             <p>
@@ -18,8 +18,8 @@ export default function About() {
           </div>
 
           <div>
-            <h3 style={{ marginBottom: '1rem', color: 'var(--accent-color)' }}>Beyond the Code</h3>
-            <p style={{ marginBottom: '1rem' }}>
+            <h3 className="about-heading">Beyond the Code</h3>
+            <p>
               I'm <strong>Co-President of UTMIST</strong>, North America's largest AI student organization, where we run events like DevCon and EigenAI.
             </p>
             <p>
