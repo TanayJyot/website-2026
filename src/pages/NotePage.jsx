@@ -7,52 +7,33 @@ import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import 'katex/dist/katex.min.css';
 import { BookOpen, FileText, CornerDownLeft } from 'lucide-react';
+import notesIndex from '../content/notes-index.json';
 
 /* ────────────────────────────────────────────────────────────
-   Vite glob: eagerly import every .md file under content/notes
-   as raw strings so we can look them up by slug at runtime.
+   Vite glob: every .md file under content/notes becomes its own
+   chunk (raw string), fetched only when that note is opened.
    ──────────────────────────────────────────────────────────── */
 const noteModules = import.meta.glob('../content/notes/*.md', {
-  eager: true,
   query: '?raw',
   import: 'default',
 });
 
-/** Build a lookup: slug (lowercase filename without .md) → raw markdown string */
-function buildNoteLookup() {
-  const lookup = {};
-  for (const [path, raw] of Object.entries(noteModules)) {
-    // path looks like "../content/notes/naive bayes.md"
-    const filename = path.split('/').pop().replace(/\.md$/, '');
-    lookup[filename.toLowerCase()] = raw;
-  }
-  return lookup;
+/** Lookup: slug (lowercase filename without .md) → () => Promise<raw markdown> */
+const NOTE_LOADERS = {};
+for (const [path, load] of Object.entries(noteModules)) {
+  // path looks like "../content/notes/naive bayes.md"
+  const filename = path.split('/').pop().replace(/\.md$/, '');
+  NOTE_LOADERS[filename.toLowerCase()] = load;
 }
 
-const NOTES = buildNoteLookup();
-
-/** Pre-compute backlinks: for each note, which other notes link to it? */
-const WIKILINK_RE = /\[\[([^\]|#]+)(?:[#|][^\]]*)?\]\]/g;
-
-function buildBacklinksIndex() {
-  const index = {}; // targetSlug → [{ slug, display }]
-  for (const [sourceSlug, raw] of Object.entries(NOTES)) {
-    let match;
-    const re = new RegExp(WIKILINK_RE.source, 'g');
-    while ((match = re.exec(raw)) !== null) {
-      const targetName = match[1].trim().toLowerCase();
-      if (targetName === sourceSlug) continue; // skip self-links
-      if (!index[targetName]) index[targetName] = [];
-      // Avoid duplicate entries from the same source
-      if (!index[targetName].some(b => b.slug === sourceSlug)) {
-        index[targetName].push({ slug: sourceSlug, display: sourceSlug });
-      }
-    }
-  }
-  return index;
-}
-
-const BACKLINKS = buildBacklinksIndex();
+/**
+ * Built from every note by scripts/build-notes-index.mjs (run by the Vite plugin
+ * in vite.config.js), so backlinks don't require loading all notes at runtime.
+ *   backlinks: target slug → [source slugs]
+ *   images:    lowercase embed target → actual file name in /notes-assets
+ */
+const BACKLINKS = notesIndex.backlinks;
+const IMAGE_FILES = notesIndex.images;
 
 /* ────────────────────────────────────────────────────────────
    Pre-processing pipeline: Obsidian → standard Markdown
@@ -68,10 +49,18 @@ function encodeSlug(name) {
   return encodeURIComponent(name).replace(/\(/g, '%28').replace(/\)/g, '%29');
 }
 
-/** Convert ![[image.png]] and ![[image.png|300]] → standard markdown image syntax */
+/**
+ * Convert ![[image.png]] and ![[image.png|300]] → standard markdown image syntax.
+ * Embeds whose exported file has a different name (Obsidian subfolders such as
+ * `Pictures/x.png` are flattened to `Pictures - x.png`) are mapped via the index.
+ */
 function convertObsidianImages(md) {
   return md.replace(/!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|svg|webp|bmp|tiff|tif|excalidraw))(?:\|[^\]]*)?\]\]/gi,
-    (_, filename) => `![${filename.trim()}](/notes-assets/${encodeSlug(filename.trim())})`
+    (_, embed) => {
+      const filename = embed.trim();
+      const file = IMAGE_FILES[filename.toLowerCase()] || filename;
+      return `![${filename}](/notes-assets/${encodeSlug(file)})`;
+    }
   );
 }
 
@@ -89,7 +78,7 @@ function convertWikilinks(md) {
     // Same-note heading/block reference ([[#^abc|text]]) — no page to link to
     if (!target) return display.replace(/^#\^?/, '');
 
-    const isMissing = !(target.toLowerCase() in NOTES);
+    const isMissing = !(target.toLowerCase() in NOTE_LOADERS);
     const suffix = isMissing ? '?missing=true' : '';
 
     return `[${display}](/note/${encodeSlug(target)}${suffix})`;
@@ -122,6 +111,14 @@ function convertCallouts(md) {
  * Ensure $$...$$ blocks have their delimiters on separate lines
  * so that remark-math parses them as display math, not inline.
  */
+const EMPTY_LIST_ITEM_RE = /^\s*(?:[-*+]|\d+[.)])\s*$/;
+const LIST_PREFIX_RE = /^\s*(?:[-*+]|\d+\.)\s*/;
+
+/** Is this line (ignoring a list prefix and indentation) the start of a $$ block? */
+function startsDisplayMath(line) {
+  return line.replace(LIST_PREFIX_RE, '').trim().startsWith('$$');
+}
+
 function isolateDisplayMath(md) {
   const lines = md.split('\n');
   const result = [];
@@ -143,6 +140,18 @@ function isolateDisplayMath(md) {
       result.push(line);
       i++;
       continue;
+    }
+
+    // An empty bullet whose "content" is the $$ block on the next line(s) would
+    // render as an empty <li> followed by the equation, since the block is
+    // hoisted out of the list below — drop the bullet.
+    if (EMPTY_LIST_ITEM_RE.test(line)) {
+      let next = i + 1;
+      while (next < lines.length && lines[next].trim() === '') next++;
+      if (next < lines.length && startsDisplayMath(lines[next])) {
+        i++;
+        continue;
+      }
     }
 
     // Strip list prefix if the line is just a list item wrapping $$...$$
@@ -238,8 +247,15 @@ function preprocessObsidian(raw) {
 /* ────────────────────────────────────────────────────────────
    Custom renderers for ReactMarkdown
    ──────────────────────────────────────────────────────────── */
-function NoteLink({ href, children }) {
+function NoteLink({ href, children, ...props }) {
   const navigate = useNavigate();
+  delete props.node; // react-markdown's hast node, not a DOM attribute
+
+  // Same-page anchors (e.g. GFM footnotes #user-content-fn-1): plain link, keeping
+  // data-footnote-ref / data-footnote-backref and the other attributes
+  if (href && href.startsWith('#')) {
+    return <a href={href} {...props}>{children}</a>;
+  }
 
   // Internal /note/ links
   if (href && href.startsWith('/note/')) {
@@ -286,10 +302,8 @@ function NoteImage({ src, alt }) {
   );
 }
 
-/** Everything the page renders for a given slug */
-function loadNote(name) {
-  const raw = NOTES[name.toLowerCase()];
-
+/** Everything the page renders for a note, given its raw markdown (undefined = not found) */
+function buildNote(name, raw) {
   // Empty notes are valid (raw === ''), so check for undefined rather than falsiness
   if (raw === undefined) {
     return {
@@ -318,23 +332,58 @@ function loadNote(name) {
     linkedNotes.push({ display: m[1], slug, exists: !m[3] });
   }
 
-  const backlinks = (BACKLINKS[name.toLowerCase()] || []).map(b => ({
-    ...b,
-    slug: encodeSlug(b.slug),
-    exists: true, // they're in NOTES by definition
+  const backlinks = (BACKLINKS[name.toLowerCase()] || []).map(source => ({
+    display: source,
+    slug: encodeSlug(source),
+    exists: true, // the index only lists notes that exist
   }));
 
   return { content, title, linkedNotes, backlinks };
 }
 
+/**
+ * Fetch the note's chunk. Returns null while it loads, otherwise what buildNote returns.
+ * A failed chunk load (e.g. a stale deploy) is reported as { error }.
+ */
+function useNote(name) {
+  const key = name.toLowerCase();
+  const load = NOTE_LOADERS[key];
+  const [loaded, setLoaded] = useState({ key: null, raw: undefined, error: null });
+
+  useEffect(() => {
+    if (!load) return undefined;
+    let cancelled = false;
+    load().then(
+      raw => { if (!cancelled) setLoaded({ key, raw, error: null }); },
+      error => { if (!cancelled) setLoaded({ key, raw: undefined, error }); },
+    );
+    return () => { cancelled = true; };
+  }, [key, load]);
+
+  return useMemo(() => {
+    if (!load) return buildNote(name, undefined);
+    if (loaded.key !== key) return null;
+    if (loaded.error) return { error: loaded.error };
+    return buildNote(name, loaded.raw);
+  }, [name, key, load, loaded]);
+}
+
 export default function NotePage() {
   // useParams already returns the decoded value; decoding again breaks names containing '%'
   const { slug } = useParams();
-  const { content, title, linkedNotes, backlinks } = useMemo(() => loadNote(slug), [slug]);
+  const note = useNote(slug);
+  const ready = note !== null && !note.error;
+  const { content, title, linkedNotes, backlinks } = ready
+    ? note
+    : { content: '', title: slug, linkedNotes: [], backlinks: [] };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  useEffect(() => {
+    if (ready) document.title = `${title} · Tanayjyot Singh Chawla`;
+  }, [ready, title]);
 
   return (
     <div className="note-page-container animate-fade-in">
@@ -349,19 +398,29 @@ export default function NotePage() {
 
       <div className="note-layout">
         {/* Main content */}
-        <article key={slug} className="note-content glass-card markdown-body">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm, remarkMath]}
-            rehypePlugins={[rehypeKatex, rehypeRaw]}
-            components={{
-              a: NoteLink,
-              img: NoteImage,
-            }}
-          >
-            {content}
-          </ReactMarkdown>
+        <article key={slug} className="note-content glass-card markdown-body" aria-busy={note === null}>
+          {note === null && (
+            <p className="note-loading" style={{ color: 'var(--text-muted)' }}>Loading note…</p>
+          )}
+          {note?.error && (
+            <p>
+              This note couldn&apos;t be loaded — the site may have been updated.{' '}
+              <a href={`/note/${encodeSlug(slug)}`}>Reload the page</a> to try again.
+            </p>
+          )}
+          {ready && (
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm, remarkMath]}
+              rehypePlugins={[rehypeKatex, rehypeRaw]}
+              components={{
+                a: NoteLink,
+                img: NoteImage,
+              }}
+            >
+              {content}
+            </ReactMarkdown>
+          )}
         </article>
-
         {/* Sidebar: linked notes + backlinks */}
         {(linkedNotes.length > 0 || backlinks.length > 0) && (
           <aside className="note-sidebar">
