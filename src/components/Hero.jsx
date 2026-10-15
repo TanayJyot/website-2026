@@ -17,26 +17,24 @@ const fullData = {
     { id: "Neurobridge", name: "Neurobridge ('24)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 15, fy: 15 },
     { id: "Sampark", name: "Sampark Info. ('24)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 45, fy: 45 },
     { id: "Flybits", name: "Flybits ('25)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 15, fy: 15 },
-    { id: "LeeLang", name: "Lee Lang. Lab ('24)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 45, fy: 45 },
+    { id: "LeeLang", name: "Lee Lang. Lab ('25)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 45, fy: 45 },
     { id: "Shopify", name: "Shopify ('26)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 30, fy: 30 },
     { id: "HCDSL", name: "HCDS Lab ('26)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 10, fy: 10 },
-    { id: "RBC", name: "RBC Let's Solve It ('26)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 50, fy: 50 },
+    { id: "RBC", name: "RBC Borealis ('26)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 50, fy: 50 },
     
     // Leadership Timeline geometrically tiered to avoid overlap
     { id: "IIMUN", name: "IIMUN ('22)", val: 3, color: "#e2e8f0", link: "#experience", prefY: -65, fy: -65 },
     { id: "Lyceum", name: "Lyceum HR ('22)", val: 3, color: "#e2e8f0", link: "#experience", prefY: -30, fy: -30 },
     { id: "LeoClub", name: "Leo Club Pres. ('22)", val: 3, color: "#e2e8f0", link: "#experience", prefY: 5, fy: 5 },
     { id: "UTMIST_ML", name: "UTMIST ML Lead", val: 3, color: "#e2e8f0", link: "#experience", prefY: -45, fy: -45 },
-    { id: "UofTAI", name: "UofT AI Dir. Parts", val: 3, color: "#e2e8f0", link: "#experience", prefY: -15, fy: -15 },
+    { id: "UofTAI", name: "UofT AI Partnerships", val: 3, color: "#e2e8f0", link: "#experience", prefY: -15, fy: -15 },
     { id: "UTMIST", name: "UTMIST Co-Pres", val: 3, color: "#e2e8f0", link: "#experience", prefY: -45, fy: -45 },
     { id: "RSG", name: "RSG Asst ('24)", val: 3, color: "#e2e8f0", link: "#experience", prefY: -15, fy: -15 },
 
     // Writings layered neatly avoiding the central dense timeline
-    { id: "Books", name: "Book Recs", val: 3, color: "#e2e8f0", link: "#interests", prefY: 100, fy: 100 },
-    { id: "Blog", name: "Tech Blog", val: 3, color: "#e2e8f0", link: "/blog", prefY: 130, fy: 130 },
-    { id: "Opportunities", name: "Opportunities", val: 3, color: "#e2e8f0", link: "/node/Opportunities", prefY: 160, fy: 160 },
-    { id: "CSC401", name: "CSC401 NLP Notes", val: 3, color: "#e2e8f0", link: "/note/natural%20language%20processing", prefY: 190, fy: 190 },
-    { id: "CSC384", name: "CSC384 AI Notes", val: 3, color: "#e2e8f0", link: "/note/CSC384%20Index", prefY: 220, fy: 220 },
+    { id: "Opportunities", name: "Opportunities", val: 3, color: "#e2e8f0", link: "/node/Opportunities", prefY: 100, fy: 100 },
+    { id: "CSC401", name: "CSC401 NLP Notes", val: 3, color: "#e2e8f0", link: "/note/natural%20language%20processing", prefY: 130, fy: 130 },
+    { id: "CSC384", name: "CSC384 AI Notes", val: 3, color: "#e2e8f0", link: "/note/CSC384%20Index", prefY: 160, fy: 160 },
 
     // Interests
     { id: "Guitar", name: "Guitar", val: 3, color: "#e2e8f0", link: "#about", prefY: -110, fy: -110 }
@@ -49,8 +47,6 @@ const fullData = {
 
     { source: "Interests", target: "Guitar" },
 
-    { source: "Writings", target: "Books" },
-    { source: "Writings", target: "Blog" },
     { source: "Writings", target: "Opportunities" },
     { source: "Writings", target: "CSC401" },
     { source: "Writings", target: "CSC384" },
@@ -85,8 +81,8 @@ const nodeLayers = {
   "Start": 0,
   "Interests": 1, "Lead": 1, "Tech": 1, "Writings": 1,
   "Guitar": 2,
-  "IIMUN": 2, "Lyceum": 2, "LeoClub": 2, "Neurobridge": 2, "Sampark": 2, "Books": 2, "Opportunities": 2, "CSC401": 2, "CSC384": 2,
-  "UTMIST_ML": 3, "UofTAI": 3, "Flybits": 3, "LeeLang": 3, "Blog": 3,
+  "IIMUN": 2, "Lyceum": 2, "LeoClub": 2, "Neurobridge": 2, "Sampark": 2, "Opportunities": 2, "CSC401": 2, "CSC384": 2,
+  "UTMIST_ML": 3, "UofTAI": 3, "Flybits": 3, "LeeLang": 3,
   "UTMIST": 4, "RSG": 4, "Shopify": 4, "HCDSL": 4, "RBC": 4 
 };
 

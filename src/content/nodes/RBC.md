@@ -1,7 +1,6 @@
----
-title: RBC Let's Solve It
-date: "2026"
----
-# RBC Let's Solve It
+# Let's Solve It Fellow @ RBC Borealis
+*Mar 2026 – May 2026*
 
-Details coming soon!
+- Engineered Python/LangChain pipelines that condense 1,100 pages into one-page digests, cutting review time by 90%.
+
+**Stack:** Python, LangChain
