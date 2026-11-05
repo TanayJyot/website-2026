@@ -5,15 +5,15 @@ export default function Interests() {
   return (
     <section className="section" id="interests">
       <div className="container">
-        <h2 className="title">Notes &amp; Resources</h2>
+        <h2 className="title">Writing &amp; Resources</h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(1.5rem, 5vw, 3rem)' }}>
           <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>Course Notes</h3>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>Writings</h3>
             <p style={{ marginBottom: '2rem' }}>
-              My notes from CSC401 (Natural Language Processing) and CSC384 (Intro to AI).
+              Essays, short pieces and pages from my journal, plus my notes from CSC401 (Natural Language Processing) and CSC384 (Intro to AI).
             </p>
-            <Link to="/blog" className="btn-secondary btn-touch">Read the Notes</Link>
+            <Link to="/blog" className="btn-secondary btn-touch">Read My Writings</Link>
           </div>
 
           <div className="glass-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>

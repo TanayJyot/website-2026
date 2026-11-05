@@ -1,0 +1,8 @@
+---
+title: "We were Vivasvanites"
+date: "2023-03-21"
+label: "March 21, 2023"
+section: "journal"
+---
+
+Within all of those awful SBA memories, there are still some that empower me to this day. I still remember the way I cried when I lost the music fest, came fourth and everything and every damn person who gave even a little damn about me knowing me just for a month came up to encourage me. I couldn’t fulfill the expectations of the house but it just did not matter because I put in everything I could. Even though I messed up in the very last moment. At least,  the people around me could see my efforts and they came to help for them. I wasn’t the prodigy I was supposed to be and there were a chain of events that lead to that including my overconfidence but it just did not matter. I mattered. We could focus on what was to come up next instead of mourning on the past. Even though there was seriousness when it did come to our goals. We as a house did care about each other. Although we had different principles. Principles that led us to act differently in the coming months. We knew that outside the house we stood for each other. Even with our discrepancies, That’s what SBA taught me. To be something, go for it with all your might and failure cannot be everlasting. There were multiple instances wherein my individual performance could have altered outcome of events because I was capable and that made me matter. Just like it does today. I can crack anything as long as I am willing to figure out how. After all I am a Vivasvanite. We were the serious gals but we were also the ones who knew how to have fun when we did. We didn’t see eye to eye, but that never changed our conviction for the greater cause: the prosperity of our house. We were Vivasvanites.
