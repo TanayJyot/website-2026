@@ -15,6 +15,8 @@ import './components/Hero.css';
 const Hero = lazy(() => import('./components/Hero'));
 const NodePage = lazy(() => import('./pages/NodePage'));
 const NotePage = lazy(() => import('./pages/NotePage'));
+const WritingsPage = lazy(() => import('./pages/WritingsPage'));
+const WritingPage = lazy(() => import('./pages/WritingPage'));
 
 // Where a scrolled-to section heading should sit: just below the fixed nav
 // (about 71px tall, or about 80px to the bottom of the floating pill).
@@ -77,58 +79,6 @@ function HomePage() {
   );
 }
 
-function WritingsPage() {
-  usePageTitle('Writings');
-  const courseNotes = [
-    {
-      id: 'natural language processing',
-      title: 'CSC401 — Natural Language Processing',
-      description: 'Course notes covering linguistic knowledge, language modelling, Naive Bayes, entropy & information theory, neural networks, and machine translation.',
-      tags: ['NLP', 'Transformers', 'Deep Learning', 'Probability'],
-      date: '2026',
-    },
-    {
-      id: 'CSC384 Index',
-      title: 'CSC384 — Intro to Artificial Intelligence',
-      description: 'Course notes covering search algorithms, heuristics, constraint satisfaction problems, game trees, and basic machine learning concepts.',
-      tags: ['AI', 'Search', 'CSP', 'Machine Learning'],
-      date: '2026',
-    },
-  ];
-
-  return (
-    <div className="container animate-fade-in" style={{ marginTop: '5rem', paddingBlock: 'clamp(3rem, 8vw, 5rem)', minHeight: '80vh', maxWidth: '900px' }}>
-      <h2 className="title">Writings</h2>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '3rem', fontSize: '1.15rem', lineHeight: 1.7 }}>
-        Course notes from my CS classes at UofT.
-      </p>
-
-      {/* Course Notes section */}
-      <h3 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-        <span style={{ color: 'var(--accent-color)' }}>📚</span> Course Notes
-      </h3>
-
-      <div className="writings-grid">
-        {courseNotes.map((note) => (
-          <Link key={note.id} to={`/note/${encodeURIComponent(note.id)}`} style={{ textDecoration: 'none' }}>
-            <div className="writing-card glass-card">
-              <div className="writing-card-accent" />
-              <p className="writing-card-date">{note.date}</p>
-              <h4 className="writing-card-title">{note.title}</h4>
-              <p className="writing-card-desc">{note.description}</p>
-              <div className="writing-card-tags">
-                {note.tags.map((t) => (
-                  <span key={t} className="writing-tag">{t}</span>
-                ))}
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function NotFoundPage() {
   usePageTitle('Page Not Found');
   return (
@@ -179,6 +129,7 @@ function AppContent() {
             <Route path="/node/:id" element={<NodePage />} />
             <Route path="/note/:slug" element={<NotePage />} />
             <Route path="/blog" element={<WritingsPage />} />
+            <Route path="/writing/:slug" element={<WritingPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
