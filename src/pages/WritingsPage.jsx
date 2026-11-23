@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Lock, LogOut } from 'lucide-react';
 import usePageTitle from '../components/usePageTitle';
-import { WRITINGS } from '../content/writings';
+import useWritingsAuth from '../components/useWritingsAuth';
+import WritingsLogin from '../components/WritingsLogin';
+import { ALL_WRITINGS } from '../content/writings';
 
 const COURSE_NOTES = [
   {
@@ -27,14 +30,19 @@ const SECTIONS = [
   { key: 'journal', title: 'From My Journal', layout: 'rows' },
 ];
 
-function WritingCard({ writing }) {
+function LockIcon({ writing, unlocked }) {
+  if (!writing.private || unlocked) return null;
+  return <Lock size={15} className="writing-lock" aria-label="Private" />;
+}
+
+function WritingCard({ writing, unlocked }) {
   return (
     <Link to={`/writing/${writing.slug}`} style={{ textDecoration: 'none' }}>
       <div className="writing-card glass-card">
         <div className="writing-card-accent" />
         <p className="writing-card-date">{writing.label}</p>
-        <h4 className="writing-card-title">{writing.title}</h4>
-        <p className="writing-card-desc">{writing.excerpt}</p>
+        <h4 className="writing-card-title"><LockIcon writing={writing} unlocked={unlocked} />{writing.title}</h4>
+        <p className="writing-card-desc">{writing.private && !unlocked ? 'Private. Sign in to read.' : writing.excerpt}</p>
         {writing.status && (
           <div className="writing-card-tags"><span className="writing-tag">{writing.status}</span></div>
         )}
@@ -43,11 +51,12 @@ function WritingCard({ writing }) {
   );
 }
 
-function WritingRow({ writing }) {
+function WritingRow({ writing, unlocked }) {
   return (
     <li>
       <Link to={`/writing/${writing.slug}`} className="writing-row">
         <span className="writing-row-title">
+          <LockIcon writing={writing} unlocked={unlocked} />
           {writing.title}
           {writing.status && <span className="writing-tag writing-row-tag">{writing.status}</span>}
         </span>
@@ -63,6 +72,9 @@ function SectionHeading({ children }) {
 
 export default function WritingsPage() {
   usePageTitle('Writings');
+  const auth = useWritingsAuth();
+  const unlocked = auth.status === 'in';
+  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <div className="container animate-fade-in" style={{ marginTop: '5rem', paddingBlock: 'clamp(3rem, 8vw, 5rem)', minHeight: '80vh', maxWidth: '900px' }}>
@@ -71,18 +83,37 @@ export default function WritingsPage() {
         Essays, short pieces and pages from my journal since 2023, plus course notes from my CS classes at UofT.
       </p>
 
+      {auth.status !== 'loading' && (
+        <div className="writings-auth-bar">
+          {unlocked ? (
+            <button type="button" className="writings-auth-btn" onClick={auth.logout}>
+              <LogOut size={16} aria-hidden="true" /> Sign out
+            </button>
+          ) : (
+            <button type="button" className="writings-auth-btn" aria-expanded={showLogin} onClick={() => setShowLogin((v) => !v)}>
+              <Lock size={16} aria-hidden="true" /> Sign in to read private writing
+            </button>
+          )}
+        </div>
+      )}
+      {!unlocked && showLogin && auth.status === 'out' && (
+        <div style={{ marginBottom: '3rem' }}>
+          <WritingsLogin onLogin={auth.login} configured={auth.configured} heading="Unlock private writing" />
+        </div>
+      )}
+
       {SECTIONS.map(({ key, title, layout }) => {
-        const items = WRITINGS.filter((w) => w.section === key);
+        const items = ALL_WRITINGS.filter((w) => w.section === key);
         return (
           <section key={key} className="writings-section">
             <SectionHeading>{title}</SectionHeading>
             {layout === 'cards' ? (
               <div className="writings-grid">
-                {items.map((w) => <WritingCard key={w.slug} writing={w} />)}
+                {items.map((w) => <WritingCard key={w.slug} writing={w} unlocked={unlocked} />)}
               </div>
             ) : (
               <ul className="writing-rows">
-                {items.map((w) => <WritingRow key={w.slug} writing={w} />)}
+                {items.map((w) => <WritingRow key={w.slug} writing={w} unlocked={unlocked} />)}
               </ul>
             )}
           </section>

@@ -1,8 +1,9 @@
 import { resolve, dirname, sep } from 'path'
 import { fileURLToPath } from 'url'
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import { buildNotesIndex, NOTES_DIR } from './scripts/build-notes-index.mjs'
+import { buildPrivateIndex, PRIVATE_DIR } from './scripts/build-private-index.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -23,6 +24,44 @@ function notesIndexPlugin() {
       server.watcher.on('add', rebuild)
       server.watcher.on('change', rebuild)
       server.watcher.on('unlink', rebuild)
+    },
+  }
+}
+
+/**
+ * Private writings: keeps src/content/private-index.json (the public list of
+ * locked pieces) current, and in dev serves the same /api handlers Vercel runs in
+ * production. Set WRITINGS_PASSWORD in .env.local to sign in locally.
+ */
+function privateWritingsPlugin() {
+  const routes = { '/api/auth': './api/auth.js', '/api/private-writing': './api/private-writing.js' }
+  const isPrivate = (file) => file.startsWith(PRIVATE_DIR + sep) && file.endsWith('.md')
+  return {
+    name: 'private-writings',
+    buildStart() {
+      buildPrivateIndex()
+    },
+    configureServer(server) {
+      for (const [key, value] of Object.entries(loadEnv(server.config.mode, process.cwd(), 'WRITINGS_'))) {
+        process.env[key] ??= value
+      }
+      const rebuild = (file) => { if (isPrivate(file)) buildPrivateIndex() }
+      server.watcher.add(PRIVATE_DIR)
+      server.watcher.on('add', rebuild)
+      server.watcher.on('change', rebuild)
+      server.watcher.on('unlink', rebuild)
+      server.middlewares.use(async (req, res, next) => {
+        const route = routes[req.url.split('?')[0]]
+        if (!route) return next()
+        try {
+          const mod = await server.ssrLoadModule(route)
+          await mod.default(req, res)
+        } catch (err) {
+          server.ssrFixStacktrace(err)
+          res.statusCode = 500
+          res.end('Server error')
+        }
+      })
     },
   }
 }
@@ -53,7 +92,7 @@ function vendorChunk(id) {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [notesIndexPlugin(), react()],
+  plugins: [notesIndexPlugin(), privateWritingsPlugin(), react()],
   build: {
     rollupOptions: {
       input: {

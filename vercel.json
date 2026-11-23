@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/*.js": {
+      "includeFiles": "{private/writings,src/content/writings}/*.md"
+    }
+  },
   "rewrites": [
     {
       "source": "/node/Opportunities",
