@@ -2,6 +2,7 @@
 // public list of private pieces (scripts/build-private-index.mjs).
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 export const ROOT = process.cwd();
 export const PRIVATE_DIR = path.join(ROOT, 'private/writings');
@@ -28,11 +29,12 @@ export function listDir(dir) {
     .map((f) => parseWriting(f.replace(/\.md$/, ''), fs.readFileSync(path.join(dir, f), 'utf8')));
 }
 
-export function readPrivate(slug) {
-  if (!SLUG_RE.test(slug)) return null;
-  const file = path.join(PRIVATE_DIR, `${slug}.md`);
-  if (!fs.existsSync(file)) return null;
-  return parseWriting(slug, fs.readFileSync(file, 'utf8'));
+/** Look a private piece up by its slug (links inside pieces) or its public id (the list). */
+export function readPrivate(slugOrId) {
+  if (!SLUG_RE.test(slugOrId)) return null;
+  const file = path.join(PRIVATE_DIR, `${slugOrId}.md`);
+  if (fs.existsSync(file)) return parseWriting(slugOrId, fs.readFileSync(file, 'utf8'));
+  return listPrivate().find((w) => w.id === slugOrId) || null;
 }
 
 /** Pieces (public and private) that link to `slug`. Only served to signed-in readers. */
@@ -42,4 +44,14 @@ export function linkedFrom(slug) {
     .filter((w) => w.slug !== slug && re.test(w.body))
     .sort((a, b) => b.date.localeCompare(a.date))
     .map((w) => ({ slug: w.slug, title: w.title }));
+}
+
+/** Opaque public id for a private piece, so the public list never exposes its slug or title. */
+export function privateId(slug) {
+  const salt = fs.readFileSync(path.join(ROOT, 'private/id-salt.txt'), 'utf8').trim();
+  return crypto.createHmac('sha256', salt).update(slug).digest('hex').slice(0, 12);
+}
+
+export function listPrivate() {
+  return listDir(PRIVATE_DIR).map((w) => ({ ...w, id: privateId(w.slug) }));
 }

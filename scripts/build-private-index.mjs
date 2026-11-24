@@ -3,8 +3,8 @@
  *
  * The private pieces never enter the site bundle (they are only served by
  * api/private-writing.js to signed-in readers), but the Writings page still
- * needs to list them with a lock. This file holds just slug, title, date, label,
- * section and status for each: no body and no excerpt.
+ * needs to list them with a lock. This file holds just an opaque id, date, label,
+ * section and status for each: no slug, title, body or excerpt.
  *
  * Runs from the Vite plugin in vite.config.js (build start, and in dev whenever
  * a private piece changes); `node scripts/build-private-index.mjs` runs it by hand.
@@ -12,16 +12,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { listDir } from '../api/_lib/writings.js';
+import { listPrivate } from '../api/_lib/writings.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const PRIVATE_DIR = path.join(ROOT, 'private/writings');
 export const INDEX_FILE = path.join(ROOT, 'src/content/private-index.json');
 
 export function buildPrivateIndex() {
-  const items = listDir(PRIVATE_DIR)
-    .map(({ slug, title, date, label, section, status }) => ({ slug, title, date, label, section, ...(status ? { status } : {}) }))
-    .sort((a, b) => b.date.localeCompare(a.date) || (a.slug < b.slug ? -1 : 1));
+  const items = listPrivate()
+    .map(({ id, date, label, section, status }) => ({ id, date, label, section, ...(status ? { status } : {}) }))
+    .sort((a, b) => b.date.localeCompare(a.date) || (a.id < b.id ? -1 : 1));
   const json = JSON.stringify(items, null, 1) + '\n';
   const previous = fs.existsSync(INDEX_FILE) ? fs.readFileSync(INDEX_FILE, 'utf8') : null;
   if (previous === json) return { changed: false, count: items.length };

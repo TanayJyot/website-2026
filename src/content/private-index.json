@@ -1,113 +1,97 @@
 [
  {
-  "slug": "lessons-from-eigen-ai",
-  "title": "Lessons from Eigen AI 2025",
+  "id": "0287dd0d5158",
   "date": "2025-09",
   "label": "September 2025",
   "section": "essay"
  },
  {
-  "slug": "offering-the-hand",
-  "title": "Offering the hand",
+  "id": "cfd384f9547d",
   "date": "2024-11-19",
   "label": "November 19, 2024",
   "section": "journal"
  },
  {
-  "slug": "another-mat137",
-  "title": "Another MAT137",
+  "id": "580fc75dc235",
   "date": "2024-09-18",
   "label": "September 18, 2024",
   "section": "journal"
  },
  {
-  "slug": "struggle",
-  "title": "High school advice that I understood in college",
+  "id": "c634963d41e3",
   "date": "2024-05",
   "label": "May 2024",
   "section": "essay",
   "status": "Unfinished"
  },
  {
-  "slug": "answers",
-  "title": "Questions that do not really have answers",
+  "id": "1d29ebea910b",
   "date": "2024-03-14",
   "label": "March 14, 2024",
   "section": "journal"
  },
  {
-  "slug": "presentable",
-  "title": "Presentable",
+  "id": "79d5579c700b",
   "date": "2023-12-08",
   "label": "December 8, 2023",
   "section": "journal"
  },
  {
-  "slug": "selling-my-phone",
-  "title": "My story when I went to sell my phone",
+  "id": "8c1ee52c7477",
   "date": "2023-12",
   "label": "December 2023",
   "section": "essay"
  },
  {
-  "slug": "failed-as-a-leader",
-  "title": "How I failed as a leader",
+  "id": "bac4015e82d2",
   "date": "2023-11-19",
   "label": "November 19, 2023",
   "section": "journal"
  },
  {
-  "slug": "imagined-troubles",
-  "title": "Imagined troubles",
+  "id": "abd66f553450",
   "date": "2023-08-20",
   "label": "August 20, 2023",
   "section": "journal"
  },
  {
-  "slug": "experiences-are-indications",
-  "title": "Experiences are like indications",
+  "id": "8495758ac7a8",
   "date": "2023-06-04",
   "label": "June 4, 2023",
   "section": "journal"
  },
  {
-  "slug": "stress",
-  "title": "Stress in a manner is very exciting",
+  "id": "74babadd9f7d",
   "date": "2023-05-23",
   "label": "May 23, 2023",
   "section": "journal"
  },
  {
-  "slug": "very-strong",
-  "title": "When you are very strong",
+  "id": "ca85613ff055",
   "date": "2023-05-13",
   "label": "May 13, 2023",
   "section": "journal"
  },
  {
-  "slug": "does-education-matter",
-  "title": "Why does education even matter",
+  "id": "1804613dc1ea",
   "date": "2023-05-12",
   "label": "May 12, 2023",
   "section": "journal"
  },
  {
-  "slug": "no-one-is-born-insecure",
-  "title": "No one is born insecure",
+  "id": "393b68ca7256",
   "date": "2023-04-27",
   "label": "April 27, 2023",
   "section": "journal"
  },
  {
-  "slug": "the-music-fest",
-  "title": "We were Vivasvanites",
+  "id": "54628edac815",
   "date": "2023-03-21",
   "label": "March 21, 2023",
   "section": "journal"
  },
  {
-  "slug": "what-i-consume",
-  "title": "What I consume",
+  "id": "905f78c39d61",
   "date": "2023-03-16",
   "label": "March 16, 2023",
   "section": "journal"

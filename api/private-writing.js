@@ -1,5 +1,6 @@
-// GET /api/private-writing?slug=<slug> -> the piece, only with a valid session.
-import { linkedFrom, readPrivate } from './_lib/writings.js';
+// GET /api/private-writing            -> real titles of every private piece (signed in only)
+// GET /api/private-writing?slug=<slug or id> -> the piece (signed in only)
+import { linkedFrom, listPrivate, readPrivate } from './_lib/writings.js';
 import { isAuthenticated, send } from './_lib/session.js';
 
 export default function handler(req, res) {
@@ -9,10 +10,12 @@ export default function handler(req, res) {
   }
   if (!isAuthenticated(req)) return send(res, 401, { error: 'Sign in to read this.' });
 
-  const slug = new URL(req.url, 'http://x').searchParams.get('slug') || '';
-  const writing = readPrivate(slug);
+  const requested = new URL(req.url, 'http://x').searchParams.get('slug');
+  if (!requested) return send(res, 200, { items: listPrivate().map(({ id, slug, title }) => ({ id, slug, title })) });
+
+  const writing = readPrivate(requested);
   if (!writing) return send(res, 404, { error: 'Not found.' });
 
-  const { title, date, label, section, status, body } = writing;
+  const { slug, title, date, label, section, status, body } = writing;
   return send(res, 200, { slug, title, date, label, section, status, body, linkedFrom: linkedFrom(slug) });
 }

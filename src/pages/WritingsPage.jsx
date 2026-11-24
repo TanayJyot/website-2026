@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Lock, LogOut } from 'lucide-react';
 import usePageTitle from '../components/usePageTitle';
@@ -42,7 +42,9 @@ function WritingCard({ writing, unlocked }) {
         <div className="writing-card-accent" />
         <p className="writing-card-date">{writing.label}</p>
         <h4 className="writing-card-title"><LockIcon writing={writing} unlocked={unlocked} />{writing.title}</h4>
-        <p className="writing-card-desc">{writing.private && !unlocked ? 'Private. Sign in to read.' : writing.excerpt}</p>
+        {writing.private
+          ? !unlocked && <p className="writing-card-desc">Private. Sign in to read.</p>
+          : <p className="writing-card-desc">{writing.excerpt}</p>}
         {writing.status && (
           <div className="writing-card-tags"><span className="writing-tag">{writing.status}</span></div>
         )}
@@ -75,6 +77,18 @@ export default function WritingsPage() {
   const auth = useWritingsAuth();
   const unlocked = auth.status === 'in';
   const [showLogin, setShowLogin] = useState(false);
+  const [titles, setTitles] = useState({}); // private id -> real title, once signed in
+
+  useEffect(() => {
+    if (!unlocked) return undefined;
+    let live = true;
+    fetch('/api/private-writing', { credentials: 'same-origin' })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => live && data && setTitles(Object.fromEntries(data.items.map((i) => [i.id, i.title]))))
+      .catch(() => {});
+    return () => { live = false; };
+  }, [unlocked]);
+  const reveal = (w) => (w.private && unlocked && titles[w.slug] ? { ...w, title: titles[w.slug] } : w);
 
   return (
     <div className="container animate-fade-in" style={{ marginTop: '5rem', paddingBlock: 'clamp(3rem, 8vw, 5rem)', minHeight: '80vh', maxWidth: '900px' }}>
@@ -109,11 +123,11 @@ export default function WritingsPage() {
             <SectionHeading>{title}</SectionHeading>
             {layout === 'cards' ? (
               <div className="writings-grid">
-                {items.map((w) => <WritingCard key={w.slug} writing={w} unlocked={unlocked} />)}
+                {items.map((w) => <WritingCard key={w.slug} writing={reveal(w)} unlocked={unlocked} />)}
               </div>
             ) : (
               <ul className="writing-rows">
-                {items.map((w) => <WritingRow key={w.slug} writing={w} unlocked={unlocked} />)}
+                {items.map((w) => <WritingRow key={w.slug} writing={reveal(w)} unlocked={unlocked} />)}
               </ul>
             )}
           </section>
