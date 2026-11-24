@@ -26,4 +26,9 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
+  {
+    // Server-side code: Vercel functions, build scripts and the Vite config
+    files: ['api/**/*.js', 'scripts/**/*.mjs', 'vite.config.js'],
+    languageOptions: { globals: globals.node },
+  },
 ])
