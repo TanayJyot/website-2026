@@ -27,14 +27,16 @@ Then visit the provided localized development port (default `localhost:5173`).
 
 ## Private writings
 
-Pieces in `private/writings/` are not part of the site bundle. They are served only by
-`api/private-writing.js` to visitors who have signed in through `api/auth.js`. The public
-Writings page lists them with a lock (title and date only, from the generated
-`src/content/private-index.json`).
+Pieces in `private/writings/` are not part of the site bundle, and nothing about them
+(text, titles, or how many) reaches the browser until someone signs in. They are served
+only by `api/private-writing.js` to visitors with a session from `api/auth.js`. Once signed
+in, the Writings page lists them (with a lock) alongside the public pieces.
 
 - **Make a piece private:** move its `.md` file from `src/content/writings/` to
-  `private/writings/` (the build regenerates the index). Move it back to make it public.
+  `private/writings/`. Move it back to make it public. Don't link to a private piece
+  from a public one.
 - **Password:** set `WRITINGS_PASSWORD` in the Vercel project's environment variables
   (optionally `WRITINGS_SESSION_SECRET` too). Changing either signs everyone out.
   With no password set, private writing stays locked for everyone.
 - **Local dev:** put `WRITINGS_PASSWORD=...` in `.env.local`, then `npm run dev`.
+- **Signing in:** a quiet "Sign in" link sits at the bottom of the Writings page.

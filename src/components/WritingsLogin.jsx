@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Lock } from 'lucide-react';
 
 /** Password prompt for the private writings. `onLogin(password)` resolves to an error message or null. */
-export default function WritingsLogin({ onLogin, configured = true, heading = 'Private writing' }) {
+export default function WritingsLogin({ onLogin, configured = true, heading = 'Sign in' }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
@@ -22,9 +22,7 @@ export default function WritingsLogin({ onLogin, configured = true, heading = 'P
       <Lock size={22} aria-hidden="true" className="writings-login-icon" />
       <h3>{heading}</h3>
       <p>
-        {configured
-          ? 'Some of my writing is personal. Enter the password to read it.'
-          : "Sign-in isn't available right now, so private writing stays locked."}
+        {configured ? 'Enter the password to continue.' : "Sign-in isn't available right now."}
       </p>
       {configured && (
         <>

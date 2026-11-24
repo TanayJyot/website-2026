@@ -4,7 +4,7 @@ import { Lock, LogOut } from 'lucide-react';
 import usePageTitle from '../components/usePageTitle';
 import useWritingsAuth from '../components/useWritingsAuth';
 import WritingsLogin from '../components/WritingsLogin';
-import { ALL_WRITINGS } from '../content/writings';
+import { WRITINGS } from '../content/writings';
 
 const COURSE_NOTES = [
   {
@@ -30,21 +30,20 @@ const SECTIONS = [
   { key: 'journal', title: 'From My Journal', layout: 'rows' },
 ];
 
-function LockIcon({ writing, unlocked }) {
-  if (!writing.private || unlocked) return null;
+/** Private pieces only ever appear for signed-in readers; the lock marks them as such. */
+function LockIcon({ writing }) {
+  if (!writing.private) return null;
   return <Lock size={15} className="writing-lock" aria-label="Private" />;
 }
 
-function WritingCard({ writing, unlocked }) {
+function WritingCard({ writing }) {
   return (
     <Link to={`/writing/${writing.slug}`} style={{ textDecoration: 'none' }}>
       <div className="writing-card glass-card">
         <div className="writing-card-accent" />
         <p className="writing-card-date">{writing.label}</p>
-        <h4 className="writing-card-title"><LockIcon writing={writing} unlocked={unlocked} />{writing.title}</h4>
-        {writing.private
-          ? !unlocked && <p className="writing-card-desc">Private. Sign in to read.</p>
-          : <p className="writing-card-desc">{writing.excerpt}</p>}
+        <h4 className="writing-card-title"><LockIcon writing={writing} />{writing.title}</h4>
+        {!writing.private && <p className="writing-card-desc">{writing.excerpt}</p>}
         {writing.status && (
           <div className="writing-card-tags"><span className="writing-tag">{writing.status}</span></div>
         )}
@@ -53,12 +52,12 @@ function WritingCard({ writing, unlocked }) {
   );
 }
 
-function WritingRow({ writing, unlocked }) {
+function WritingRow({ writing }) {
   return (
     <li>
       <Link to={`/writing/${writing.slug}`} className="writing-row">
         <span className="writing-row-title">
-          <LockIcon writing={writing} unlocked={unlocked} />
+          <LockIcon writing={writing} />
           {writing.title}
           {writing.status && <span className="writing-tag writing-row-tag">{writing.status}</span>}
         </span>
@@ -77,18 +76,20 @@ export default function WritingsPage() {
   const auth = useWritingsAuth();
   const unlocked = auth.status === 'in';
   const [showLogin, setShowLogin] = useState(false);
-  const [titles, setTitles] = useState({}); // private id -> real title, once signed in
+  const [fetched, setFetched] = useState([]);
+  const privateItems = unlocked ? fetched : []; // only ever filled once signed in
 
   useEffect(() => {
     if (!unlocked) return undefined;
     let live = true;
     fetch('/api/private-writing', { credentials: 'same-origin' })
       .then((res) => (res.ok ? res.json() : null))
-      .then((data) => live && data && setTitles(Object.fromEntries(data.items.map((i) => [i.id, i.title]))))
+      .then((data) => live && data && setFetched(data.items.map((w) => ({ ...w, private: true }))))
       .catch(() => {});
     return () => { live = false; };
   }, [unlocked]);
-  const reveal = (w) => (w.private && unlocked && titles[w.slug] ? { ...w, title: titles[w.slug] } : w);
+
+  const all = [...WRITINGS, ...privateItems].sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <div className="container animate-fade-in" style={{ marginTop: '5rem', paddingBlock: 'clamp(3rem, 8vw, 5rem)', minHeight: '80vh', maxWidth: '900px' }}>
@@ -97,37 +98,19 @@ export default function WritingsPage() {
         Essays, short pieces and pages from my journal since 2023, plus course notes from my CS classes at UofT.
       </p>
 
-      {auth.status !== 'loading' && (
-        <div className="writings-auth-bar">
-          {unlocked ? (
-            <button type="button" className="writings-auth-btn" onClick={auth.logout}>
-              <LogOut size={16} aria-hidden="true" /> Sign out
-            </button>
-          ) : (
-            <button type="button" className="writings-auth-btn" aria-expanded={showLogin} onClick={() => setShowLogin((v) => !v)}>
-              <Lock size={16} aria-hidden="true" /> Sign in to read private writing
-            </button>
-          )}
-        </div>
-      )}
-      {!unlocked && showLogin && auth.status === 'out' && (
-        <div style={{ marginBottom: '3rem' }}>
-          <WritingsLogin onLogin={auth.login} configured={auth.configured} heading="Unlock private writing" />
-        </div>
-      )}
-
       {SECTIONS.map(({ key, title, layout }) => {
-        const items = ALL_WRITINGS.filter((w) => w.section === key);
+        const items = all.filter((w) => w.section === key);
+        if (items.length === 0) return null;
         return (
           <section key={key} className="writings-section">
             <SectionHeading>{title}</SectionHeading>
             {layout === 'cards' ? (
               <div className="writings-grid">
-                {items.map((w) => <WritingCard key={w.slug} writing={reveal(w)} unlocked={unlocked} />)}
+                {items.map((w) => <WritingCard key={w.slug} writing={w} />)}
               </div>
             ) : (
               <ul className="writing-rows">
-                {items.map((w) => <WritingRow key={w.slug} writing={reveal(w)} unlocked={unlocked} />)}
+                {items.map((w) => <WritingRow key={w.slug} writing={w} />)}
               </ul>
             )}
           </section>
@@ -154,6 +137,23 @@ export default function WritingsPage() {
           ))}
         </div>
       </section>
+
+      {auth.status !== 'loading' && (
+        <div className="writings-auth-bar">
+          {unlocked ? (
+            <button type="button" className="writings-auth-btn" onClick={auth.logout}>
+              <LogOut size={16} aria-hidden="true" /> Sign out
+            </button>
+          ) : (
+            <button type="button" className="writings-auth-btn" aria-expanded={showLogin} onClick={() => setShowLogin((v) => !v)}>
+              Sign in
+            </button>
+          )}
+        </div>
+      )}
+      {!unlocked && showLogin && auth.status === 'out' && (
+        <WritingsLogin onLogin={auth.login} configured={auth.configured} heading="Sign in" />
+      )}
     </div>
   );
 }

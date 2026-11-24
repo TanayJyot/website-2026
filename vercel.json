@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/*.js": {
-      "includeFiles": "{private/writings/*.md,private/id-salt.txt,src/content/writings/*.md}"
+      "includeFiles": "{private/writings/*.md,src/content/writings/*.md}"
     }
   },
   "rewrites": [
