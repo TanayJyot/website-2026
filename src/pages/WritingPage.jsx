@@ -82,7 +82,7 @@ function PrivateWriting({ slug }) {
     <>
       <BackLink />
       {auth.status === 'loading' && <div aria-hidden="true" style={{ minHeight: '40vh' }} />}
-      {auth.status === 'out' && <WritingsLogin onLogin={auth.login} configured={auth.configured} heading="Private writing" />}
+      {auth.status === 'out' && <WritingsLogin onLogin={auth.login} configured={auth.configured} heading="Sign in" />}
       {signedIn && !current && <p style={{ color: 'var(--text-muted)' }}>Loading…</p>}
       {signedIn && current?.missing && <NotFound />}
       {signedIn && current?.error && <p style={{ color: 'var(--text-muted)' }}>Couldn't load this piece. Try again in a moment.</p>}
@@ -103,8 +103,7 @@ function NotFound() {
 export default function WritingPage() {
   const { slug } = useParams();
   const writing = WRITINGS_BY_SLUG[slug];
-  const titled = writing ? writing.title : 'Private writing';
-  usePageTitle(titled);
+  usePageTitle(writing ? writing.title : 'Page Not Found');
 
   // Anything that isn't a public piece might be a private one (the server decides,
   // by slug or opaque id), so nothing about private slugs is known here.

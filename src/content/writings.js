@@ -3,10 +3,8 @@
    /writing/<slug>; "linked from" lists are worked out from them here.
 
    Private pieces live in /private/writings instead, outside the bundle, and are
-   only served by /api/private-writing to signed-in readers. All that ships here
-   for them is an opaque id plus date and section (private-index.json), so they
-   can be listed with a lock but their slug and title stay secret. */
-import privateIndex from './private-index.json';
+   only served by /api/private-writing to signed-in readers. Nothing about them
+   ships to the browser until sign-in: not their text, titles, or even how many. */
 
 const modules = import.meta.glob('./writings/*.md', {
   eager: true,
@@ -59,8 +57,3 @@ for (const writing of WRITINGS) {
   }
 }
 
-/** Locked pieces: no real slug, title, body or excerpt. `slug` is the opaque id. */
-export const PRIVATE_WRITINGS = privateIndex.map(({ id, ...w }) => ({ ...w, slug: id, title: 'Private piece', private: true }));
-
-/** Everything the Writings page lists, newest first. */
-export const ALL_WRITINGS = [...WRITINGS, ...PRIVATE_WRITINGS].sort((a, b) => b.date.localeCompare(a.date));
